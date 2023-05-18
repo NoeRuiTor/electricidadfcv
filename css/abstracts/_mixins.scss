@@ -1,0 +1,82 @@
+@mixin button($bordeColor:$color1,$colorLetra:$colorNegro ){
+    -moz-border-radius:5rem;
+    -webkit-border-radius:5rem;
+    -o-border-radius: 5rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    color:$colorLetra; 
+    font-family: $fuente1;     
+    font-weight: 600;
+    font-size: $s-size;
+    text-align: center;    
+    border: 0.2rem solid;  
+    border-color: $bordeColor; 
+    padding: 1.5rem 4rem;
+    margin:1rem;
+    display: inline-block;    
+    
+}
+@mixin button-animation{
+    transform: translateY(-3px); 
+    box-shadow:  0 10px 20px rgba(0, 0,0, 0.2);    
+}
+
+@mixin centra-items{
+    align-self: center;
+    justify-self: center;
+}
+
+
+@mixin caja-logo{
+    height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    
+}
+@mixin logo{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto; 
+    height: auto;
+}
+
+@mixin banner($height:auto,$bgBM:normal){
+    height: $height;    
+    background-blend-mode: $bgBM;
+    background-repeat: no-repeat;
+    background-size: cover;       
+    max-width: 100%;
+
+}
+
+
+
+@mixin heading_linea ($color:$color5){
+    display: flex;
+       span{
+        border-bottom: 0.3rem solid;
+        border-color: $color;
+        width: 5rem;
+       }
+}
+
+@mixin sombreado{
+    box-shadow: 0.2em 0.2em 1.3em ($color2), -0.2em -0.2em 1.3em ($color2), inset 0 0 0 transparent, inset 0 0 0 transparent;
+}
+
+@mixin mobile($medida:768px) {
+    @media screen and (max-width: $medida) {
+      @content;
+    }
+  }
+@mixin bocadillo{
+    border: 2.5rem solid $color5;
+    content: '';
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    bottom: -48px;
+    left: calc(50% - 2.5rem);
+}
+

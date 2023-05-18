@@ -1,0 +1,56 @@
+.header{
+    max-width: 100%;
+    width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0; /* Posicionamos la cabecera pegada arriba */
+	position: fixed; /* Hacemos que la cabecera tenga una posició*/
+    z-index: 1;
+    box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);   
+    height: 15rem;
+    justify-content: space-around;
+    align-items: start;  
+    background-color: $colorBlanco;
+    
+   
+    &__logo{
+    
+    @include centra-items; 
+    @include caja-logo; 
+
+        .logo{
+            @include logo;
+            @include mobile{
+                width: 10rem;
+                height: 10rem;
+            }
+        }
+    }
+
+    &__nav{   
+     
+      align-self: center; 
+      
+      @include mobile{          
+        align-self: center;
+      
+        
+     }
+   }   
+    
+ 
+    &__btn{
+       
+     @include centra-items;
+    
+     @include mobile{        
+        font-size: $s-size;
+        padding: 0.5rem 1rem;
+        align-self: flex-start;
+        justify-self: center;
+        margin: 0.2rem;
+        text-align: center;
+    }
+    }
+   
+   
+}

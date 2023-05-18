@@ -1,0 +1,19 @@
+.heading{
+    font-family: $fuente1;
+    font-weight: 800;    
+    letter-spacing: 0.1em;    
+    text-transform: uppercase;   
+    padding: 0.5rem;  
+}
+.heading-primary{
+    font-size: $xl-size;
+}
+.heading-secondary{
+    font-size: $l-size;
+}
+.heading-terciary{
+    font-size: $m-size;
+}
+.heading-cuaternary{
+    font-size: $s-size;
+}

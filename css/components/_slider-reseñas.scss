@@ -1,0 +1,53 @@
+.slider {
+	width: 100%;
+	margin: auto;
+	overflow: hidden;  
+  
+
+  ul {
+   
+	display: flex;
+	padding: 0;
+	width: 500%;	
+	animation: cambio 20s infinite alternate linear;
+
+
+    li {
+       
+        width: 100%;
+        list-style: none;
+        
+        .reseña{
+           
+            display: flex;
+            flex-direction: column;
+         &__bocadillo{
+            position: relative;
+            padding: 3rem;
+            width: 50%;
+            background-color: $color5;
+            box-shadow: 0.1rem 1.2rem 3.3rem rgba(0, 0, 0, 0.5);
+        
+            &:before{
+            @include bocadillo;          
+            }
+            .star {
+                color: gold;
+                font-size: 20px;
+            }
+        }
+         &__autor{
+            padding:4rem 2rem;
+            width: 50%;
+            align-self: center;
+            
+         }
+        }
+
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,16 @@
+.btn--login{
+    @include button;   
+    background-color: $color1;   
+   &:hover{
+    @include button-animation;    
+   } 
+}  
+
+.btn--enviar{  
+    @include button($color5,$color5 );              
+    background-color: transparent;  
+    &:hover{
+        @include button-animation;       
+    
+       }    
+}

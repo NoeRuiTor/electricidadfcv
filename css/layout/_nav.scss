@@ -1,0 +1,26 @@
+.nav{
+    
+    .menu{  
+        width: 100%;      
+        display: flex;        
+        flex-wrap: wrap;
+        justify-content:space-around;
+    }
+       li{
+        list-style: none;
+    
+         a{
+            text-decoration: none;
+            font-weight: 600;
+            font-size: $s-size;
+            color: $colorNegro;
+            padding-top: 2rem;
+
+            &:hover{
+                text-decoration: none;
+                color:$color4;
+                border-top: 0.1rem solid $colorNegro;
+            }
+        }      
+    }
+}

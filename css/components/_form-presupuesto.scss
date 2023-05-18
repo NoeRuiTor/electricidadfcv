@@ -1,0 +1,70 @@
+.presupuesto{
+    background-color: $color1;
+    font-size: $s-size;
+    width: 80%;
+    padding: 2rem;
+    box-shadow: 0.3em 0.3em 1em 0.5em rgba(0,0,0,0.3); 
+    margin-top: 2rem;
+
+    &__heading{
+        .heading-secondary{
+            color: $colorBlanco;
+            @include heading_linea;
+        }
+        .heading-secondary--main{
+            line-height: 2.5rem;
+            width: 80%;
+            margin-left: 2rem;
+        }
+    }
+    &__formulario{
+        padding: 1.5rem;
+        font-size: $xs-size;
+        line-height: 3rem;
+        display:flex;
+        flex-direction: column;
+        align-content: center;
+        .input{
+            display: flex;           
+            justify-content: space-between;
+            padding-top: 1.5rem;
+            input{
+                width: 100%;
+                height: 2.5rem;
+                border:none;
+                color:$color3;
+            }
+            .ciudad{
+                width: 45%;
+                
+                
+           }
+        }
+        #descripcion{
+            width: 100%;
+            border:none;
+            color:$color3;
+        }
+        #file{
+           color:$color2;
+           
+        }
+        .radio{ 
+          display: flex;
+            input{
+               margin-left: 2rem;
+             }
+         }
+        .boton{
+            display: flex;
+            justify-content: center;
+        }
+        .privacidad{
+            padding-top: 1.2rem;
+            @include mobile{
+                padding-top: 3rem;
+            }
+        }
+       
+    }
+}

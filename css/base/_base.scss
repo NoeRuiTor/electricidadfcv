@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+.site{  
+    max-width: 144rem;
+    min-width: auto;
+    margin: 0 auto;      
+    font-family: $fuente1;
+    padding-top: 15rem;    
+    background-color: $colorBlanco;    
+   
+}
+
+  
+
+@include mobile{
+    html{
+        font-size: 8px !important;
+    }
+}
+@include mobile(500px){
+    html{
+        font-size: 6px !important;
+    }
+}

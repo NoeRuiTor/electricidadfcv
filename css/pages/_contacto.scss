@@ -1,0 +1,16 @@
+
+
+.localiza{
+    padding: 10rem 0;
+    width: 95%;
+    height: 60rem;
+
+    &__mapa{   
+    padding-left: 5rem;
+       height: 100%;
+       .mapa{
+        width: 100%;
+        height: 100%;
+       }
+    }
+}

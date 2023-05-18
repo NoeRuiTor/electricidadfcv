@@ -1,0 +1,35 @@
+//ABSTRACT:
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/funtions";
+
+
+//BASE:
+@import "base/typography";
+@import "base/base";
+@import "base/animations";
+
+//COMPONENTS:
+@import "components/buttons";
+@import "components/banner-head";
+@import "components/fixed-icons";
+@import "components/contact-box";
+@import "components/heading";
+@import "components/redes_sociales";
+@import "components/form-presupuesto";
+@import "components/carrousel";
+@import "components/slider-reseñas";
+@import "components/cookies";
+
+//LAYOUT:
+@import "layout/grid";
+@import "layout/nav";
+@import "layout/header";
+@import "layout/info-contacto";
+@import "layout/footer";
+
+
+//PAGES:
+@import "pages/home";
+@import "pages/presupuesto";
+@import "pages/contacto";

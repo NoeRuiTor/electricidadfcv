@@ -1,0 +1,41 @@
+.banner-head{    
+   width: 100%; 
+   height: 20rem;
+   width: 100%; 
+   height: 20rem;            
+   background-position: center center;
+   background-blend-mode:saturation;
+   background-repeat: no-repeat;
+   background-size: cover;   
+   color:$color5; 
+       
+   &__background{
+      width: 100%;
+      height: 100%;
+      background-color: $gradienteNegro1;
+      .text{
+         @include centra-items;
+         @include mobile{
+            margin-top: 3rem;
+         }
+      
+         .heading{        
+            
+            @include heading_linea;
+         }
+     }
+   }
+}
+.banner-head--contacto{
+   
+   background-image: $banner7Foto; 
+}
+.banner-head--presupuesto{
+   background-image: $banner6Foto;
+}
+.banner-head--trabajos{
+   background-image: $banner4Foto;
+}
+.banner-head--servicios{
+   background-image: $banner3Foto;;
+}
