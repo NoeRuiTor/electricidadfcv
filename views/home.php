@@ -16,34 +16,34 @@
                     <h2 class="heading heading-secondary">Instalaciones
                       <span class="heading-secondary--color">eléctricas</span>
                     </h2>
-                    <p class="main">Hacemos todo tipo de instalaciones y 
-                        mantenimientos eléctricos. <a href="#">LLame ahora</a></p>
+                    <p class="heading-main">Hacemos todo tipo de instalaciones y 
+                        mantenimientos eléctricos. <a href="#">LLame ahora.</a></p>
 
                 </div>
                 <div class="inicio__text col-4-12 col-12-12-sm">
                     <h2 class="heading heading-secondary">Presupuesto
                       <span class="heading-secondary--color">sin compromiso</span>
                     </h2>
-                    <p class="main">Rellena el formulario adjunto y te 
-                        enviaremos un presupuesto sin compromiso a la mayor brevedad posible</p>
+                    <p class="heading-main">Rellena el formulario adjunto y te 
+                        enviaremos un presupuesto sin compromiso a la mayor brevedad posible.</p>
                     
                 </div>
                 <div class="inicio__contacto col-4-12">
                     <div class="inicio__contacto contacto">
                         <!-- Icono de correo -->
-                        <a class="icon" href="mailto:<?php parametro_plantilla("email"); ?>">
+                        <a class="contacto-icon" href="mailto:<?php parametro_plantilla("email"); ?>">
                             <i class="fas fa-envelope"></i>
                         </a>                            
                        
-                        <p class="text"><?php parametro_plantilla("email"); ?></p>                       
+                        <p class="contacto-text"><?php parametro_plantilla("email"); ?></p>                       
                     </div>
                     <div class="inicio__contacto contacto">
                          <!-- Icono de teléfono -->
-                        <a class="icon" href="tel:<?php parametro_plantilla("movil"); ?>">
+                        <a class="contacto-icon" href="tel:<?php parametro_plantilla("movil"); ?>">
                         <i class="fas fa-phone"></i>
                         </a>                        
                         
-                        <p class="text"><?php parametro_plantilla("movil"); ?></p> 
+                        <p class="contacto-text"><?php parametro_plantilla("movil"); ?></p> 
                     </div>
         
                 </div>
@@ -69,42 +69,42 @@
                                 <p>Servicios</p>
                                 <span></span>
                     </h2>
-                    <p class="main">Los servicios que ofrecemos son:</p>
+                    <p class="heading-main">Los servicios que ofrecemos son:</p>
                 </div>
                 <div class="servicios__carrousel  carrousel col-12-12 col-12-12-sm">
                     <div class="carrousel__grande">
                         <div class="articulo">
-                            <img class="img" src="imgs/iluminacion_led.jpg" alt="Imagen 1" >
-                            <h3 class="heading heading-terciary">Iluminación led</h3>                            
-                            <p class="text">Le asesoramos en la elección de los elementos de iluminación que mejor se 
+                            <img class="articulo-img" src="imgs/iluminacion_led.jpg" alt="Imagen 1" >
+                            <h3 class="articulo-heading heading heading-terciary">Iluminación led</h3>                            
+                            <p class="articulo-text">Le asesoramos en la elección de los elementos de iluminación que mejor se 
                                 ajusten a su vivienda o local.</p>
                         </div>
                         <div class="articulo">
-                            <img class="img" src="imgs/renovables.png" alt="Imagen 2" >
-                            <h3 class="heading heading-terciary">Energías renovables</h3>                            
-                            <p class="text">Soluciones de auto-consumo tanto para empresas como para viviendas particulares.</p>
+                            <img class="articulo-img" src="imgs/renovables.png" alt="Imagen 2" >
+                            <h3 class="articulo-heading heading heading-terciary">Energías renovables</h3>                            
+                            <p class="articulo-text">Soluciones de auto-consumo tanto para empresas como para viviendas particulares.</p>
                         </div>
                         <div class="articulo">
-                            <img class="img" src="imgs/instalaciones_electricas.png" alt="Imagen 3" >
-                            <h3 class="heading heading-terciary">Instalaciones eléctricas</h3>                            
-                            <p class="text">Realizamos y mantenemos cualquier tipo de instalación eléctrica en viviendas, 
+                            <img class="articulo-img" src="imgs/instalaciones_electricas.png" alt="Imagen 3" >
+                            <h3 class="articulo-heading heading heading-terciary">Instalaciones eléctricas</h3>                            
+                            <p class="articulo-text">Realizamos y mantenemos cualquier tipo de instalación eléctrica en viviendas, 
                                 locales, naves industriales, etc.</p>
                         </div>
                         <div class="articulo">
-                            <img class="img" src="imgs/cargador-carga-electro-car-cerca.jpg" alt="Imagen 4" >
-                            <h3 class="heading heading-terciary">Puntos de recarga</h3>                            
-                            <p class="text">Instalamos puntos de recarga tango en viviendas particulares cómo en garaje colectivos.</p>
+                            <img class="articulo-img" src="imgs/cargador-carga-electro-car-cerca.jpg" alt="Imagen 4" >
+                            <h3 class="articulo-heading heading heading-terciary">Puntos de recarga</h3>                            
+                            <p class="articulo-text">Instalamos puntos de recarga tango en viviendas particulares cómo en garaje colectivos.</p>
                         </div> 
                         <div class="articulo">
-                            <img class="img" src="imgs/iluminacion_led.jpg" alt="Imagen 5" >
-                            <h3 class="heading heading-terciary">Iluminación led</h3>                            
-                            <p class="text">Le asesoramos en la elección de los elementos de iluminación que mejor se 
+                            <img class="articulo-img" src="imgs/iluminacion_led.jpg" alt="Imagen 5" >
+                            <h3 class="articulo-heading heading heading-terciary">Iluminación led</h3>                            
+                            <p class="articulo-text">Le asesoramos en la elección de los elementos de iluminación que mejor se 
                                 ajusten a su vivienda o local.</p>
                         </div>
                         <div class="articulo">
-                            <img class="img" src="imgs/renovables.png" alt="Imagen 6" >
-                            <h3 class="heading heading-terciary">Energías renovables</h3>                            
-                            <p class="text">Soluciones de auto-consumo tanto para empresas como para viviendas particulares.</p>
+                            <img class="articulo-img" src="imgs/renovables.png" alt="Imagen 6" >
+                            <h3 class="articulo-heading heading heading-terciary">Energías renovables</h3>                            
+                            <p class="articulo-text">Soluciones de auto-consumo tanto para empresas como para viviendas particulares.</p>
                         </div> 
                         
 

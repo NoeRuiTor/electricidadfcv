@@ -1,0 +1,48 @@
+.feature{
+
+  padding: 2rem;
+  height: 60rem;
+     &__img{
+       
+        .img-first{
+            position: relative;
+            top: 2rem;
+            left: 4rem;
+            width: 50%;
+        }
+         .img-second{
+            position: relative;
+            top: -25rem ;
+            left: 20rem;
+            width: 50%;
+         }
+        
+    }
+    &__text{
+      
+       line-height: 3rem;
+        font-size: $s-size;
+        text-align: justify;
+
+        &-heading{
+            padding: 2rem;
+            span{
+                color:$color4;
+            }
+        
+        }
+        &-desc{
+            margin:2rem 0;
+        }
+        
+    }
+}
+
+.feature--reverse{ 
+   
+    .feature__img{
+        order:1;       
+       
+         
+     }
+}

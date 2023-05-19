@@ -40,7 +40,7 @@
               
             }
             
-            .img{
+            &-img{
                 height: 30vh;
                 max-width: 90%;                           
                 display: block;
@@ -52,13 +52,13 @@
                 }
             }
 
-            .heading-terciary{
+            &-heading{
                 font-size: 2rem;
                 text-decoration:underline;
                 padding-bottom: 1em;
                 
             }
-            .text{
+            &-text{
                 font-size: $s-size;
                 line-height: 1.5em;
                 text-align: center;

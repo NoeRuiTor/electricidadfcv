@@ -63,9 +63,12 @@
                     color: $color1;
                 }
             }
-            .main{
+            .heading-main{
+                padding: 2rem;                
+                line-height: 3rem;
                 a{
                     color:$colorNegro;
+                   
                 }
             }
 
@@ -101,7 +104,7 @@
             .heading-secondary{               
                 @include heading_linea($color2);
             }
-            .main{           
+            .heading-main{           
                 font-size: $s-size;
                 padding: 2rem;
             }

@@ -3,8 +3,8 @@
 
             <div class="footer__logo col-3-12 col-12-12-sm">
 
-                <img class="logo" src="imgs/logo.png" alt="logo Electricidad FCV" >
-                <p class="text">Profesional dedicado y especializado en el mundo de la electricidad con gran experiencia avalada por nuestros clientes.</p>
+                <img class="logo" src="../imgs/logo.png" alt="logo Electricidad FCV" >
+                <p class="footer-text">Profesional dedicado y especializado en el mundo de la electricidad con gran experiencia avalada por nuestros clientes.</p>
                 <div class="redes_sociales">
                  <a class="footer-icon" href="https://www.facebook.com/electricidadFCV" target="_blank"><i class="fab fa-facebook"></i></a>
                  <a class="footer-icon" href="https://www.instagram.com/electricidadfcv/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -74,7 +74,7 @@
         </div>
 
  
-   </div>
+ 
  </body>
 
 </html>

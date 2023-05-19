@@ -18,22 +18,22 @@ include("cabecera.php");
         </div>
       </div>
     </section>
-    <section class="articulos">
+    <section class="features">
 
-      <article class="articulo contenedor__row">
+      <div class="feature contenedor__row">
 
-          <div class="articulo__img col-5-12 col-9-12-sm"> 
+          <div class="feature__img col-5-12 col-9-12-sm"> 
 
               <img class="img-first" src="../imgs/CUADRO.jpg" alt="foto cuadro1">
               <img class="img-second" src="../imgs/CUADRO2.jpg" alt="foto cuadro2">
 
           </div>
-          <div class="articulo__texto col-7-12 col-9-12-sm">
+          <div class="feature__text col-7-12 col-9-12-sm">
 
-              <h2 class="heading heading-secondary">
+              <h2 class="feature__text-heading heading-secondary">
                 Instalaciones <span>eléctricas</span>
               </h2>
-              <p class="descripcion">Vestibulum non magna efficitur, bibendum leo eget, 
+              <p class="feature__text-desc">Vestibulum non magna efficitur, bibendum leo eget, 
                 ullamcorper arcu. Suspendisse in malesuada sapien. Curabitur id massa id 
                 tortor vehicula commodo id nec metus. Ut vel nulla consequat, sollicitudin nibh ac, 
                 convallis sem. Duis vel imperdiet sem. Etiam venenatis, mi eget vehicula rutrum, ante 
@@ -41,26 +41,26 @@ include("cabecera.php");
                 fermentum quis ipsum. Integer id quam vestibulum, tincidunt est vel, ornare neque. In hac 
                 habitasse platea dictumst. Maecenas vitae urna est. Aenean nec convallis dui, in vulputate nibh. 
                 Cras ullamcorper fermentum metus.</p>
-              <a href="#" class="btn btn btn--presupuesto">Pida su presupuesto</a>  
+              <a href="#" class="feature__text-btn btn btn--presupuesto">Pida su presupuesto</a>  
 
           </div>
 
-      </article>
+      </div>
 
-      <article class="articulo--reverse contenedor__row">
+      <div class="feature feature--reverse contenedor__row">
 
-          <div class="articulo--reverse__img col-5-12 col-9-12-sm"> 
+          <div class="feature__img col-5-12 col-9-12-sm"> 
 
               <img class="img-first" src="../imgs/FOTOVOLTAICA.jpg" alt="foto placa-solar1">
               <img class="img-second" src="../imgs/IMG_20220714_110257.jpg" alt="foto placa-solar2">
 
           </div>
-          <div class="articulo--reverse__texto col-7-12 col-9-12-sm">
+          <div class="feature__text col-7-12 col-9-12-sm">
 
-              <h2 class="heading heading-secondary">
+              <h2 class="feature__text-heading heading heading-secondary">
                 Instalaciones <span>fotovoltáicas</span>
               </h2>
-              <p class="descripcion">Vestibulum non magna efficitur, bibendum leo eget, 
+              <p class="feature__text-desc">Vestibulum non magna efficitur, bibendum leo eget, 
                 ullamcorper arcu. Suspendisse in malesuada sapien. Curabitur id massa id 
                 tortor vehicula commodo id nec metus. Ut vel nulla consequat, sollicitudin nibh ac, 
                 convallis sem. Duis vel imperdiet sem. Etiam venenatis, mi eget vehicula rutrum, ante 
@@ -68,27 +68,27 @@ include("cabecera.php");
                 fermentum quis ipsum. Integer id quam vestibulum, tincidunt est vel, ornare neque. In hac 
                 habitasse platea dictumst. Maecenas vitae urna est. Aenean nec convallis dui, in vulputate nibh. 
                 Cras ullamcorper fermentum metus.</p>
-              <a href="#" class="btn btn btn--presupuesto">Pida su presupuesto</a>  
+              <a href="#" class="featue_text-btn btn btn--presupuesto">Pida su presupuesto</a>  
 
           </div>
 
-      </article>
+      </div>
     
       
-      <article class="articulo contenedor__row">
+      <div class="feature contenedor__row">
 
-          <div class="articulo__img col-5-12 col-9-12-sm"> 
+          <div class="feature__img col-5-12 col-9-12-sm"> 
 
               <img class="img-first" src="../imgs/LAMPARA LED.jpg" alt="foto lamparaLed">
               <img class="img-second" src="../imgs/iluminacion_led.jpg" alt="foto focosLed">
 
           </div>
-          <div class="articulo__texto col-7-12 col-9-12-sm">
+          <div class="feature__text col-7-12 col-9-12-sm">
 
-              <h2 class="heading heading-secondary">
+              <h2 class="feature__text-heading heading heading-secondary">
                 Iluminación <span>Led</span>
               </h2>
-              <p class="descripcion">Vestibulum non magna efficitur, bibendum leo eget, 
+              <p class="feature__text-desc">Vestibulum non magna efficitur, bibendum leo eget, 
                 ullamcorper arcu. Suspendisse in malesuada sapien. Curabitur id massa id 
                 tortor vehicula commodo id nec metus. Ut vel nulla consequat, sollicitudin nibh ac, 
                 convallis sem. Duis vel imperdiet sem. Etiam venenatis, mi eget vehicula rutrum, ante 
@@ -96,11 +96,11 @@ include("cabecera.php");
                 fermentum quis ipsum. Integer id quam vestibulum, tincidunt est vel, ornare neque. In hac 
                 habitasse platea dictumst. Maecenas vitae urna est. Aenean nec convallis dui, in vulputate nibh. 
                 Cras ullamcorper fermentum metus.</p>
-              <a href="#" class="btn btn btn--presupuesto">Pida su presupuesto</a>  
+              <a href="#" class="feature__text-btn btn btn--presupuesto">Pida su presupuesto</a>  
 
           </div>
 
-      </article>
+      </div>
     </section>
 
 

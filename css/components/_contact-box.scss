@@ -1,11 +1,11 @@
-.contacto{
+ .contacto{
     padding: 1rem;
     border: 1px solid $color3;
     background-color: $color3;
     display: flex;
     align-items: center;
     
-    .icon{
+    &-icon{
       
             font-size: 2rem;
             background-color: $color2; 
@@ -15,7 +15,7 @@
         }        
     
 
-    .text{
+    &-text{
         text-decoration: none;
         color:$colorNegro;
         font-size: $s-size;

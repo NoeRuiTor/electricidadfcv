@@ -5,6 +5,7 @@
     line-height: 3rem;
     margin-top: 3rem; 
     justify-content: space-around;
+    font-size: $xs-size;
 
     .heading-quaternary {
        @include heading_linea($colorNegro); 
@@ -14,14 +15,12 @@
         justify-self: center;
         align-self: flex-start;
         height: 50%;
-        max-width: 50%;       
+        max-width: 80%;       
         
 
         @include mobile{                        
-           margin-left: 25%;
-            .text{
-                width: 80%;               
-            }            
+           margin-left: 20%;
+           max-width: 80%;       
         } 
 
         .logo{
@@ -44,8 +43,7 @@
 
         .footer-list{ 
             li{
-                list-style: none;
-                font-size: $xs-size; 
+                list-style: none;               
 
                 a {
                     text-decoration: none;
@@ -56,6 +54,7 @@
         }
          
        @include mobile {
+         
          .footer-icon{
              img{
               width: 20%;
@@ -72,7 +71,7 @@
 
      small{
         display: block;
-        font-size: $xs-size;
+       
         
         span{
             color:$color4 ;
@@ -84,6 +83,7 @@
             display:flex;
             flex-direction: column;
             align-items: center;
+            
         }
 
         

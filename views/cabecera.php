@@ -15,7 +15,7 @@
     
 </head>
 <body>
-   <div class="site">       
+       
 
             <header class="header contenedor__row">
                 <div class="header__logo col-3-12 col-12-12-sm">
