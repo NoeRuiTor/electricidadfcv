@@ -20,6 +20,7 @@
 @import "components/carrousel";
 @import "components/slider-reseñas";
 @import "components/cookies";
+@import "components/articulo";
 
 //LAYOUT:
 @import "layout/grid";
@@ -31,5 +32,6 @@
 
 //PAGES:
 @import "pages/home";
+@import "pages/servicios";
 @import "pages/presupuesto";
 @import "pages/contacto";

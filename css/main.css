@@ -101,6 +101,26 @@ html {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+.btn--presupuesto {
+  border-radius: 5rem;
+  text-decoration: none;
+  color: #F1F1EA;
+  font-family: "Comfortaa", cursive;
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: center;
+  border: 0.2rem solid;
+  border-color: #2D86C0;
+  padding: 1.5rem 4rem;
+  margin: 1rem;
+  display: inline-block;
+  background-color: #2D86C0;
+}
+.btn--presupuesto:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
 .banner-head {
   width: 100%;
   height: 20rem;
@@ -454,6 +474,71 @@ html {
 .cookie-banner a {
   color: #2D86C0;
   text-decoration: none;
+}
+
+.articulo {
+  padding: 2rem;
+  height: 60rem;
+}
+.articulo__img .img-first {
+  position: relative;
+  top: 2rem;
+  left: 4rem;
+  width: 50%;
+}
+.articulo__img .img-second {
+  position: relative;
+  top: -25rem;
+  left: 20rem;
+  width: 50%;
+}
+.articulo__texto {
+  line-height: 3rem;
+  font-size: 1.8rem;
+  text-align: justify;
+}
+.articulo__texto .heading {
+  padding: 2rem;
+}
+.articulo__texto .heading span {
+  color: #2D86C0;
+}
+.articulo__texto .descripcion {
+  margin: 2rem 0;
+}
+
+.articulo--reverse {
+  padding: 2rem;
+  height: 60rem;
+}
+.articulo--reverse__img {
+  order: 1;
+}
+.articulo--reverse__img .img-first {
+  position: relative;
+  top: 2rem;
+  left: 10rem;
+  width: 50%;
+}
+.articulo--reverse__img .img-second {
+  position: relative;
+  top: -12rem;
+  left: 25rem;
+  width: 50%;
+}
+.articulo--reverse__texto {
+  line-height: 3rem;
+  font-size: 1.8rem;
+  text-align: justify;
+}
+.articulo--reverse__texto .heading {
+  padding: 2rem;
+}
+.articulo--reverse__texto .heading span {
+  color: #2D86C0;
+}
+.articulo--reverse__texto .descripcion {
+  margin: 2rem 0;
 }
 
 .contenedor {
@@ -907,6 +992,12 @@ html {
 .main .info .info__extra-asocia .imagen {
   width: 50%;
   padding: 1rem;
+}
+
+.articulos {
+  background-color: #FFFFFF;
+  padding: 3rem;
+  margin-top: 5rem;
 }
 
 .localiza {

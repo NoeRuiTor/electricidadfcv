@@ -14,3 +14,12 @@
     
        }    
 }
+
+.btn--presupuesto{
+    @include button($color4,$color5);              
+    background-color: $color4;  
+    &:hover{
+        @include button-animation;       
+    
+       }    
+}
