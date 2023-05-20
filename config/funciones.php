@@ -29,6 +29,29 @@ function active($current_page){
    }
 
 }
+
+//FUNCION PARA CONECTAR CON LA BASE DE DATOS
+
+function conectar_db($bd){ 
+  $opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");     
+  define ("USER_DB","noelia"); 
+  define ("PASSWORD","password1234"); 
+  try {
+      $dsn = "mysql:host=localhost;dbname=".$bd;
+      $con = new PDO($dsn, USER_DB, PASSWORD);
+      $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $opciones;
+
+      } catch (PDOException $e){
+
+      echo 'Error: '.$e->getMessage()."<br/>";
+      
+      }   
+  
+  
+  return $con;
+}
+
 //Hacer una solicitud a la API de reseñas de Google
 function getGoogleReviews($placeId, $apiKey) {
     $apiUrl = 'https://maps.googleapis.com/maps/api/place/details/json?place_id=' . $placeId . '&fields=reviews&key=' . $apiKey.'&language=es';
