@@ -15,7 +15,7 @@
     
 </head>
 <body>
-       
+       <!-------CABECERA CON NAVEGADOR--------->
 
             <header class="header contenedor__row">
                 <div class="header__logo col-3-12 col-12-12-sm">
@@ -27,12 +27,12 @@
                             <li class="menu__opcion"><a class="<?php active('servicios.php'); ?>" href="paginaServicios.php">Servicios</a></li>                
                             <li class="menu__opcion"><a class="<?php active('trabajos.php'); ?>" href="paginaTrabajos.php">Trabajos</a></li> 
                             <li class="menu__opcion"><a class="<?php active('presupuesto.php'); ?>" href="paginaPresupuesto.php">Presupuesto</a></li>
-                            <li class="menu__opcion"><a class="<?php active('blog.php'); ?>" href="paginaBlog.php">Blog</a></li>       
+                            <li class="menu__opcion"><a class="<?php active('blog.php'); ?>" href="paginaConstruccion.php">Blog</a></li>       
                             <li class="menu__opcion"><a class="<?php active('contacto.php'); ?>" href="paginaContacto.php">Contacto</a></li>
                     
                         </ul>          
                     </nav>
-                <a href="#" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso clientes</a>
+                <a href="paginaLogin.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso clientes</a>
             </header>
       
 

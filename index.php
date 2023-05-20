@@ -34,12 +34,12 @@ include_once("config/funciones.php");
                             <li class="menu__opcion"><a class="<?php active('servicios.php'); ?>" href="views/paginaServicios.php">Servicios</a></li>                
                             <li class="menu__opcion"><a class="<?php active('trabajos.php'); ?>" href="views/paginaTrabajos.php">Trabajos</a></li> 
                             <li class="menu__opcion"><a class="<?php active('presupuesto.php'); ?>" href="views/paginaPresupuesto.php">Presupuesto</a></li>
-                            <li class="menu__opcion"><a class="<?php active('blog.php'); ?>" href="views/paginaBlog.php">Blog</a></li>       
+                            <li class="menu__opcion"><a class="<?php active('blog.php'); ?>" href="views/paginaConstruccion.php">Blog</a></li>       
                             <li class="menu__opcion"><a class="<?php active('contacto.php'); ?>" href="views/paginaContacto.php">Contacto</a></li>
                     
                         </ul>          
                     </nav>
-                <a href="#" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso clientes</a>
+                <a href="views/paginaLogin.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso clientes</a>
             </header>
        
 

@@ -1,3 +1,4 @@
+ //CARD CONTACTO ( EMAIL, DIRECCION, TELÉFONO) 
  .contacto{
     padding: 1rem;
     border: 1px solid $color3;
@@ -21,9 +22,11 @@
         color:$colorNegro;
         font-size: $s-size;
         padding-left: 0.3rem;
+        word-wrap: break-word ;
         @include mobile(1300px){
-            font-size: $xs-size;
-        }
+           font-size: $xs-size;
+       }
+       
        
     }
 }

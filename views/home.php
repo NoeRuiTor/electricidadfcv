@@ -1,4 +1,4 @@
-<main class="main contenedor">
+<main class="contenedor">
 
        <!------SECCION BANNER---->
 

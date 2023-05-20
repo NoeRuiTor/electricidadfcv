@@ -1,11 +1,12 @@
-.main {
+.contenedor {
     
     max-width: 100%;
-    margin-top: 2rem; 
+    margin-top: 1.5rem; 
+    background-color: $colorBlanco;
 
     .banner1{
         @include  banner(
-            $height:80rem,
+            $height:55rem,
             $bgBM:saturation);           
         background-image: $banner1Foto;        
         background-position: center center;

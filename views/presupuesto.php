@@ -1,3 +1,6 @@
+<!--------FORMULARIO PARA PEDIR PRESUPUESTOS-------------->
+
+
 <section class="presupuesto contenedor__row">
         
       <div class="presupuesto__heading col-12-12 col-12-12-sm">
@@ -8,7 +11,7 @@
         <p class="heading-secondary--main">Rellene el formulario y haga un breve resumen de lo que necesita,  indicar puntos de luz si es el caso 
             (reforma o instalación de electricidad). Puede adjuntar fotos y documentación para una mejor descripción.</p>
       </div>
-      <form class="presupuesto__formulario col-12-12 col-12-12-sm" action="#" method="post">
+      <form class="presupuesto__formulario col-12-12 col-12-12-sm" action="#" method="post" enctype="multipart/form-data>
            <div class="presupuesto__formulario-input">
                 <input type="text" name="nombre" value="nombre">
            </div>

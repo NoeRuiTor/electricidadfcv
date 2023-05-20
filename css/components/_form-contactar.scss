@@ -1,3 +1,5 @@
+//FORMULARIO PÁGINA DE CONTACTO
+
 .contactar__form-form{
     border: 0.1rem solid $color3;
     box-shadow: 0.1rem 0.5rem 2rem rgba(0, 0, 0, 0.448);
@@ -5,11 +7,11 @@
     padding: 1.5rem;
     font-size: $xs-size;
     line-height: 3rem;
+    @include centra-items;
     display:flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column;    
     margin: 2rem 0;
-    width: 75% ;
+  
        
     
    .form-input{

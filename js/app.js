@@ -1,4 +1,4 @@
-//CARROUSEL
+//CARROUSEL DE LOS SERVICIOS
 
 'use strict'
 

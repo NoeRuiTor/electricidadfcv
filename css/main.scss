@@ -22,6 +22,8 @@
 @import "components/cookies";
 @import "components/feature";
 @import "components/form-contactar";
+@import "components/admin-nav";
+@import "components/form-login";
 
 //LAYOUT:
 @import "layout/grid";
@@ -36,3 +38,5 @@
 @import "pages/servicios";
 @import "pages/presupuesto";
 @import "pages/contacto";
+@import "pages/construccion";
+@import "pages/login";

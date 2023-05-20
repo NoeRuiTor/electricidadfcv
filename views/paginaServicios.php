@@ -7,7 +7,7 @@ include("cabecera.php");
 ?>
 
 
- <main class="main contenedor">
+ <main class="contenedor">
 
   <!----------BANNER HEAD---------->
 
@@ -107,11 +107,24 @@ include("cabecera.php");
 
       </div>
     </section>
+  
+      <!------ICONOS FIJOS WHATSAPP Y TELEFONO---->   
 
+      <div class="fixed-icons">
+         <!-- Icono de WhatsApp -->
+         <a href="https://wa.me/+34666194313" target="_blank" rel="noopener">
+             <i class="fab fa-whatsapp"></i>
+          </a>
+         <!-- Icono de teléfono -->
+          <a href="tel:+34666194313">
+             <i class="fas fa-phone"></i>
+          </a>
+      </div>
 
+           
  </main>
 
-   <!----------PIE DE PÁGINA---------->
+  
 <?php
 include("info-contacto.php");
 include("pie.php");

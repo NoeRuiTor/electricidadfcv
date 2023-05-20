@@ -1,3 +1,5 @@
+<!----------BANNER CON TARJETAS DE CONTACTO INCLUIDO EN TODAS LAS PÁGINAS ANTES DEL FOOTER-------------->
+
 <section class="info-contacto">
     <div class="contenedor__row">                
         <div class="contacto col-4-12 col-12-12-sm">

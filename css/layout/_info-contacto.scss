@@ -1,5 +1,7 @@
 .info-contacto{
-    background-color: $color4;   
+    background-color: $color4;  
+    max-width: 100%;
+     
     .contacto{
         margin: 2rem;
         @include mobile(1300px){
