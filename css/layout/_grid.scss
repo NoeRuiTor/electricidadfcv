@@ -126,7 +126,7 @@
     }
   }
 
-    @include mobile(530px){
+    @include mobile(1300px){
       &__row{
          width: 100%;
          display:grid;
@@ -134,7 +134,7 @@
          grid-template-rows:min-content;     
          gap: 1rem;
   
-        .col-12-12-s{
+        .col-12-12-m{
           grid-column:span 12;
         }
 

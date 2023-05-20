@@ -64,7 +64,7 @@
     box-shadow: 0.2em 0.2em 1.3em ($color2), -0.2em -0.2em 1.3em ($color2), inset 0 0 0 transparent, inset 0 0 0 transparent;
 }
 
-@mixin mobile($medida:768px) {
+@mixin mobile($medida:834px) {
     @media screen and (max-width: $medida) {
       @content;
     }
@@ -78,5 +78,8 @@
     position: absolute;
     bottom: -48px;
     left: calc(50% - 2.5rem);
+    @include mobile{
+        bottom:-28px;
+    }
 }
 

@@ -1,22 +1,17 @@
-.feature{
-
+.feature{  
   padding: 2rem;
-  height: 60rem;
-     &__img{
+
+     figure{
+       @include centra-items;
+       width: 100%; 
+       display: flex;
+       justify-content: center;        
+    }
+    &__img{
+          
+        height: 40rem;      
+        width: 45rem;
        
-        .img-first{
-            position: relative;
-            top: 2rem;
-            left: 4rem;
-            width: 50%;
-        }
-         .img-second{
-            position: relative;
-            top: -25rem ;
-            left: 20rem;
-            width: 50%;
-         }
-        
     }
     &__text{
       
@@ -25,7 +20,9 @@
         text-align: justify;
 
         &-heading{
-            padding: 2rem;
+            padding: 1rem;
+            line-height: 4rem;
+            text-align: center;
             span{
                 color:$color4;
             }
@@ -34,15 +31,21 @@
         &-desc{
             margin:2rem 0;
         }
-        
+      @include mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       }  
     }
 }
 
 .feature--reverse{ 
    
-    .feature__img{
+    figure{
         order:1;       
-       
+      @include mobile{
+        order:0;
+      }
          
      }
 }

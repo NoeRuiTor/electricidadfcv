@@ -1,0 +1,43 @@
+.contactar__form-form{
+    border: 0.1rem solid $color3;
+    box-shadow: 0.1rem 0.5rem 2rem rgba(0, 0, 0, 0.448);
+    background-color: $color5;
+    padding: 1.5rem;
+    font-size: $xs-size;
+    line-height: 3rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem 0;
+    width: 75% ;
+       
+    
+   .form-input{
+    input{
+        width: 90%;
+        padding: 1rem;
+        margin: 0 0 1rem 1.2rem ;
+        border-radius: 1rem ;
+        border:$color2;
+        background-color: $color3;
+        color:$color5;
+    }
+  
+   }
+   .form-descripcion{
+        textarea{
+            width: 90%;
+            margin: 0 0 1rem 1.2rem ;
+            border-radius: 1rem ;
+            border:$color2;
+            background-color: $color3;
+            color:$color5;
+        
+        } 
+   
+    }
+    .form-boton{
+        display: flex;
+        justify-content: center;
+       }
+}

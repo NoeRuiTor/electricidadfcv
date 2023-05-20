@@ -1,3 +1,5 @@
+//CARROUSEL
+
 'use strict'
 
 const grande    = document.querySelector('.carrousel__grande')

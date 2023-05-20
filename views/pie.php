@@ -1,7 +1,7 @@
 <footer class="footer contenedor__row">
             
 
-            <div class="footer__logo col-3-12 col-12-12-sm">
+            <div class="footer__logo col-4-12 col-12-12-sm">
 
                 <img class="logo" src="../imgs/logo.png" alt="logo Electricidad FCV" >
                 <p class="footer-text">Profesional dedicado y especializado en el mundo de la electricidad con gran experiencia avalada por nuestros clientes.</p>
@@ -15,7 +15,7 @@
 
             </div>
             
-            <div class="footer__main col-3-12 col-6-12-sm">
+            <div class="footer__main col-2-12 col-6-12-sm">
 
                  <h4 class="heading heading-quaternary">
                     <p>MENÚ</p>
@@ -32,7 +32,7 @@
 
             </div>   
 
-            <div class="footer__main col-3-12 col-6-12-sm"> 
+            <div class="footer__main col-2-12 col-6-12-sm"> 
 
                  <h4 class="heading heading-quaternary">
                     <p>PÁGINAS LEGALES</p>
@@ -45,7 +45,7 @@
                  </ul>
             </div>
 
-            <div class="footer__main col-3-12 col-12-12-sm">  
+            <div class="footer__main col-4-12 col-12-12-sm">  
                  <h4 class="heading heading-quaternary">
                     <p>DONDE ESTAMOS</p>
                     <span></span>

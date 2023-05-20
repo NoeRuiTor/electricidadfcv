@@ -1,5 +1,7 @@
 <main class="main contenedor">
-            
+
+       <!------SECCION BANNER---->
+
             <section class="banner1 contenedor__row">
                 <div class="banner1__text-background col-6-12 col-12-12-sm">
                     <div class="banner1__text">
@@ -10,6 +12,9 @@
                         
                     </div>      
                 </div>
+       
+           <!------SECCION INICIO---->
+
             </section>
             <section class="inicio contenedor__row">
                 <div class="inicio__text col-4-12 col-12-12-sm">
@@ -48,6 +53,8 @@
         
                 </div>
 
+           <!------ICONOS FIJOS WHATSAPP Y TELEFONO---->   
+
             <div class="fixed-icons">
                  <!-- Icono de WhatsApp -->
                 <a href="https://wa.me/+34666194313" target="_blank" rel="noopener">
@@ -61,7 +68,11 @@
 
             </section>
 
+               <!------SECCION FORMULARIO PRESUPUESTO---->
+
         <?php    include("presupuesto.php"); ?>
+
+            <!------SECCION CARROUSEL SERVICIOS---->
 
           <section class="servicios contenedor__row">
                 <div class="servicios__text col-12-12 col-12-12-sm">
@@ -119,6 +130,9 @@
                  </div>
 
           </section>
+
+           <!------SECCION INFORMACION COMO TRABAJAMOS Y RESEÑAS DE CLIENTES---->
+
           <section class="info">  
             <div class="info__background">         
                 <div class="info__trabajo contenedor__row">

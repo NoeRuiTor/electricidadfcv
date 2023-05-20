@@ -38,7 +38,7 @@
                 <input type="radio" name="trabajo" value="paneles_solares">Instalar paneles solares
             </div>
             <div class="presupuesto__formulario-radio">
-                <input type="radio" name="trabajo" value="punto_recarga">Installar punto de recarga
+                <input type="radio" name="trabajo" value="punto_recarga">Instalar punto de recarga
             </div>
             <div class="presupuesto__formulario-radio">
                 <input type="radio" name="trabajo" value="otros">Otros trabajos de electricidad

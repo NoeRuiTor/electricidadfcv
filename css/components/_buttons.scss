@@ -23,3 +23,13 @@
     
        }    
 }
+
+.btn--contactar{
+    @include button($color2,$color2);              
+    background-color: $color5;
+   
+    &:hover{
+        @include button-animation;       
+    
+       }    
+}
