@@ -25,7 +25,7 @@
                     <span></span>
                 </h4>         
                  <ul class="footer-list">
-                     <li><a href="../public/index.php">Inicio</a></li>
+                     <li><a href="../index.php">Inicio</a></li>
                      <li><a href="paginaServicios.php">Servicios</a></li>
                      <li><a href="paginaTrabajos.php">Trabajos</a></li>
                      <li><a href="paginaPresupuestos.php">Presupuesto</a></li>

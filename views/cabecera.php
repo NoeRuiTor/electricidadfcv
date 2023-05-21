@@ -23,7 +23,7 @@
                 </div>
                     <nav class="header__nav nav col-6-12 col-9-12-sm">            
                         <ul class="menu">
-                            <li class="menu__opcion"><a class="<?php active('index.php'); ?>" href="../public/index.php">Inicio</a></li>
+                            <li class="menu__opcion"><a class="<?php active('index.php'); ?>" href="../index.php">Inicio</a></li>
                             <li class="menu__opcion"><a class="<?php active('servicios.php'); ?>" href="paginaServicios.php">Servicios</a></li>                
                             <li class="menu__opcion"><a class="<?php active('trabajos.php'); ?>" href="paginaTrabajos.php">Trabajos</a></li> 
                             <li class="menu__opcion"><a class="<?php active('presupuesto.php'); ?>" href="paginaPresupuesto.php">Presupuesto</a></li>
