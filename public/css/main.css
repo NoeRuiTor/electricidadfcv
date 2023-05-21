@@ -196,19 +196,19 @@ body {
 }
 
 .banner__head--contacto {
-  background-image: url(../imgs/fondo-tecnologia-onda-fractal-abstracto-azul.jpg);
+  background-image: url(../img/fondo-tecnologia-onda-fractal-abstracto-azul.jpg);
 }
 
 .banner__head--presupuesto {
-  background-image: url(../imgs/IMG_20220714_110257.jpg);
+  background-image: url(../img/IMG_20220714_110257.jpg);
 }
 
 .banner__head--trabajos {
-  background-image: url(../imgs/background-iniciaSesion.jpg);
+  background-image: url(../img/background-iniciaSesion.jpg);
 }
 
 .banner__head--servicios {
-  background-image: url(../imgs/SERVICIOS.jpg);
+  background-image: url(../img/SERVICIOS.jpg);
 }
 
 .fixed-icons {
@@ -954,7 +954,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 100%;
-  background-image: url(../imgs/banner1.jpg);
+  background-image: url(../img/banner1.jpg);
   background-position: center center;
 }
 @media screen and (max-width: 834px) {
@@ -1053,7 +1053,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 100%;
-  background-image: url(../imgs/CONTADOR.jpg);
+  background-image: url(../img/CONTADOR.jpg);
   background-position: center center;
   color: #F1F1EA;
 }
@@ -1196,7 +1196,7 @@ body {
 .admin__login {
   max-width: 100%;
   width: 100%;
-  height: 50rem;
+  height: 55rem;
 }
 .admin__login .admin__nav-heading {
   padding-top: 7rem;
@@ -1204,5 +1204,9 @@ body {
 .admin__login .admin__remember {
   align-self: center;
   justify-self: center;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+}
+.admin__login .admin__remember-psw {
+  text-decoration: none;
+  color: #2D86C0;
 }/*# sourceMappingURL=main.css.map */

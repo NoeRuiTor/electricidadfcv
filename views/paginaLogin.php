@@ -13,10 +13,10 @@ include_once("../config/funciones.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php parametro_plantilla("description"); ?>">
     <meta name="Keywords" content="<?php parametro_plantilla("keywords"); ?>"> 
-    <link rel="shortcut icon" type="image/x-icon" href="../imgs/favicon.png">
-    <script defer src="../js/app.js" ></script>  
-    <script defer src="../js/cookies.js" ></script>    
-    <link rel="stylesheet" href="../css/main.css">     
+    <link rel="shortcut icon" type="image/x-icon" href="../public/img/favicon.png">
+    <script defer src="../public/js/app.js" ></script>  
+    <script defer src="../public/js/cookies.js" ></script>    
+    <link rel="stylesheet" href="../public/css/main.css">     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<title><?php parametro_plantilla("titulo_pagina"); ?></title>
     
@@ -26,11 +26,11 @@ include_once("../config/funciones.php");
 
             <header class="header contenedor__row">
                 <div class="header__logo col-3-12 col-12-12-sm">
-                    <img class="logo" src="../imgs/logo.png" alt="electricidadFCV" width="150" height="150" >
+                    <img class="logo" src="../public/img/logo.png" alt="electricidadFCV" width="150" height="150" >
                 </div>
                     <nav class="header__nav nav col-6-12 col-9-12-sm">            
                         <ul class="menu">
-                            <li class="menu__opcion"><a class="<?php active('index.php'); ?>" href="../index.php">Inicio</a></li>
+                            <li class="menu__opcion"><a class="<?php active('index.php'); ?>" href="../public/index.php">Inicio</a></li>
                             <li class="menu__opcion"><a class="<?php active('servicios.php'); ?>" href="paginaServicios.php">Servicios</a></li>                
                             <li class="menu__opcion"><a class="<?php active('trabajos.php'); ?>" href="paginaTrabajos.php">Trabajos</a></li> 
                             <li class="menu__opcion"><a class="<?php active('presupuesto.php'); ?>" href="paginaPresupuesto.php">Presupuesto</a></li>
@@ -80,7 +80,7 @@ include_once("../config/funciones.php");
                      
                  </form>
                  <div class="admin__remember col-12-12 col-12-12-sm">   
-                    <p>¿Has olvidado tú contraseña?</p>               
+                    <a class="admin__remember-psw" href="#"><p>¿Has olvidado tú contraseña?</p></a>              
                  </div>
             </section>
 

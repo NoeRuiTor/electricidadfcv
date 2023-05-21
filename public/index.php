@@ -1,6 +1,6 @@
 <?php
 
-include_once("config/funciones.php");
+include_once("../config/funciones.php");
 
 
 ?>
@@ -12,7 +12,7 @@ include_once("config/funciones.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php parametro_plantilla("description"); ?>">
     <meta name="Keywords" content="<?php parametro_plantilla("keywords"); ?>"> 
-    <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
     <script defer src="js/app.js" ></script>  
     <script defer src="js/cookies.js" ></script>    
     <link rel="stylesheet" href="css/main.css">     
@@ -26,26 +26,26 @@ include_once("config/funciones.php");
 
             <header class="header contenedor__row">
                 <div class="header__logo col-3-12 col-12-12-sm">
-                    <img class="logo" src="imgs/logo.png" alt="electricidadFCV" width="150" height="150" >
+                    <img class="logo" src="img/logo.png" alt="electricidadFCV" width="150" height="150" >
                 </div>
                     <nav class="header__nav nav col-6-12 col-9-12-sm">            
                         <ul class="menu">
                             <li class="menu__opcion"><a class="<?php active('index.php'); ?>" href="index.php">Inicio</a></li>
-                            <li class="menu__opcion"><a class="<?php active('servicios.php'); ?>" href="views/paginaServicios.php">Servicios</a></li>                
-                            <li class="menu__opcion"><a class="<?php active('trabajos.php'); ?>" href="views/paginaTrabajos.php">Trabajos</a></li> 
-                            <li class="menu__opcion"><a class="<?php active('presupuesto.php'); ?>" href="views/paginaPresupuesto.php">Presupuesto</a></li>
-                            <li class="menu__opcion"><a class="<?php active('blog.php'); ?>" href="views/paginaConstruccion.php">Blog</a></li>       
-                            <li class="menu__opcion"><a class="<?php active('contacto.php'); ?>" href="views/paginaContacto.php">Contacto</a></li>
+                            <li class="menu__opcion"><a class="<?php active('servicios.php'); ?>" href="../views/paginaServicios.php">Servicios</a></li>                
+                            <li class="menu__opcion"><a class="<?php active('trabajos.php'); ?>" href="../views/paginaTrabajos.php">Trabajos</a></li> 
+                            <li class="menu__opcion"><a class="<?php active('presupuesto.php'); ?>" href="../views/paginaPresupuesto.php">Presupuesto</a></li>
+                            <li class="menu__opcion"><a class="<?php active('blog.php'); ?>" href="../views/paginaConstruccion.php">Blog</a></li>       
+                            <li class="menu__opcion"><a class="<?php active('contacto.php'); ?>" href="../views/paginaContacto.php">Contacto</a></li>
                     
                         </ul>          
                     </nav>
-                <a href="views/paginaLogin.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso clientes</a>
+                <a href="../views/paginaLogin.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso clientes</a>
             </header>
        
 
 <?php
-include("views/home.php");
-include("views/info-contacto.php");
+include("../views/home.php");
+include("../views/info-contacto.php");
 
 ?>
 
@@ -56,7 +56,7 @@ include("views/info-contacto.php");
 
             <div class="footer__logo col-4-12 col-12-12-sm">
 
-                <img class="logo" src="imgs/logo.png" alt="logo Electricidad FCV" >
+                <img class="logo" src="img/logo.png" alt="logo Electricidad FCV" >
                 <p class="footer-text">Profesional dedicado y especializado en el mundo de la electricidad con gran experiencia avalada por nuestros clientes.</p>
                 <div class="redes_sociales">
                  <a class="footer-icon" href="https://www.facebook.com/electricidadFCV" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -76,11 +76,11 @@ include("views/info-contacto.php");
                 </h4>         
                  <ul class="footer-list">
                      <li><a href="index.php">Inicio</a></li>
-                     <li><a href="servicios.php">Servicios</a></li>
-                     <li><a href="trabajos.php">Trabajos</a></li>
-                     <li><a href="presupuestos.php">Presupuesto</a></li>
-                     <li><a href="blog.php">Blog</a></li>
-                     <li><a href="contacto.php">Contacto</a></li>
+                     <li><a href="../views/paginaServicios.php">Servicios</a></li>
+                     <li><a href="../views/paginaTrabajos.php">Trabajos</a></li>
+                     <li><a href="../views/paginaPresupuesto.php">Presupuesto</a></li>
+                     <li><a href="../views/paginaConstruccion.php">Blog</a></li>
+                     <li><a href="../views/paginaContacto.php">Contacto</a></li>
                  </ul> 
 
             </div>   
