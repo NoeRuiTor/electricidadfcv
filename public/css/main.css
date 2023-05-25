@@ -826,7 +826,7 @@ body {
     position: fixed;
     background: rgba(0, 0, 0, 0.767);
     z-index: 98;
-    top: -60rem;
+    top: -50rem;
     right: -100vw;
     width: 40vw;
     bottom: 0;
@@ -898,6 +898,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 2.4rem;
+    cursor: pointer;
   }
 }
 .header__nav {
