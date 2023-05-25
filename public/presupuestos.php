@@ -3,7 +3,7 @@
 include_once("../config/funciones.php");
 
 
-include("cabecera.php");
+include("../plantillas/cabecera.php");
 ?>
 
  <!---------CONTENIDO--------------->
@@ -37,10 +37,10 @@ include("cabecera.php");
     
 
 <?php
-include("presupuesto.php");
+include("../plantillas/presupuesto.php");
 ?>
  </main>
 <?php
-include("info-contacto.php");
-include("pie.php");
+include("../plantillas/info-contacto.php");
+include("../plantillas/pie.php");
 ?>

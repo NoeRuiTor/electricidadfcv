@@ -25,17 +25,24 @@
             }
         }
     }
-
+  
+    .menu-icon{
+        display: none;
+        @include mobile{
+            display: flex;
+	        justify-content: center;
+	        align-items: center;
+            font-size: 2.4rem;
+        }
+    }
+    
     &__nav{   
      
-      align-self: center; 
-      
-      @include mobile{          
-        align-self: center;
-      
+      align-self: center;      
+          
         
      }
-   }   
+    
     
  
     &__btn{
@@ -43,14 +50,14 @@
      @include centra-items;
     
      @include mobile{        
-        font-size: $s-size;
-        padding: 0.5rem 1rem;
-        align-self: flex-start;
-        justify-self: center;
-        margin: 0.2rem;
-        text-align: center;
+        //font-size: $s-size;
+       // padding: 0.5rem 1rem;
+        //align-self: flex-start;
+        //justify-self: center;
+        //margin: 0.2rem;
+       // text-align: center;
+       display: none;
     }
     }
    
-   
-}
+}  

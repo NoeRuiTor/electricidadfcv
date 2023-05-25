@@ -29,6 +29,9 @@
             width: 50%;
             background-color: $color5;
             box-shadow: 0.1rem 1.2rem 3.3rem rgba(0, 0, 0, 0.5);
+            @include mobile{
+              font-size: $xs-size;
+            }
         
             &:before{
             @include bocadillo;          
@@ -42,6 +45,9 @@
             padding:4rem 2rem;
             width: 50%;
             align-self: center;
+            @include mobile{
+              font-size: $s-size;
+            }
             
          }
         }

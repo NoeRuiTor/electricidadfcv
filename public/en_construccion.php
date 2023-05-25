@@ -3,7 +3,7 @@
 include_once("../config/funciones.php");
 
 
-include("cabecera.php");
+include("../plantillas/cabecera.php");
 ?>
 
 
@@ -17,6 +17,6 @@ include("cabecera.php");
 
 <?php
 
-include("info-contacto.php");
-include("pie.php");
+include("../plantillas/info-contacto.php");
+include("../plantillas/pie.php");
 ?>

@@ -250,11 +250,6 @@ body {
   padding-left: 0.3rem;
   word-wrap: break-word;
 }
-@media screen and (max-width: 1300px) {
-  .contacto-text {
-    font-size: 1.2rem;
-  }
-}
 
 .heading {
   font-family: "Comfortaa", cursive;
@@ -407,11 +402,18 @@ body {
 }
 @media screen and (max-width: 834px) {
   .carrousel .carrousel__grande .articulo {
-    width: 100%;
+    width: 90%;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .carrousel .carrousel__grande .articulo {
+    text-align: center;
+    font-size: 1.2rem;
   }
 }
 .carrousel .carrousel__grande .articulo-img {
-  height: 30vh;
+  height: 25vh;
   max-width: 90%;
   display: block;
   -o-object-fit: cover;
@@ -425,15 +427,30 @@ body {
     max-height: 25vh;
   }
 }
+@media screen and (max-width: 1350px) {
+  .carrousel .carrousel__grande .articulo-img {
+    max-height: 15vh;
+  }
+}
 .carrousel .carrousel__grande .articulo-heading {
   font-size: 2rem;
   text-decoration: underline;
   padding-bottom: 1em;
 }
+@media screen and (max-width: 1400px) {
+  .carrousel .carrousel__grande .articulo-heading {
+    font-size: 1.2rem;
+  }
+}
 .carrousel .carrousel__grande .articulo-text {
   font-size: 1.8rem;
   line-height: 1.5em;
   text-align: center;
+}
+@media screen and (max-width: 1400px) {
+  .carrousel .carrousel__grande .articulo-text {
+    font-size: 1.2rem;
+  }
 }
 .carrousel .carrousel__puntos {
   width: 100%;
@@ -487,6 +504,11 @@ body {
   background-color: #F1F1EA;
   box-shadow: 0.1rem 1.2rem 3.3rem rgba(0, 0, 0, 0.5);
 }
+@media screen and (max-width: 834px) {
+  .slider ul li .reseña__bocadillo {
+    font-size: 1.2rem;
+  }
+}
 .slider ul li .reseña__bocadillo:before {
   border: 2.5rem solid #F1F1EA;
   content: "";
@@ -510,6 +532,11 @@ body {
   padding: 4rem 2rem;
   width: 50%;
   align-self: center;
+}
+@media screen and (max-width: 834px) {
+  .slider ul li .reseña__autor {
+    font-size: 1.8rem;
+  }
 }
 
 .cookie-banner {
@@ -585,8 +612,6 @@ body {
   padding: 1.5rem;
   font-size: 1.2rem;
   line-height: 3rem;
-  align-self: center;
-  justify-self: center;
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
@@ -796,7 +821,42 @@ body {
   color: #2D86C0;
   border-top: 0.1rem solid #000000;
 }
+@media screen and (max-width: 834px) {
+  .nav {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.767);
+    z-index: 98;
+    top: -60rem;
+    right: -100vw;
+    width: 40vw;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+  }
+  .nav li {
+    padding: 0.9rem;
+  }
+  .nav li a {
+    color: #FFFFFF;
+  }
+  .nav li a:hover {
+    text-decoration: none;
+    color: #C9CAC1;
+    border-top: none;
+  }
+  .nav #menu-items {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
+@media screen and (max-width: 834px) {
+  .nav.is-active {
+    right: 0;
+  }
+}
 .header {
   max-width: 100%;
   width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
@@ -829,13 +889,19 @@ body {
     height: 10rem;
   }
 }
-.header__nav {
-  align-self: center;
+.header .menu-icon {
+  display: none;
 }
 @media screen and (max-width: 834px) {
-  .header__nav {
-    align-self: center;
+  .header .menu-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.4rem;
   }
+}
+.header__nav {
+  align-self: center;
 }
 .header__btn {
   align-self: center;
@@ -843,12 +909,7 @@ body {
 }
 @media screen and (max-width: 834px) {
   .header__btn {
-    font-size: 1.8rem;
-    padding: 0.5rem 1rem;
-    align-self: flex-start;
-    justify-self: center;
-    margin: 0.2rem;
-    text-align: center;
+    display: none;
   }
 }
 
@@ -945,6 +1006,7 @@ body {
 
 .contenedor {
   max-width: 100%;
+  width: 100%;
   margin-top: 1.5rem;
   background-color: #FFFFFF;
 }
@@ -1023,7 +1085,7 @@ body {
 }
 @media screen and (max-width: 834px) {
   .contenedor .inicio__contacto {
-    visibility: hidden;
+    display: none;
   }
 }
 .contenedor .servicios {
@@ -1154,6 +1216,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
+  justify-self: center;
 }
 .contactar__form-heading {
   align-self: flex-end;

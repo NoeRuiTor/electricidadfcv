@@ -6,8 +6,7 @@
     background-color: $color5;
     padding: 1.5rem;
     font-size: $xs-size;
-    line-height: 3rem;
-    @include centra-items;
+    line-height: 3rem;   
     display:flex;
     flex-direction: column;    
     margin: 2rem 0;
@@ -42,4 +41,5 @@
         display: flex;
         justify-content: center;
        }
+      
 }

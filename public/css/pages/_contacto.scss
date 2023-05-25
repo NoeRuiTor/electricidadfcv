@@ -17,6 +17,7 @@
        display: flex;
        flex-direction: column;
        align-items: center;
+       @include centra-items;
        
 
        &-heading{
@@ -24,7 +25,7 @@
         display: block;        
         @include heading_linea($color1);  
         @include mobile  {
-            align-self:center;
+            align-self:center;            
             margin-top: 2rem;
           }    
 

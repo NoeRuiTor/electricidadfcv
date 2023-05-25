@@ -3,7 +3,7 @@
 <section class="info-contacto">
     <div class="contenedor__row">                
         <div class="contacto col-4-12 col-12-12-sm">
-             <a class="contacto-icon" href="mailto:<?php parametro_plantilla("email"); ?>">
+             <a  class="contacto-icon" href="mailto:<?php parametro_plantilla("email"); ?>">
                     <i class="fas fa-envelope"></i>
              </a>                            
                        

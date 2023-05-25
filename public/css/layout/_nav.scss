@@ -1,4 +1,5 @@
 .nav{
+   
     
     .menu{  
         width: 100%;      
@@ -23,4 +24,45 @@
             }
         }      
     }
+    @include mobile{     
+        position: fixed;
+        background:$gradienteNegro1;
+        z-index: 98;
+        top: -60rem;
+        right: -100vw;
+        width: 40vw;        
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        transition: .3s;
+       li{
+        padding: 0.9rem;
+        a{
+                        
+            color: $colorBlanco;          
+
+            &:hover{
+                text-decoration: none;
+                color:$color3; 
+                border-top: none;               
+            }
+        }      
+       }
+       
+        #menu-items {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          
+        }
+      
+      
+      
+        
+    }
+}
+@include mobile{
+    .nav.is-active{
+        right:0;
+       }
 }

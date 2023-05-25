@@ -1,6 +1,7 @@
 .contenedor {
     
     max-width: 100%;
+    width: 100%;
     margin-top: 1.5rem; 
     background-color: $colorBlanco;
 
@@ -87,7 +88,7 @@
            }
 
            @include mobile{
-            visibility:hidden;
+            display: none;
          }  
            
         }

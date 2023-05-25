@@ -22,11 +22,9 @@
         color:$colorNegro;
         font-size: $s-size;
         padding-left: 0.3rem;
-        word-wrap: break-word ;
-        @include mobile(1300px){
-           font-size: $xs-size;
-       }
+        word-wrap: break-word ;            
        
-       
-    }
+    }   
+
+   
 }
