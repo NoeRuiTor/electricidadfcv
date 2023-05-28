@@ -5,5 +5,12 @@ runtime_config:
   document_root: public
 
 handlers:
+- url: /index\.php
+  script: auto
+
+- url: /(.+)
+  static_files: public/\1
+  upload: public/(.+)
+
 - url: /.*
   script: auto
