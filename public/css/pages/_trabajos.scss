@@ -1,0 +1,15 @@
+.trabajos{
+    background-color: $colorBlanco;
+    width: 100%;
+    padding: 5rem;
+
+    .galeria{
+        width: 100%;       
+       
+    
+        &__card-foto{
+            padding: 2rem;
+           
+        }
+    }
+}

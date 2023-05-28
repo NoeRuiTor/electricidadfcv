@@ -13,12 +13,16 @@
   
   
       a {
-        margin: 0 1rem;    
+          
         font-size: 6rem;
 
         .fa-whatsapp{
             color:green;
+            margin-left: 2rem;
             
+        }
+        .fa-phone{
+            margin-right: 2rem;
         }
      }
 

@@ -37,7 +37,7 @@ include("../plantillas/cabecera.php")
                         <input class="input-login" type="password" name="password" value="contraseña">
                     </div>
                     <div class="form-boton">
-                         <input type="submit" class="btn btn--entrar" name="entrar" value="ENTRAR">
+                         <input type="submit" class="btn btn--enviar" name="entrar" value="ENTRAR">
                      </div>
                      
                  </form>
@@ -49,6 +49,6 @@ include("../plantillas/cabecera.php")
 
             </main>
 <?php
-include("info-contacto.php");
-include("pie.php");
+include("../plantillas/info-contacto.php");
+include("../plantillas/pie.php");
 ?>           

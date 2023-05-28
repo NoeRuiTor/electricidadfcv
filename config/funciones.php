@@ -8,7 +8,7 @@
   $email = 'info@electricidadfcv.com';
   $movil = '+34666194313';
   $direccion = "Electricidad FCV, Carrer Senieta de l'Auelet, 53, 03420 Castalla, Alicante";
-
+  
 
 //FUNCION PARA CREAR VARIABLES QUE MODIFIQUEN EL CONTENIDO DE LA WEB
 function parametro_plantilla($variable){
@@ -32,25 +32,7 @@ function active($current_page){
 
 //FUNCION PARA CONECTAR CON LA BASE DE DATOS
 
-function conectar_db($bd){ 
-  $opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");     
-  define ("USER_DB","noelia"); 
-  define ("PASSWORD","password1234"); 
-  try {
-      $dsn = "mysql:host=localhost;dbname=".$bd;
-      $con = new PDO($dsn, USER_DB, PASSWORD);
-      $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $opciones;
 
-      } catch (PDOException $e){
-
-      echo 'Error: '.$e->getMessage()."<br/>";
-      
-      }   
-  
-  
-  return $con;
-}
 
 //Hacer una solicitud a la API de reseñas de Google
 function getGoogleReviews($placeId, $apiKey) {

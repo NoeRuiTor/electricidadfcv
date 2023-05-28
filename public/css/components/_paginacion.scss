@@ -1,0 +1,15 @@
+.paginacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $s-size;
+    span{
+        color: $color4;
+        padding: 0.5rem;
+        
+    }
+    a{
+        text-decoration: none;
+        color:$color2
+    }
+}

@@ -9,7 +9,7 @@
 }  
 
 .btn--enviar{  
-    @include button($color5,$color5 );              
+    @include button($color2,$color2 );              
     background-color: transparent;  
     &:hover{
         @include button-animation;       
@@ -35,15 +35,6 @@
     
        }    
 }
+  
 
-.btn--entrar{
 
-    @include button($color5,$color5);              
-    background-color: $color1;
-   
-    &:hover{
-        @include button-animation;       
-    
-       }  
-
-}

@@ -13,7 +13,7 @@
         background-position: center center;
             
 
-        @include mobile{
+        @include mobile(1200px){
           align-content: end ;
           height: calc(80rem/2);
         }
@@ -24,7 +24,7 @@
         
             background-color: $gradienteNegro;
            
-            @include mobile{
+            @include mobile(1200px){
                 align-self: end  ;
                 justify-self: center;
                 width: 100%;
@@ -59,8 +59,16 @@
         padding: 5rem;
         &__text{
             font-size: $s-size;
+           
+
             .heading-secondary{                
                 color: $colorNegro;
+                @include mobile(1200px){
+                    font-size: 3rem;
+                }
+                @include mobile(1000px){
+                    font-size: 2.5rem;
+                }
                 &--color{
                     color: $color1;
                 }
@@ -68,6 +76,7 @@
             .heading-main{
                 padding: 2rem;                
                 line-height: 3rem;
+                
                 a{
                     color:$colorNegro;
                    
@@ -77,7 +86,7 @@
             @include mobile{
                 text-align: left;
                 padding: 2rem;
-                margin-right: 5rem;
+                margin-right: 5rem;                
              }  
             
         }

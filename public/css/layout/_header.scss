@@ -30,10 +30,23 @@
         display: none;
         @include mobile{
             display: flex;
-	        justify-content: center;
+	        justify-content:flex-end;
 	        align-items: center;
             font-size: 2.4rem;
             cursor: pointer;
+        }
+    }
+    .menu-login{
+        display: none;
+        @include mobile{
+            display: flex;
+	        justify-content:flex-end;
+	        align-items: center;
+            font-size: 2.4rem;
+            cursor: pointer;
+            a{
+                color: $colorNegro;
+            }
         }
     }
     
@@ -50,15 +63,15 @@
        
      @include centra-items;
     
-     @include mobile{        
-        //font-size: $s-size;
-       // padding: 0.5rem 1rem;
-        //align-self: flex-start;
-        //justify-self: center;
-        //margin: 0.2rem;
-       // text-align: center;
+     @include mobile{       
+      
        display: none;
     }
+    @include mobile(1024px){       
+       font-size: $xs-size;
+        
+     }
+
     }
    
 }  

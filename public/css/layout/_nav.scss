@@ -16,6 +16,12 @@
             font-size: $s-size;
             color: $colorNegro;
             padding-top: 2rem;
+            @include mobile(1024px){
+                font-size: $xs-size;
+            }
+            @include mobile(768px){
+                font-size: $s-size;
+            }
 
             &:hover{
                 text-decoration: none;
@@ -28,7 +34,7 @@
         position: fixed;
         background:$gradienteNegro1;
         z-index: 98;
-        top: -50rem;
+        top: -25rem;
         right: -100vw;
         width: 40vw;        
         bottom: 0;

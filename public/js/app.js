@@ -37,9 +37,9 @@ function carrousel() {
   
   // Llamar a la función para ejecutar el código
   carrousel();
-  
-  // MENU RESPONSIVE NAV
 
+  
+  
  
 
   

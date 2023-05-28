@@ -24,6 +24,10 @@
 @import "components/form-contactar";
 @import "components/admin-nav";
 @import "components/form-login";
+@import "components/categorias";
+@import "components/card-foto";
+@import "components/paginacion";
+
 
 //LAYOUT:
 @import "layout/grid";
@@ -40,3 +44,4 @@
 @import "pages/contacto";
 @import "pages/construccion";
 @import "pages/login";
+@import "pages/trabajos";

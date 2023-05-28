@@ -84,13 +84,13 @@ body {
 .btn--enviar {
   border-radius: 5rem;
   text-decoration: none;
-  color: #F1F1EA;
+  color: #323535;
   font-family: "Comfortaa", cursive;
   font-weight: 600;
   font-size: 1.8rem;
   text-align: center;
   border: 0.2rem solid;
-  border-color: #F1F1EA;
+  border-color: #323535;
   padding: 1.5rem 4rem;
   margin: 1rem;
   display: inline-block;
@@ -137,26 +137,6 @@ body {
   background-color: #F1F1EA;
 }
 .btn--contactar:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn--entrar {
-  border-radius: 5rem;
-  text-decoration: none;
-  color: #F1F1EA;
-  font-family: "Comfortaa", cursive;
-  font-weight: 600;
-  font-size: 1.8rem;
-  text-align: center;
-  border: 0.2rem solid;
-  border-color: #F1F1EA;
-  padding: 1.5rem 4rem;
-  margin: 1rem;
-  display: inline-block;
-  background-color: #FFDE51;
-}
-.btn--entrar:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -223,11 +203,14 @@ body {
   z-index: 9999;
 }
 .fixed-icons a {
-  margin: 0 1rem;
   font-size: 6rem;
 }
 .fixed-icons a .fa-whatsapp {
   color: green;
+  margin-left: 2rem;
+}
+.fixed-icons a .fa-phone {
+  margin-right: 2rem;
 }
 
 .contacto {
@@ -690,6 +673,66 @@ body {
   justify-content: center;
 }
 
+.categorias #category-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.categorias #category-list li {
+  list-style: none;
+  margin: 1rem;
+}
+.categorias #category-list li a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  background-color: #C9CAC1;
+  padding: 1rem;
+}
+@media screen and (max-width: 1024px) {
+  .categorias #category-list li a {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 834px) {
+  .categorias #category-list li a {
+    font-size: 1.2rem;
+  }
+}
+.categorias #category-list li a:hover {
+  text-decoration: none;
+  background-color: #323535;
+}
+
+.card-foto {
+  width: 90%;
+}
+.card-foto img {
+  width: 100%;
+  height: 35rem;
+}
+.card-foto p {
+  text-align: center;
+  font-size: 1.8rem;
+  background-color: rgba(0, 0, 0, 0.767);
+  color: #FFFFFF;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+}
+.paginacion span {
+  color: #2D86C0;
+  padding: 0.5rem;
+}
+.paginacion a {
+  text-decoration: none;
+  color: #323535;
+}
+
 .contenedor {
   margin: 0 auto;
   max-width: 100%;
@@ -816,6 +859,16 @@ body {
   color: #000000;
   padding-top: 2rem;
 }
+@media screen and (max-width: 1024px) {
+  .nav li a {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav li a {
+    font-size: 1.8rem;
+  }
+}
 .nav li a:hover {
   text-decoration: none;
   color: #2D86C0;
@@ -826,7 +879,7 @@ body {
     position: fixed;
     background: rgba(0, 0, 0, 0.767);
     z-index: 98;
-    top: -50rem;
+    top: -25rem;
     right: -100vw;
     width: 40vw;
     bottom: 0;
@@ -895,10 +948,25 @@ body {
 @media screen and (max-width: 834px) {
   .header .menu-icon {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     font-size: 2.4rem;
     cursor: pointer;
+  }
+}
+.header .menu-login {
+  display: none;
+}
+@media screen and (max-width: 834px) {
+  .header .menu-login {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 2.4rem;
+    cursor: pointer;
+  }
+  .header .menu-login a {
+    color: #000000;
   }
 }
 .header__nav {
@@ -911,6 +979,11 @@ body {
 @media screen and (max-width: 834px) {
   .header__btn {
     display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .header__btn {
+    font-size: 1.2rem;
   }
 }
 
@@ -1020,7 +1093,7 @@ body {
   background-image: url(../img/banner1.jpg);
   background-position: center center;
 }
-@media screen and (max-width: 834px) {
+@media screen and (max-width: 1200px) {
   .contenedor .banner1 {
     align-content: end;
     height: 40rem;
@@ -1029,7 +1102,7 @@ body {
 .contenedor .banner1__text-background {
   background-color: rgba(0, 0, 0, 0.321);
 }
-@media screen and (max-width: 834px) {
+@media screen and (max-width: 1200px) {
   .contenedor .banner1__text-background {
     align-self: end;
     justify-self: center;
@@ -1059,6 +1132,16 @@ body {
 }
 .contenedor .inicio__text .heading-secondary {
   color: #000000;
+}
+@media screen and (max-width: 1200px) {
+  .contenedor .inicio__text .heading-secondary {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .contenedor .inicio__text .heading-secondary {
+    font-size: 2.5rem;
+  }
 }
 .contenedor .inicio__text .heading-secondary--color {
   color: #FFDE51;
@@ -1274,4 +1357,16 @@ body {
 .admin__login .admin__remember-psw {
   text-decoration: none;
   color: #2D86C0;
+}
+
+.trabajos {
+  background-color: #FFFFFF;
+  width: 100%;
+  padding: 5rem;
+}
+.trabajos .galeria {
+  width: 100%;
+}
+.trabajos .galeria__card-foto {
+  padding: 2rem;
 }/*# sourceMappingURL=main.css.map */
