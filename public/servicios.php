@@ -32,7 +32,7 @@ include("../plantillas/cabecera.php");
 
           <figure class="col-5-12 col-12-12-sm"> 
 
-              <img class="feature__img" src="../public/img/obra nueva.jpg" alt="foto cuadro1">             
+              <img class="feature__img" src="img/obra nueva.jpg" alt="foto cuadro1">             
 
           </figure>
           <div class="feature__text col-7-12 col-12-12-sm">
@@ -58,7 +58,7 @@ include("../plantillas/cabecera.php");
 
           <figure class="col-5-12 col-12-12-sm"> 
 
-              <img class="feature__img" src="../public/img/FOTOVOLTAICA.jpg" alt="foto placa-solar1">            
+              <img class="feature__img" src="img/FOTOVOLTAICA.jpg" alt="foto placa-solar1">            
 
           </figure>
           <div class="feature__text col-7-12 col-12-12-sm">
@@ -85,7 +85,7 @@ include("../plantillas/cabecera.php");
 
           <figure class="col-5-12 col-12-12-sm"> 
 
-              <img class="feature__img" src="../public/img/LAMPARA LED.jpg" alt="foto lamparaLed">          
+              <img class="feature__img" src="img/LAMPARA LED.jpg" alt="foto lamparaLed">          
 
           </figure>
           <div class="feature__text col-7-12 col-12-12-sm">
