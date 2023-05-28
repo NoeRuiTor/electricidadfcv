@@ -25,7 +25,7 @@
                         <i class="fas fa-bars"></i>
                 </div> 
                 <div class="menu-login">
-                 <a href="../views/login_view.php"><i class="fas fa-sign-in-alt"></i></a>
+                 <a href="login_view.php"><i class="fas fa-sign-in-alt"></i></a>
 
                 </div> 
                 <nav class="col-6-12 header__nav nav" id="bars">
@@ -40,7 +40,7 @@
                     
                       </ul>          
                 </nav>
-                <a href="../views/login_view.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso clientes</a>
+                <a href="login_view.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso clientes</a>
             </header>
       
 <script>
