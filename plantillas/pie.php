@@ -6,7 +6,7 @@
 
             <div class="footer__logo col-4-12 col-12-12-sm">
 
-                <img class="logo" src="../public/img/logo.png" alt="logo Electricidad FCV" >
+                <img class="logo" src="img/logo.png" alt="logo Electricidad FCV" >
                 <p class="footer-text">Profesional dedicado y especializado en el mundo de la electricidad con gran experiencia avalada por nuestros clientes.</p>
                 <div class="redes_sociales">
                  <a class="footer-icon" href="https://www.facebook.com/electricidadFCV" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -26,11 +26,11 @@
                 </h4>         
                  <ul class="footer-list">
                      <li><a href="index.php">Inicio</a></li>
-                     <li><a href="../views/servicios.php">Servicios</a></li>
-                     <li><a href="../public/trabajos.php">Trabajos</a></li>
-                     <li><a href="../public/presupuestos.php">Presupuesto</a></li>
-                     <li><a href="../public/en_onstruccion.php">Blog</a></li>
-                     <li><a href="../public/contacto.php">Contacto</a></li>
+                     <li><a href="servicios.php">Servicios</a></li>
+                     <li><a href="trabajos.php">Trabajos</a></li>
+                     <li><a href="presupuestos.php">Presupuesto</a></li>
+                     <li><a href="en_onstruccion.php">Blog</a></li>
+                     <li><a href="contacto.php">Contacto</a></li>
                  </ul> 
 
             </div>   
