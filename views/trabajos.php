@@ -28,7 +28,7 @@
             }
           ?>
 </div>
-<div class="paginacion">
+<div class="paginacion col-12-12 col-12-12-sm">
 <?php
     // Mostrar la paginación
     for ($i = 1; $i <= $totalPaginas; $i++) {

@@ -30,11 +30,12 @@
             }
         }      
     }
+   
     @include mobile{     
         position: fixed;
         background:$gradienteNegro1;
-        z-index: 98;
-        top: -25rem;
+        z-index: 9999;
+        top: -100rem;
         right: -100vw;
         width: 40vw;        
         bottom: 0;
@@ -62,10 +63,10 @@
           
         }
       
-      
-      
+          
         
     }
+   
 }
 @include mobile{
     .nav.is-active{

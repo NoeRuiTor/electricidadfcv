@@ -29,7 +29,7 @@ include("../plantillas/cabecera.php");
               <li><a href="?categoria=todas">TODAS</a></li>
               <li><a href="?categoria=1">VIVIENDAS</a></li>
               <li><a href="?categoria=2">LOCALES</a></li>
-              <li><a href="?categoria=3">NAVES INDUSTRIALES</a></li>
+              <li><a id="naves" href="?categoria=3">NAVES INDUSTRIALES</a></li>
               <li><a href="?categoria=4">AUTOCONSUMO</a></li>
             </ul>       
           </nav>

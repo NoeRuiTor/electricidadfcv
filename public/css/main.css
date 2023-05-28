@@ -191,6 +191,10 @@ body {
   background-image: url(../img/SERVICIOS.jpg);
 }
 
+.banner__head--blog {
+  background-image: url(../img/bannerBlog.jpg);
+}
+
 .fixed-icons {
   position: fixed;
   width: 98%;
@@ -698,6 +702,9 @@ body {
   .categorias #category-list li a {
     font-size: 1.2rem;
   }
+  .categorias #category-list li a #naves {
+    font-size: 0.8rem;
+  }
 }
 .categorias #category-list li a:hover {
   text-decoration: none;
@@ -719,6 +726,7 @@ body {
 }
 
 .paginacion {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -731,6 +739,102 @@ body {
 .paginacion a {
   text-decoration: none;
   color: #323535;
+}
+
+.post {
+  background-color: #FFFFFF;
+  width: 90%;
+  height: 50rem;
+  padding: 2rem 10rem;
+  box-shadow: 0.3em 0.3em 1em 0.5em rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+  line-height: 2rem;
+}
+.post-img {
+  padding: 1rem;
+  width: 60%;
+  height: 60%;
+}
+.post-detalles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.post-detalles--color {
+  color: #2D86C0;
+}
+.post-detalles--estilo {
+  font-style: italic;
+}
+.post-heading {
+  font-size: 1.8rem;
+}
+.post-resumen {
+  padding: 1rem;
+  text-align: left;
+}
+.post-resumen a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #2D86C0;
+}
+
+.post--detalle {
+  height: 100%;
+}
+.post--detalle div {
+  max-width: 90%;
+  max-height: 90%;
+}
+.post--detalle div .post-contenido {
+  line-height: 2.5rem;
+  text-align: justify;
+  padding: 3rem 0;
+  max-height: 90%;
+}
+
+.post--filtrado {
+  width: 90%;
+}
+
+#volver {
+  width: 80%;
+  margin: 3rem;
+  text-align: right;
+}
+#volver a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #2D86C0;
+}
+
+.post_list {
+  background-color: #FFFFFF;
+  width: 90%;
+  height: 60rem;
+  padding: 2rem;
+  box-shadow: 0.3em 0.3em 1em 0.5em rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+  line-height: 2rem;
+}
+.post_list div {
+  width: 90%;
+  padding: 3rem 0;
+  border-bottom: 0.1rem solid #C9CAC1;
+  text-align: left;
+}
+.post_list-heading {
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  color: #000000;
+}
+.post_list-fecha {
+  color: #2D86C0;
+  padding: 1rem 0;
+}
+.post_list a {
+  text-decoration: none;
 }
 
 .contenedor {
@@ -878,8 +982,8 @@ body {
   .nav {
     position: fixed;
     background: rgba(0, 0, 0, 0.767);
-    z-index: 98;
-    top: -25rem;
+    z-index: 9999;
+    top: -100rem;
     right: -100vw;
     width: 40vw;
     bottom: 0;
@@ -1324,21 +1428,37 @@ body {
   border-bottom: none;
 }
 
-.construccion {
-  width: 100%;
-  max-width: 100%;
+.blog {
+  font-size: 1.2rem;
   background-color: #FFFFFF;
+  margin: 2rem;
+  align-content: space-around;
 }
-.construccion__img {
-  width: 50%;
-  height: 58vh;
-  align-self: center;
-  justify-self: center;
-  padding: 5rem;
+.blog__posts {
+  padding: 2rem;
+  width: 100%;
 }
-.construccion__img img {
-  align-self: center;
-  width: 80%;
+.blog__aside {
+  padding: 2rem;
+}
+.blog__aside-etiquetas .etiquetas-heading {
+  font-size: 2.5rem;
+  display: flex;
+  padding: 1rem;
+  color: #323535;
+}
+.blog__aside-etiquetas .etiquetas-heading span {
+  border-bottom: 0.3rem solid;
+  border-color: #323535;
+  width: 5rem;
+}
+.blog__aside-etiquetas a {
+  text-decoration: none;
+  font-style: italic;
+  color: #000000;
+}
+.blog__aside-etiquetas .etiquetas-etiqueta {
+  padding: 0.8rem;
 }
 
 .admin__login {

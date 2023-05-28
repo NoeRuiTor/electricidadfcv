@@ -27,6 +27,8 @@
 @import "components/categorias";
 @import "components/card-foto";
 @import "components/paginacion";
+@import "components/post";
+@import "components/post_list";
 
 
 //LAYOUT:
@@ -42,6 +44,6 @@
 @import "pages/servicios";
 @import "pages/presupuesto";
 @import "pages/contacto";
-@import "pages/construccion";
+@import "pages/blog";
 @import "pages/login";
 @import "pages/trabajos";

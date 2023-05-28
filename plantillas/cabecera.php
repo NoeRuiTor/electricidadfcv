@@ -35,12 +35,12 @@
                             <li class="menu__opcion"><a class="<?php active('servicios.php'); ?>" href="servicios.php">Servicios</a></li>                
                             <li class="menu__opcion"><a class="<?php active('trabajos.php'); ?>" href="trabajos.php">Trabajos</a></li> 
                             <li class="menu__opcion"><a class="<?php active('presupuesto.php'); ?>" href="presupuestos.php">Presupuesto</a></li>
-                            <li class="menu__opcion"><a class="<?php active('blog.php'); ?>" href="en_construccion.php">Blog</a></li>       
+                            <li class="menu__opcion"><a class="<?php active('blog.php'); ?>" href="blog.php">Blog</a></li>       
                             <li class="menu__opcion"><a class="<?php active('contacto.php'); ?>" href="contacto.php">Contacto</a></li>
                     
                       </ul>          
                 </nav>
-                <a href="login_view.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso clientes</a>
+                <a href="login_view.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Zona Usuarios</a>
             </header>
       
 <script>

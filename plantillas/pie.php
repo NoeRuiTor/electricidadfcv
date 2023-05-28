@@ -29,7 +29,7 @@
                      <li><a href="servicios.php">Servicios</a></li>
                      <li><a href="trabajos.php">Trabajos</a></li>
                      <li><a href="presupuestos.php">Presupuesto</a></li>
-                     <li><a href="en_onstruccion.php">Blog</a></li>
+                     <li><a href="blog.php">Blog</a></li>
                      <li><a href="contacto.php">Contacto</a></li>
                  </ul> 
 

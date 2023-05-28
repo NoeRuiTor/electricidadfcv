@@ -1,0 +1,30 @@
+.post_list{
+    background-color: $colorBlanco;  
+    width: 90%;
+    height: 60rem;
+    padding: 2rem;
+    box-shadow: 0.3em 0.3em 1em 0.5em rgba(0,0,0,0.3); 
+    margin-top: 2rem; 
+    line-height: 2rem; 
+
+    div{
+        width: 90%;
+        padding: 3rem 0;
+        border-bottom: 0.1rem solid $color3;
+        text-align: left;
+    }
+    &-heading{
+        font-size: $xs-size;
+        padding: 1rem 0;        
+        color:$colorNegro;
+        
+    }
+    &-fecha{
+        color:$color4;
+        padding: 1rem 0;
+    }
+    a{
+        text-decoration: none;
+        
+    }
+}
