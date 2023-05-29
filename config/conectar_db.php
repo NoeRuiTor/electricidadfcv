@@ -14,7 +14,7 @@ function conectar_db($bd) {
         $password = 'password123456'; // Reemplaza '' con tu contraseña de la base de datos
         $dbName = $bd; // Nombre de la base de datos
         $instanceUnixSocket = '/cloudsql/balmy-doodad-386421:europe-west1:bd-electricidadfcv'; // Ruta del socket UNIX de Cloud SQL
-
+        $opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");  
         // Conectarse usando sockets UNIX
         $dsn = sprintf(
             'mysql:dbname=%s;unix_socket=%s',
@@ -27,11 +27,13 @@ function conectar_db($bd) {
             $dsn,
             $username,
             $password,
+            $opciones,
             [
                 PDO::ATTR_TIMEOUT => 5,
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             ]
         );
+        
         
         return $conn;
 
