@@ -5,6 +5,8 @@ use PDOException;
 use RuntimeException;
 use TypeError;
 
+$bd = 'electricidadfcv';
+
 function conectar_db($bd) {
     try {
         
@@ -32,7 +34,7 @@ function conectar_db($bd) {
         );
         
         return $conn;
-        
+
     } catch (TypeError $e) {
         throw new RuntimeException(
             sprintf(
