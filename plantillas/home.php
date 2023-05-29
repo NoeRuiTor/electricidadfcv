@@ -172,4 +172,12 @@
 
 
 </main>
+
+<!------AVISO COOKIES----->
+
+  
+  <div id="cookie-banner" class="cookie-banner">
+       <p>Utilizamos cookies en nuestro sitio web para ofrecerte la mejor experiencia. Al continuar navegando, aceptas nuestro uso de cookies.
+           <a href="#" id="cookie-accept">Aceptar</a> | <a href="#" id="cookie-reject">Rechazar</a></p>
+   </div>
         

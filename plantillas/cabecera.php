@@ -40,7 +40,7 @@
                     
                       </ul>          
                 </nav>
-                <a href="login_view.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Zona Usuarios</a>
+                <a href="login_view.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso usuarios</a>
             </header>
       
 <script>

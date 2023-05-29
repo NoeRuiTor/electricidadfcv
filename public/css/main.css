@@ -67,7 +67,7 @@ body {
   color: #000000;
   font-family: "Comfortaa", cursive;
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   text-align: center;
   border: 0.2rem solid;
   border-color: #FFDE51;
@@ -87,7 +87,7 @@ body {
   color: #323535;
   font-family: "Comfortaa", cursive;
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   text-align: center;
   border: 0.2rem solid;
   border-color: #323535;
@@ -107,7 +107,7 @@ body {
   color: #F1F1EA;
   font-family: "Comfortaa", cursive;
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   text-align: center;
   border: 0.2rem solid;
   border-color: #2D86C0;
@@ -127,7 +127,7 @@ body {
   color: #323535;
   font-family: "Comfortaa", cursive;
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   text-align: center;
   border: 0.2rem solid;
   border-color: #323535;
@@ -474,7 +474,7 @@ body {
   display: flex;
   padding: 0;
   width: 500%;
-  animation: cambio 20s infinite alternate linear;
+  animation: cambio 50s infinite alternate linear;
 }
 .slider ul li {
   width: 100%;
@@ -595,13 +595,13 @@ body {
 .contactar__form-form {
   border: 0.1rem solid #C9CAC1;
   box-shadow: 0.1rem 0.5rem 2rem rgba(0, 0, 0, 0.448);
-  background-color: #F1F1EA;
+  background-color: #FFFFFF;
   padding: 1.5rem;
   font-size: 1.2rem;
   line-height: 3rem;
   display: flex;
   flex-direction: column;
-  margin: 2rem 0;
+  margin: 2rem 0 2rem 5rem;
 }
 .contactar__form-form .form-input input {
   width: 90%;
@@ -745,10 +745,14 @@ body {
   background-color: #FFFFFF;
   width: 90%;
   height: 50rem;
-  padding: 2rem 10rem;
+  padding: 2rem 5rem;
   box-shadow: 0.3em 0.3em 1em 0.5em rgba(0, 0, 0, 0.3);
   margin-top: 2rem;
   line-height: 2rem;
+}
+.post div {
+  max-width: 90%;
+  max-height: 90%;
 }
 .post-img {
   padding: 1rem;
@@ -783,11 +787,7 @@ body {
 .post--detalle {
   height: 100%;
 }
-.post--detalle div {
-  max-width: 90%;
-  max-height: 90%;
-}
-.post--detalle div .post-contenido {
+.post--detalle .post-contenido {
   line-height: 2.5rem;
   text-align: justify;
   padding: 3rem 0;

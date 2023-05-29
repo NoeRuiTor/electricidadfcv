@@ -48,7 +48,7 @@ include("../plantillas/cabecera.php");
                 fermentum quis ipsum. Integer id quam vestibulum, tincidunt est vel, ornare neque. In hac 
                 habitasse platea dictumst. Maecenas vitae urna est. Aenean nec convallis dui, in vulputate nibh. 
                 Cras ullamcorper fermentum metus.</p>
-              <a href="paginaPresupuesto.php" class="feature__text-btn btn btn--presupuesto">Pida su presupuesto</a>  
+              <a href="presupuestos.php" class="feature__text-btn btn btn--presupuesto">Pida su presupuesto</a>  
 
           </div>
 
@@ -74,7 +74,7 @@ include("../plantillas/cabecera.php");
                 fermentum quis ipsum. Integer id quam vestibulum, tincidunt est vel, ornare neque. In hac 
                 habitasse platea dictumst. Maecenas vitae urna est. Aenean nec convallis dui, in vulputate nibh. 
                 Cras ullamcorper fermentum metus.</p>
-              <a href="paginaPresupuesto.php" class="featue_text-btn btn btn--presupuesto">Pida su presupuesto</a>  
+              <a href="presupuestos.php" class="featue_text-btn btn btn--presupuesto">Pida su presupuesto</a>  
 
           </div>
 
@@ -101,7 +101,7 @@ include("../plantillas/cabecera.php");
                 fermentum quis ipsum. Integer id quam vestibulum, tincidunt est vel, ornare neque. In hac 
                 habitasse platea dictumst. Maecenas vitae urna est. Aenean nec convallis dui, in vulputate nibh. 
                 Cras ullamcorper fermentum metus.</p>
-              <a href="paginaPresupuesto.php" class="feature__text-btn btn btn--presupuesto">Pida su presupuesto</a>  
+              <a href="presupuestos.php" class="feature__text-btn btn btn--presupuesto">Pida su presupuesto</a>  
 
           </div>
 

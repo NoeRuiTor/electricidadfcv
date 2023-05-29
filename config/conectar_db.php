@@ -2,10 +2,10 @@
 $bd = 'electricidadfcv';
 function conectar_db($bd){ 
   $opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");     
-  define ("USER_DB","noelia"); 
-  define ("PASSWORD","password1234"); 
+  define ("USER_DB","root"); 
+  define ("PASSWORD",""); 
   try {
-      $dsn = "mysql:host=localhost;dbname=".$bd;
+      $dsn = "35.240.97.143;dbname=".$bd;
       $con = new PDO($dsn, USER_DB, PASSWORD);
       $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $opciones;

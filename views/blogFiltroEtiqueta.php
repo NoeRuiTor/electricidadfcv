@@ -25,13 +25,15 @@
         foreach ($postFiltrado as $p) : ?>
         
          <article class="posts__post post post--filtrado">
-            <img class="post-img" src='<?php echo $p['imagen']; ?>' alt="img-post".<?php echo $p['id']; ?>.>
-            <div class="post-detalles">
-                <p class="post-detalles--color"><?php echo $p['fecha_emision']; ?></p>
-                <p class="post-detalles--estilo"><?php echo $p['etiqueta']; ?></p>
+            <div>
+                <img class="post-img" src='<?php echo $p['imagen']; ?>' alt="img-post".<?php echo $p['id']; ?>.>
+                <div class="post-detalles">
+                    <p class="post-detalles--color"><?php echo $p['fecha_emision']; ?></p>
+                    <p class="post-detalles--estilo"><?php echo $p['etiqueta']; ?></p>
+                </div>
+                <h2 class="post-heading heading heading-secondary"><?php echo $p['titulo']; ?></h2>
+                <p class="post-resumen"><?php echo $p['resumen']; ?><a href="blog.php?id=<?php echo $p['id']; ?>">leer más...</a></p>
             </div>
-            <h2 class="post-heading heading heading-secondary"><?php echo $p['titulo']; ?></h2>
-            <p class="post-resumen"><?php echo $p['resumen']; ?><a href="blog.php?id=<?php echo $p['id']; ?>">leer más...</a></p>
         </article>
         <div id="volver" class="col-12-12 col-12-12-sm">
             <a  href="blog.php">Volver</a> 

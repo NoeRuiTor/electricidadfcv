@@ -2,11 +2,14 @@
     background-color: $colorBlanco;  
     width: 90%;
     height: 50rem;
-    padding: 2rem 10rem;
+    padding: 2rem 5rem;
     box-shadow: 0.3em 0.3em 1em 0.5em rgba(0,0,0,0.3); 
     margin-top: 2rem; 
     line-height: 2rem;   
-
+    div{
+        max-width: 90%;
+        max-height: 90%;
+    }
     &-img{
         padding: 1rem;
         width: 60%;
@@ -39,15 +42,14 @@
 }
 .post--detalle{   
     height: 100%; 
-   div{
-    max-width: 90%;
-    max-height: 90%;
+ 
+    
     .post-contenido{
         line-height: 2.5rem;
         text-align: justify;
         padding:3rem 0;
         max-height: 90%;
-    }
+    
    }  
     
 }
