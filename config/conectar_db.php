@@ -1,71 +1,67 @@
 <?php
+
 use PDO;
 use PDOException;
 use RuntimeException;
 use TypeError;
 
-$bd = 'electricidadfcv';
-function conectar_db($bd){ 
-  try {
-    // Note: Saving credentials in environment variables is convenient, but not
-    // secure - consider a more secure solution such as
-    // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help
-    // keep secrets safe.
-    $username = getenv('root'); // e.g. 'your_db_user'
-    $password = getenv(''); // e.g. 'your_db_password'
-    $dbName = getenv($bd); // e.g. 'your_db_name'
-    $instanceUnixSocket = getenv('/cloudsql/balmy-doodad-386421:europe-west1:bd-electricidadfcv'); // e.g. '/cloudsql/project:region:instance'
+function conectar_db($bd) {
+    try {
+        
+        $username = 'fundeanu'; // Reemplaza 'root' con tu usuario de la base de datos
+        $password = 'password123456'; // Reemplaza '' con tu contraseña de la base de datos
+        $dbName = $bd; // Nombre de la base de datos
+        $instanceUnixSocket = '/cloudsql/balmy-doodad-386421:europe-west1:bd-electricidadfcv'; // Ruta del socket UNIX de Cloud SQL
 
-    // Connect using UNIX sockets
-    $dsn = sprintf(
-        'mysql:dbname=%s;unix_socket=%s',
-        $dbName,
-        $instanceUnixSocket
-    );
+        // Conectarse usando sockets UNIX
+        $dsn = sprintf(
+            'mysql:dbname=%s;unix_socket=%s',
+            $dbName,
+            $instanceUnixSocket
+        );
 
-    // Connect to the database.
-    $conn = new PDO(
-        $dsn,
-        $username,
-        $password,
-        # [START_EXCLUDE]
-        // Here we set the connection timeout to five seconds and ask PDO to
-        // throw an exception if any errors occur.
-        [
-            PDO::ATTR_TIMEOUT => 5,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        ]
-        # [END_EXCLUDE]
-    );
-} catch (TypeError $e) {
-    throw new RuntimeException(
-        sprintf(
-            'Invalid or missing configuration! Make sure you have set ' .
-                '$username, $password, $dbName, ' .
-                'and $instanceUnixSocket (for UNIX socket mode). ' .
-                'The PHP error was %s',
-            $e->getMessage()
-        ),
-        (int) $e->getCode(),
-        $e
-    );
-} catch (PDOException $e) {
-    throw new RuntimeException(
-        sprintf(
-            'Could not connect to the Cloud SQL Database. Check that ' .
-                'your username and password are correct, that the Cloud SQL ' .
-                'proxy is running, and that the database exists and is ready ' .
-                'for use. For more assistance, refer to %s. The PDO error was %s',
-            'https://cloud.google.com/sql/docs/mysql/connect-external-app',
-            $e->getMessage()
-        ),
-        (int) $e->getCode(),
-        $e
-    );
+        // Conectarse a la base de datos.
+        $conn = new PDO(
+            $dsn,
+            $username,
+            $password,
+            [
+                PDO::ATTR_TIMEOUT => 5,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            ]
+        );
+        
+        return $conn;
+        
+    } catch (TypeError $e) {
+        throw new RuntimeException(
+            sprintf(
+                'Configuración inválida o faltante. Asegúrate de haber establecido ' .
+                '$username, $password, $dbName y $instanceUnixSocket. ' .
+                'El error en PHP fue: %s',
+                $e->getMessage()
+            ),
+            (int) $e->getCode(),
+            $e
+        );
+    } catch (PDOException $e) {
+        throw new RuntimeException(
+            sprintf(
+                'No se pudo conectar a la base de datos de Cloud SQL. Verifica que ' .
+                'tu nombre de usuario y contraseña sean correctos, que el proxy de ' .
+                'Cloud SQL esté en ejecución y que la base de datos exista y esté ' .
+                'lista para usarse. Para obtener más ayuda, consulta %s. El error PDO fue: %s',
+                'https://cloud.google.com/sql/docs/mysql/connect-external-app',
+                $e->getMessage()
+            ),
+            (int) $e->getCode(),
+            $e
+        );
+    }
 }
 
-return $conn;
-}
+
+
 /*
 $bd = 'electricidadfcv';
 function conectar_db($bd){ 
