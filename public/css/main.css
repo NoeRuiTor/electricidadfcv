@@ -983,7 +983,7 @@ body {
     position: fixed;
     background: rgba(0, 0, 0, 0.767);
     z-index: 9999;
-    top: -100rem;
+    top: -40rem;
     right: -100vw;
     width: 40vw;
     bottom: 0;
