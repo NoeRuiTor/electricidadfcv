@@ -14,3 +14,6 @@ handlers:
 
 - url: /.*
   script: auto
+
+- beta_settings:
+  cloud_sql_instances: balmy-doodad-386421:europe-west1:bd-electricidadfcv
