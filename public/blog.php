@@ -2,7 +2,7 @@
 <?php
 
 include_once("../config/funciones.php");
-
+include_once("../config/conectar_db.php");
 
 include("../plantillas/cabecera.php");
 ?>
