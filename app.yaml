@@ -15,5 +15,8 @@ handlers:
 - url: /.*
   script: auto
 
-- beta_settings:
-  cloud_sql_instances: balmy-doodad-386421:europe-west1:bd-electricidadfcv
+env_variables:
+  CLOUD_SQL_CONNECTION_NAME: "balmy-doodad-386421:europe-west1:bd-electricidadfcv"
+  DB_USER: "fundeanu"
+  DB_PASSWORD: "Fundeanu190984"
+  DB_NAME: "electricidadfcv"
