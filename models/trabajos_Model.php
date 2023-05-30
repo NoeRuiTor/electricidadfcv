@@ -4,8 +4,8 @@
     function obtenerGaleria() {      
 
         require '../config/conectar_db.php';
-        $con=conectar_db($bd);
-        $stmt = $con->prepare("SELECT * FROM trabajo");
+        $conn=conectar_db($bd);
+        $stmt = $conn->prepare("SELECT * FROM trabajo");
         $stmt->execute();       
         $galeria = array();
         while($fila = $stmt->fetch()) {
@@ -16,8 +16,8 @@
 
 function obtenerCategoriaGaleria($categoria) {
         require '../config/conectar_db.php';
-        $con=conectar_db($bd);
-        $stmt = $con->prepare("SELECT * FROM trabajo WHERE categoria = :categoria");
+        $conn=conectar_db($bd);
+        $stmt = $conn->prepare("SELECT * FROM trabajo WHERE categoria = :categoria");
         $stmt->execute([':categoria' => $categoria]);
         $categoriaGaleria = array();
         while ($fila = $stmt->fetch()) {
@@ -29,8 +29,8 @@ function obtenerCategoriaGaleria($categoria) {
 
     function obtenerImagen($id) {
         require '../config/conectar_db.php';
-        $con=conectar_db($bd);
-        $stmt = $con->prepare("SELECT * FROM trabajo where id = $id");
+        $conn=conectar_db($bd);
+        $stmt = $conn->prepare("SELECT * FROM trabajo where id = $id");
         $stmt->execute();
         $datosImagen = array();
         while($fila = $stmt->fetch()) {
