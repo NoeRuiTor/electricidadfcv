@@ -829,6 +829,13 @@ body {
   text-decoration: none;
 }
 
+#errores {
+  width: 90%;
+  background-color: #FFFFFF;
+  color: #323535;
+  text-align: center;
+}
+
 .contenedor {
   margin: 0 auto;
   max-width: 100%;

@@ -10,20 +10,21 @@
         </h2>
         <p class="heading-secondary--main">Rellene el formulario y haga un breve resumen de lo que necesita,  indicar puntos de luz si es el caso 
             (reforma o instalación de electricidad). Puede adjuntar fotos y documentación para una mejor descripción.</p>
-      </div>
+      </div>     
+
       <form class="presupuesto__formulario col-12-12 col-12-12-sm" action="#" method="post" enctype="multipart/form-data" onsubmit="return enviaForm()">
            <div class="presupuesto__formulario-input">
-                <input type="text" name="nombre" id="nombre" value="nombre">
+                <input type="text" name="nombre" id="nombre" placeholder="nombre">
            </div>
            <div class="presupuesto__formulario-input">
-                <input type="email" name="email" id="correo" value="email">
+                <input type="email" name="email" id="correo" placeholder="email">
            </div>
            <div class="presupuesto__formulario-input">
-                <input type="tel" name="telefono" id="telefono" value="teléfono" maxlength="9">
+                <input type="tel" name="telefono" id="telefono" placeholder="teléfono" maxlength="9">
            </div>
            <div class="presupuesto__formulario-input">
-                <input class="ciudad" type="text" name="ciudad" id="ciudad" value="ciudad">
-                <input class="ciudad" type="text" name="cpostal" id="cp" value="código postal" maxlength="5">
+                <input class="ciudad" type="text" name="ciudad" id="ciudad" placeholder="ciudad">
+                <input class="ciudad" type="text" name="cpostal" id="cp" placeholder="código postal" maxlength="5">
            </div>
            <div class="presupuesto__formulario-radio">
                 <label for="tipo_trabajo">Seleccione tipo de trabajo:</label>
@@ -48,7 +49,7 @@
             
            </div>
            <div class="presupuesto__formulario-descripcion">
-                 <textarea id="descripcion" name="descripcion" cols="40" rows="10">Descripción del trabajo</textarea>
+                 <textarea id="descripcion" name="descripcion" cols="40" rows="10" placeholder="Descripción del trabajo"></textarea>
            </div>
            <div class="presupuesto__formulario-input">
                 <input id="file" type="file" id="file" name="adjunto">
@@ -56,13 +57,12 @@
            <div class="presupuesto__formulario-privacidad">
                 <input type="checkbox" name="privacidad" id="ppriva" value="privacidad"> He leído y acepto la <a href="#">POLÍTICA DE PRIVACIDAD</a>
            </div>
-           <div id="errores">
 
-           </div>
+           <div id="errores"> </div>
+           
            <div class="presupuesto__formulario-boton">
                <input type="submit" class="btn btn--enviar" id="btenviar" name="enviar" value="Enviar">
            </div>
       </form>
-
-
+     
 </section>

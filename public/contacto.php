@@ -48,27 +48,27 @@ include("../plantillas/cabecera.php");
                         <p>Formulario de <span id="color">contacto</span> </p>
                         <span></span>
                     </h3>
-                    <form class="contactar__form-form form-contacto" action="#" method="post">
+                    <form class="contactar__form-form form-contacto" action="#" method="post" onsubmit="return validaDatosContacto()">
                         <div class="form-input">
-                                <input type="text" name="nombre" value="nombre" id="nombre">
+                                <input type="text" name="nombre" id="nom" placeholder="nombre" >
                         </div>
                         <div class="form-input">
-                                <input type="email" name="email" value="email" id="correo">
+                                <input type="email" name="email" id="emeal" placeholder="email">
                         </div>
                         <div class="form-input">
-                                <input type="tel" name="telefono" value="teléfono" id="telefono">
+                                <input type="tel" name="telefono" id="tel" placeholder="teléfono">
                         </div>
                         <div class="form-descripcion">
-                            <textarea id="descripcion" name="descripcion" cols="40" rows="10">Descripción del trabajo</textarea>
+                            <textarea id="descripcion" name="descripcion" cols="40" rows="10"placeholder="Descripción del trabajo"></textarea>
                         </div>
                         <div class="form-privacidad">
-                        <input type="checkbox" name="privacidad" id="ppriva" value="privacidad"> He leído y acepto la <a href="#">POLÍTICA DE PRIVACIDAD</a>
+                        <input type="checkbox" name="privacidad"  value="privacidad" id="ppriva"> He leído y acepto la <a href="#">POLÍTICA DE PRIVACIDAD</a>
                         </div>
                         <div class="errores">
             
                          </div>
                         <div class="form-boton">
-                            <input type="submit" class="btn btn--contactar" name="enviar" id="btenviar" value="Enviar">
+                            <input type="submit" class="btn btn--contactar" name="enviar" value="Enviar">
                         </div>
                     </form>
                 
