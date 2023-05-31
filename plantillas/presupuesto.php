@@ -11,53 +11,56 @@
         <p class="heading-secondary--main">Rellene el formulario y haga un breve resumen de lo que necesita,  indicar puntos de luz si es el caso 
             (reforma o instalación de electricidad). Puede adjuntar fotos y documentación para una mejor descripción.</p>
       </div>
-      <form class="presupuesto__formulario col-12-12 col-12-12-sm" action="#" method="post" enctype="multipart/form-data">
+      <form class="presupuesto__formulario col-12-12 col-12-12-sm" action="#" method="post" enctype="multipart/form-data" onsubmit="return enviaForm()">
            <div class="presupuesto__formulario-input">
-                <input type="text" name="nombre" value="nombre">
+                <input type="text" name="nombre" id="nombre" value="nombre">
            </div>
            <div class="presupuesto__formulario-input">
-                <input type="email" name="email" value="email">
+                <input type="email" name="email" id="correo" value="email">
            </div>
            <div class="presupuesto__formulario-input">
-                <input type="tel" name="telefono" value="teléfono">
+                <input type="tel" name="telefono" id="telefono" value="teléfono" maxlength="9">
            </div>
            <div class="presupuesto__formulario-input">
-                <input class="ciudad" type="text" name="ciudad" value="ciudad">
-                <input class="ciudad" type="text" name="cpostal" value="código postal">
+                <input class="ciudad" type="text" name="ciudad" id="ciudad" value="ciudad">
+                <input class="ciudad" type="text" name="cpostal" id="cp" value="código postal" maxlength="5">
            </div>
            <div class="presupuesto__formulario-radio">
                 <label for="tipo_trabajo">Seleccione tipo de trabajo:</label>
             </div>  
             <div class="presupuesto__formulario-radio"> 
-                <input type="radio" name="trabajo" value="instalacion_electrica_nueva">Instalación eléctrica de obra nueva
+                <input type="radio" name="trabajo" value="instalacion_electrica_nueva">  Instalación eléctrica de obra nueva
             </div>
             <div class="presupuesto__formulario-radio">
-                <input type="radio" name="trabajo" value="reforma_instalacion">Reforma de instalación eléctrica
+                <input type="radio" name="trabajo" value="reforma_instalacion">  Reforma de instalación eléctrica
             </div>
             <div class="presupuesto__formulario-radio">
-                <input type="radio" name="trabajo" value="iluminacion_led">Instalar iluminación LED
+                <input type="radio" name="trabajo" value="iluminacion_led">  Instalar iluminación LED
             </div>
             <div class="presupuesto__formulario-radio">
-                <input type="radio" name="trabajo" value="paneles_solares">Instalar paneles solares
+                <input type="radio" name="trabajo" value="paneles_solares">  Instalar paneles solares
             </div>
             <div class="presupuesto__formulario-radio">
-                <input type="radio" name="trabajo" value="punto_recarga">Instalar punto de recarga
+                <input type="radio" name="trabajo" value="punto_recarga">  Instalar punto de recarga
             </div>
             <div class="presupuesto__formulario-radio">
-                <input type="radio" name="trabajo" value="otros">Otros trabajos de electricidad
+                <input type="radio" name="trabajo" value="otros">  Otros trabajos de electricidad
             
            </div>
            <div class="presupuesto__formulario-descripcion">
                  <textarea id="descripcion" name="descripcion" cols="40" rows="10">Descripción del trabajo</textarea>
            </div>
            <div class="presupuesto__formulario-input">
-                <input id="file" type="file" name="adjunto">
+                <input id="file" type="file" id="file" name="adjunto">
            </div>
            <div class="presupuesto__formulario-privacidad">
-                <input type="checkbox" name="privacidad" value="privacidad"> He leído y acepto la <a href="#">POLÍTICA DE PRIVACIDAD</a>
+                <input type="checkbox" name="privacidad" id="ppriva" value="privacidad"> He leído y acepto la <a href="#">POLÍTICA DE PRIVACIDAD</a>
+           </div>
+           <div id="errores">
+
            </div>
            <div class="presupuesto__formulario-boton">
-               <input type="submit" class="btn btn--enviar" name="enviar" value="Enviar">
+               <input type="submit" class="btn btn--enviar" id="btenviar" name="enviar" value="Enviar">
            </div>
       </form>
 

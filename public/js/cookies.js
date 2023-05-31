@@ -44,15 +44,5 @@ function checkCookieAccepted() {
   }
 }
 
-document.getElementById("cookie-accept").addEventListener("click", function(e) {
-  e.preventDefault();
-  acceptCookies();
-});
 
-document.getElementById("cookie-reject").addEventListener("click", function(e) {
-  e.preventDefault();
-  rejectCookies();
-});
-
-window.addEventListener("load", checkCookieAccepted);
 

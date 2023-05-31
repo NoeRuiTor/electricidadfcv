@@ -1,5 +1,5 @@
 <?php
-
+/*
 use PDO;
 use PDOException;
 use RuntimeException;
@@ -66,7 +66,7 @@ function conectar_db($bd) {
 
 
 
-/*
+*/
 $bd = 'electricidadfcv';
 function conectar_db($bd){ 
   $opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");     
@@ -74,8 +74,8 @@ function conectar_db($bd){
   define ("PASSWORD","password1234"); 
   try {
       $dsn = "mysql:host=localhost;dbname=".$bd;
-      $con = new PDO($dsn, USER_DB, PASSWORD);
-      $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $conn = new PDO($dsn, USER_DB, PASSWORD);
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $opciones;
 
       } catch (PDOException $e){
@@ -85,7 +85,7 @@ function conectar_db($bd){
       }   
   
   
-  return $con;
+  return $conn;
 }
-*/
+
 ?>

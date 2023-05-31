@@ -50,22 +50,25 @@ include("../plantillas/cabecera.php");
                     </h3>
                     <form class="contactar__form-form form-contacto" action="#" method="post">
                         <div class="form-input">
-                                <input type="text" name="nombre" value="nombre">
+                                <input type="text" name="nombre" value="nombre" id="nombre">
                         </div>
                         <div class="form-input">
-                                <input type="email" name="email" value="email">
+                                <input type="email" name="email" value="email" id="correo">
                         </div>
                         <div class="form-input">
-                                <input type="tel" name="telefono" value="teléfono">
+                                <input type="tel" name="telefono" value="teléfono" id="telefono">
                         </div>
                         <div class="form-descripcion">
                             <textarea id="descripcion" name="descripcion" cols="40" rows="10">Descripción del trabajo</textarea>
                         </div>
                         <div class="form-privacidad">
-                        <input type="checkbox" name="privacidad" value="privacidad"> He leído y acepto la <a href="#">POLÍTICA DE PRIVACIDAD</a>
+                        <input type="checkbox" name="privacidad" id="ppriva" value="privacidad"> He leído y acepto la <a href="#">POLÍTICA DE PRIVACIDAD</a>
                         </div>
+                        <div class="errores">
+            
+                         </div>
                         <div class="form-boton">
-                            <input type="submit" class="btn btn--contactar" name="enviar" value="Enviar">
+                            <input type="submit" class="btn btn--contactar" name="enviar" id="btenviar" value="Enviar">
                         </div>
                     </form>
                 

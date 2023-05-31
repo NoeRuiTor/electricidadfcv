@@ -18,14 +18,8 @@
                 background-color: $color3;
                 padding: 1rem;
                 @include mobile(1024px){
-                    font-size: $s-size;
-                }
-                @include mobile{
                     font-size: $xs-size;
-                    #naves{
-                      font-size: 0.8rem;
-                    }
-                }
+                }             
     
                 &:hover{
                     text-decoration: none;

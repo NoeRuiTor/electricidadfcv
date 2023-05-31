@@ -180,4 +180,16 @@
        <p>Utilizamos cookies en nuestro sitio web para ofrecerte la mejor experiencia. Al continuar navegando, aceptas nuestro uso de cookies.
            <a href="#" id="cookie-accept">Aceptar</a> | <a href="#" id="cookie-reject">Rechazar</a></p>
    </div>
-        
+   <script>
+    document.getElementById("cookie-accept").addEventListener("click", function(e) {
+    e.preventDefault();
+    acceptCookies();
+    });
+
+    document.getElementById("cookie-reject").addEventListener("click", function(e) {
+    e.preventDefault();
+    rejectCookies();
+    });
+
+    window.addEventListener("load", checkCookieAccepted);
+   </script>     
