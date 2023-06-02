@@ -12,8 +12,7 @@
   
   .custom-alert-message {
     display: block;
-    margin-bottom: 2rem;
-    font-size:$m-size;
+    margin-bottom: 2rem;    
   }
   
   .custom-alert-close {    
@@ -21,5 +20,8 @@
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    text-align: center;
+    margin-top: 1rem;
+    
   }
   

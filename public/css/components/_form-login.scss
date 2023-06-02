@@ -5,8 +5,7 @@
     line-height: 3rem;
     display:flex;
     flex-direction: column;   
-    width:30rem;
-   
+    width:30rem;   
     margin: 2rem 0;
 
     .form-input{
@@ -26,10 +25,10 @@
             color:$color2;
         }
     }
-
     .form-boton{
         display: flex;
         justify-content: center;
-       }
+
+    }    
    
   }  

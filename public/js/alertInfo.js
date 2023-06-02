@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var customAlertMessage = document.getElementById("custom-alert-message");
   
     customAlertMessage.textContent = message;
-    customAlert.style.display = "block";
+    customAlert.style.display = "flex";
+    customAlert.style.flexDirection = "column";
   }
   
   

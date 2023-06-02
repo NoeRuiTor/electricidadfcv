@@ -11,7 +11,8 @@
     <script defer src="js/formpresupuesto.js" ></script>
     <script defer src="js/formcontacto.js" ></script> 
     <script defer src="js/alertInfo.js" ></script> 
-    <script defer src="js/cookies.js" ></script>    
+    <script defer src="js/cookies.js" ></script> 
+    <script defer src="js/login.js" ></script>   
     <link rel="stylesheet" href="css/main.css">     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<title><?php parametro_plantilla("titulo_pagina"); ?></title>
@@ -28,7 +29,7 @@
                         <i class="fas fa-bars"></i>
                 </div> 
                 <div class="menu-login">
-                 <a href="login_view.php"><i class="fas fa-sign-in-alt"></i></a>
+                 <a href="login.php"><i class="fas fa-sign-in-alt"></i></a>
 
                 </div> 
                 <nav class="col-6-12 header__nav nav" id="bars">
@@ -43,7 +44,7 @@
                     
                       </ul>          
                 </nav>
-                <a href="login_view.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso usuarios</a>
+                <a href="login.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso usuarios</a>
             </header>
       
 <script>
