@@ -7,7 +7,7 @@
     <meta name="description" content="<?php parametro_plantilla("description"); ?>">
     <meta name="Keywords" content="<?php parametro_plantilla("keywords"); ?>"> 
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-    <script defer src="js/carrusel.js" ></script> 
+    <script defer src="js/carrousel.js" ></script> 
     <script defer src="js/formpresupuesto.js" ></script>
     <script defer src="js/formcontacto.js" ></script> 
     <script defer src="js/cookies.js" ></script>    
