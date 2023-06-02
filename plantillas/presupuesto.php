@@ -12,7 +12,7 @@
             (reforma o instalación de electricidad). Puede adjuntar fotos y documentación para una mejor descripción.</p>
       </div>     
 
-      <form class="presupuesto__formulario col-12-12 col-12-12-sm" action="#" method="post" enctype="multipart/form-data" onsubmit="return enviaForm()">
+      <form class="presupuesto__formulario col-12-12 col-12-12-sm" action="../controllers/presupuesto_Controller.php" method="post" enctype="multipart/form-data" onsubmit="return enviaForm()">
            <div class="presupuesto__formulario-input">
                 <input type="text" name="nombre" id="nombre" placeholder="nombre">
            </div>
@@ -52,13 +52,18 @@
                  <textarea id="descripcion" name="descripcion" cols="40" rows="10" placeholder="Descripción del trabajo"></textarea>
            </div>
            <div class="presupuesto__formulario-input">
-                <input id="file" type="file" id="file" name="adjunto">
+                <input id="file" type="file" id="file" accept=".jpg, .jpeg, .png, .gif .pdf" name="adjunto">
            </div>
            <div class="presupuesto__formulario-privacidad">
                 <input type="checkbox" name="privacidad" id="ppriva" value="privacidad"> He leído y acepto la <a href="#">POLÍTICA DE PRIVACIDAD</a>
            </div>
 
            <div id="errores"> </div>
+           <?php if (!empty($mensajeError)) : ?>
+                <div id="errores">
+                    <?php echo $mensajeError; ?>
+                </div>
+             <?php endif;?>
            
            <div class="presupuesto__formulario-boton">
                <input type="submit" class="btn btn--enviar" id="btenviar" name="enviar" value="Enviar">

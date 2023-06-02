@@ -1,5 +1,5 @@
 <?php
-
+/*
 use PDO;
 use PDOException;
 use RuntimeException;
@@ -64,9 +64,9 @@ function conectar_db($bd) {
     }
 }
 
+*/
 
 
-/*
 $bd = 'electricidadfcv';
 function conectar_db($bd){ 
   $opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");     
@@ -87,5 +87,5 @@ function conectar_db($bd){
   
   return $conn;
 }
-*/
+
 ?>

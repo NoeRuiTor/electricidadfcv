@@ -1,8 +1,9 @@
 <?php
-require_once("../config/conectar_db.php");
 
-function insertarSolicitudPresupuesto($nombre,$ciudad,$cpostal,$telefono,$email,$tipoTrabajo, $fechaActual ){
-    $con = conectar_db("electricidad_fcv");
+
+function insertarSolicitudPresupuesto($nombre,$ciudad,$cpostal,$telefono,$email,$tipoTrabajo,$fechaActual){
+    require("../config/conectar_db.php");
+    $con = conectar_db($bd);
 
     try {
         // Iniciar transacción

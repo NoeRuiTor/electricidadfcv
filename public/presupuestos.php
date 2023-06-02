@@ -34,11 +34,12 @@ include("../plantillas/cabecera.php");
                     <i class="fas fa-phone"></i>
                 </a>
             </div>
-    
 
 <?php
 include("../plantillas/presupuesto.php");
+
 ?>
+ 
  </main>
 <?php
 include("../plantillas/info-contacto.php");

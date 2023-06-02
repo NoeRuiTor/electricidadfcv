@@ -6,12 +6,12 @@ function validaDatosContacto(){
     let checkbox = document.getElementById("ppriva");
     
     if(nom ==="") {
-        alert("Debes completar el campo nombre");
+      showCustomAlert("Debes completar el campo nombre");
         return false;
     } 
 
     if (emeal === "" && tel === "") {
-      alert("Debes completar el campo de correo electrónico o teléfono.");
+      showCustomAlert("Debes completar el campo de correo electrónico o teléfono.");
       return false;
     }
 
@@ -19,7 +19,7 @@ function validaDatosContacto(){
 
     if (!checkbox.checked) {
         // El checkbox no está marcado
-        alert("Debes aceptar la política de privacidad");
+        showCustomAlert("Debes aceptar la política de privacidad");
         return false;
     }
   

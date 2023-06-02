@@ -830,10 +830,37 @@ body {
 }
 
 #errores {
-  width: 90%;
+  width: 100%;
   background-color: #FFFFFF;
   color: #323535;
   text-align: center;
+  font-size: 2.5rem;
+  font-style: italic;
+}
+
+.custom-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  z-index: 9999;
+  display: none; /* Ocultar el div por defecto */
+}
+
+.custom-alert-message {
+  display: block;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.custom-alert-close {
+  background-color: #ccc;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 .contenedor {
@@ -1488,4 +1515,22 @@ body {
 }
 .trabajos .galeria__card-foto {
   padding: 2rem;
+}
+
+.success {
+  width: 100%;
+  max-width: 100%;
+  background-color: #FFFFFF;
+}
+.success__box {
+  background-color: #FFFFFF;
+  width: 90%;
+  height: 30rem;
+  padding: 2rem 5rem;
+  box-shadow: 0.3em 0.3em 1em 0.5em rgba(0, 0, 0, 0.3);
+  margin: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=main.css.map */

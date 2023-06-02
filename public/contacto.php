@@ -48,7 +48,7 @@ include("../plantillas/cabecera.php");
                         <p>Formulario de <span id="color">contacto</span> </p>
                         <span></span>
                     </h3>
-                    <form class="contactar__form-form form-contacto" action="#" method="post" onsubmit="return validaDatosContacto()">
+                    <form class="contactar__form-form form-contacto" action="../controllers/contacto_Controller.php" method="post" onsubmit="return validaDatosContacto()">
                         <div class="form-input">
                                 <input type="text" name="nombre" id="nom" placeholder="nombre" >
                         </div>
@@ -59,14 +59,17 @@ include("../plantillas/cabecera.php");
                                 <input type="tel" name="telefono" id="tel" placeholder="teléfono">
                         </div>
                         <div class="form-descripcion">
-                            <textarea id="descripcion" name="descripcion" cols="40" rows="10"placeholder="Descripción del trabajo"></textarea>
+                            <textarea id="descripcion" name="descripcion" cols="40" rows="10"placeholder="Consulta..."></textarea>
                         </div>
                         <div class="form-privacidad">
                         <input type="checkbox" name="privacidad"  value="privacidad" id="ppriva"> He leído y acepto la <a href="#">POLÍTICA DE PRIVACIDAD</a>
                         </div>
-                        <div class="errores">
-            
-                         </div>
+                        <?php if (isset($_REQUEST['error'])) : ?>
+                        <div id="errores">
+                            <?php echo $_REQUEST['error']; ?>
+                        </div>
+                         <?php endif;?>
+                        
                         <div class="form-boton">
                             <input type="submit" class="btn btn--contactar" name="enviar" value="Enviar">
                         </div>
@@ -79,7 +82,7 @@ include("../plantillas/cabecera.php");
 </main>
 
 <?php
-
+include("../plantillas/alertInfo.php");
 include("../plantillas/info-contacto.php");
 include("../plantillas/pie.php");
 ?>
