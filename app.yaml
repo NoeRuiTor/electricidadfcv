@@ -18,5 +18,5 @@ handlers:
 env_variables:
   CLOUD_SQL_CONNECTION_NAME: "balmy-doodad-386421:europe-west1:bd-electricidadfcv"
   DB_USER: "fundeanu"
-  DB_PASSWORD: "Fundeanu190984"
+  DB_PASSWORD: "password1234"
   DB_NAME: "electricidadfcv"
