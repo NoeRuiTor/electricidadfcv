@@ -16,7 +16,7 @@ handlers:
   script: auto
 
 env_variables:
-  CLOUD_SQL_CONNECTION_NAME: "balmy-doodad-386421:europe-west1:bd-electricidadfcv"
+  CLOUD_SQL_CONNECTION_NAME: "balmy-doodad-386421:europe-southwest1:miproyecto"
   DB_USER: "fundeanu"
   DB_PASSWORD: "password1234"
   DB_NAME: "electricidadfcv"
