@@ -4,7 +4,7 @@ session_start();
 //COMPRUEBA QUE EL USUARIO ESTA AUTENTIFICADO
 if ($_SESSION['autentificado'] != "OK") {
 //si no existe, envío a la página de autentificación 
-header("Location:iniciaSesion.php");
+header("Location:../public/login.php");
 //ademas salgo de este script
 exit();
 }

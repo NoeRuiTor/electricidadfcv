@@ -42,4 +42,36 @@ function insertarSolicitudPresupuesto($nombre,$ciudad,$cpostal,$telefono,$email,
     }
     
 }
+
+function listarPresupuestos(){
+    require("../config/conectar_db.php");  
+    $conn=conectar_db($bd);
+        $stmt = $conn->prepare('SELECT p.*, u.nombre AS nombre_cliente, e.nombre AS nombre_estado
+                        FROM presupuesto p
+                        JOIN usuario u ON p.id_usuario = u.id
+                        JOIN estado e ON p.estado = e.id;
+        ');
+        $stmt->execute();       
+        $presupuestos = array();
+        while($fila = $stmt->fetch()) {
+        $presupuestos[] = $fila;
+    }
+        return $presupuestos;
+}
+
+function obtenerPresupuestosUsuario($idUser) {
+    require '../config/conectar_db.php';
+    $conn=conectar_db($bd);
+    $stmt = $conn->prepare("SELECT * FROM presupuesto WHERE id_usuario = :id_usuario");
+    $stmt->execute([':id_usuario' => $idUser]);
+    $presupuestosUser = array();
+    while ($fila = $stmt->fetch()) {
+        $presupuestosUser[] = $fila;
+    }
+    return $presupuestosUser;
+}
+
+
+
+
 ?>

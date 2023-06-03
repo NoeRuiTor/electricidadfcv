@@ -1,0 +1,43 @@
+
+//BANNER ADMINISTRACIÓN INTRANET CON USUARIO LOGUEADO
+
+.user__nav{
+    @include banner-intranet;
+    
+    &-section{
+         display: flex;
+         justify-content: center; 
+         align-items: center;
+         text-align: center;   
+         padding: 0.5rem;
+        &--doc{
+        
+            a{
+                text-decoration: none;
+                color:$colorBlanco;
+                font-size: $s-size;
+                @include mobile{
+                    font-size: $xs-size;
+                }
+            }
+        }    
+        &--heading{      
+            
+            h2{
+                text-transform: none;
+                
+            }
+            h4{
+                text-transform: none;
+                font-size: $xs-size;
+            }
+        }
+
+        &--doc{
+            border-left: 0.1rem $colorBlanco solid;
+        }
+    }
+
+    
+    
+}

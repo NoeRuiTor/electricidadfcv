@@ -1,0 +1,19 @@
+.userContent{  
+    margin-top: 10rem ;
+    max-width: 100%;
+    font-size: $xs-size;
+    padding: 2rem;
+    .presupuestos__nav{
+        
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+        
+       
+    }
+    .presupuestos__tabla{
+        margin-top: 2rem;
+    }
+    
+}

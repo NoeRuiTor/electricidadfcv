@@ -49,33 +49,33 @@ include_once("../config/funciones.php");
                 </nav>
                 <a href="login.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso usuarios</a>
             </header>
-      
+
+      <!--------SCRIPT MENU RESPONSIVE------->
+
 <script>
-const limit_size_screen = window.matchMedia('screen and (max-width: 768px)');
-const menu = document.querySelector('#bars');
-const menuIcon = document.querySelector('.menu-icon');
+        const limit_size_screen = window.matchMedia('screen and (max-width: 768px)');
+        const menu = document.querySelector('#bars');
+        const menuIcon = document.querySelector('.menu-icon');
 
-function validation(event) {
-  if (event.matches) {
-    menuIcon.addEventListener('click', hideShow);
-  } else {
-    menuIcon.removeEventListener('click', hideShow);
-    menu.classList.remove('is-active'); // Asegurarse de ocultar el menú en pantallas grandes
-  }
-}
+        function validation(event) {
+        if (event.matches) {
+            menuIcon.addEventListener('click', hideShow);
+        } else {
+            menuIcon.removeEventListener('click', hideShow);
+            menu.classList.remove('is-active'); // Asegurarse de ocultar el menú en pantallas grandes
+        }
+        }
 
-validation(limit_size_screen);
+        validation(limit_size_screen);
 
-function hideShow() {
-  menu.classList.toggle('is-active'); // Agrega o quita la clase 'is-active' para mostrar u ocultar el menú
-}
+        function hideShow() {
+        menu.classList.toggle('is-active'); // Agrega o quita la clase 'is-active' para mostrar u ocultar el menú
+        }
 
 </script>
     
 
-       <!------CONTENIDO------>
-
-            <main class="contenedor">
+       
 
         <!----------PANEL ADMINISTRACION INTRANET----->
 
@@ -86,6 +86,9 @@ function hideShow() {
                     </h2>
                 </div>
             </section>
+        <!------CONTENIDO------>
+
+        <main class="contenedor">
 
         <!-----------FORMULARIO LOGIN---------->
      
@@ -145,6 +148,8 @@ function hideShow() {
                      </div>
 
                 </form>
+                <!---------------SCRIPT FORMULARIO CAMBIO DE CONTRASEÑA---------------->
+
                 <script>
                     // Obtener el enlace "Cambiar contraseña" por su id
                     const enlaceCambiarContrasena = document.getElementById('cambiar-contrasena');

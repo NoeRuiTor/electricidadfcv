@@ -1,5 +1,8 @@
 <?php
-
+if(isset($_REQUEST['enviar'])){
+// Llamar al controlador para procesar el formulario
+    procesarFormulario();
+}
 function procesarFormulario(){
 require_once '../models/presupuesto_Model.php';
 
@@ -141,7 +144,18 @@ function enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabaj
     }
 }
 
-// Llamar al controlador para procesar el formulario
-procesarFormulario();
+
+function mostrarPresupuestos() {
+    require '../models/presupuesto_Model.php';
+    $presupuestos = listarPresupuestos();
+    include("../views/presupuestosList.php");
+  }
+
+function mostrarPresupuestosUsuario() {
+    require '../models/presupuesto_Model.php';
+    $presupuestosUser = obtenerPresupuestosUsuario($idUser);
+    include("../views/presupuestosListUser.php");
+  }
+
 
 ?>

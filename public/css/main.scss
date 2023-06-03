@@ -29,8 +29,10 @@
 @import "components/paginacion";
 @import "components/post";
 @import "components/post_list";
-@import "components/menasajes";
+@import "components/mensajes";
 @import "components/alertInfo";
+@import "components/admin-nav-users";
+@import "components/tabla-presupuestos";
 
 
 //LAYOUT:
@@ -50,3 +52,4 @@
 @import "pages/login";
 @import "pages/trabajos";
 @import "pages/success";
+@import "pages/adminDashboard";

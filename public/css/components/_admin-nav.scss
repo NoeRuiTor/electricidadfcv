@@ -1,17 +1,7 @@
-//BANNER DE ADMINISTRACIÓN INTRANET
+//BANNER DE ADMINISTRACIÓN INTRANET 
 
 .admin__nav{
-    height: 5rem;
-    max-width: 100%;
-    width: 100%;
-    left: 0; 	
-	position: fixed; 
-    z-index: 1;
-    box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);       
-    justify-content: space-around;
-    align-items: center;  
-    background-color: $color2;
-    color:$color5;
+    @include banner-intranet;
 
     &-heading{
         @include centra-items;
@@ -22,3 +12,4 @@
         }
     }
 }
+
