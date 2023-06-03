@@ -110,7 +110,7 @@
 <main class="contenedor">    
     
     <section class="userContent">
-        <form class="presupuestos__nav contenedor__row">
+        <form class="presupuestos__nav contenedor__row" method="get" action="adminDashboard.php">
             <div class="col-3-12 col-4-12-sm">                
                 <label for="nombre_cliente">Nombre cliente</label>
                 <input type="text" name="nombre_cliente" id="nombre_cliente"/>
@@ -139,10 +139,42 @@
            
        <?php
         require "../controllers/presupuesto_Controller.php";
-           if(isset($_REQUEST['navMenu']) && $_REQUEST['navMenu'] == 'presupuestos'){          
-            mostrarPresupuestos();
+
+           if(isset($_REQUEST['navMenu']) && $_REQUEST['navMenu'] == 'presupuestos'){
+
+                if(isset($_REQUEST['orderBy']) && ($_REQUEST['orderDirection'])){
+                    $orderBy = $_REQUEST['orderBy'];
+                    $orderDirection = $_REQUEST['orderDirection'];
+    
+                    mostrarPresupuestosOrdenados($orderBy, $orderDirection);
+                } else{     
+                   mostrarPresupuestos();
+                }
+            }elseif(isset($_REQUEST['btnBuscar'])) {
+                if(isset($_REQUEST['nombre_cliente'])){
+                   $nombreCliente = $_REQUEST['nombre_cliente'];
+                }
+                if(isset($_REQUEST['tipo_trabajo'])){
+                    $tipoTrabajo = $_REQUEST['tipo_trabajo'];
+                }
+                if(isset($_REQUEST['fechaEmision'])){
+                     $fechaEmision = $_REQUEST['fechaEmision'];
+                }
+                if(isset($_REQUEST['estado'])){
+                    $estado = $_REQUEST['estado'];
+                }
+                    mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo, $fechaEmision, $estado);                   
+
            }else{
-            mostrarPresupuestos();
+            if(isset($_REQUEST['orderBy']) && ($_REQUEST['orderDirection'])){
+                $orderBy = $_REQUEST['orderBy'];
+                $orderDirection = $_REQUEST['orderDirection'];
+   
+                mostrarPresupuestosOrdenados($orderBy, $orderDirection);
+              } else{     
+               mostrarPresupuestos();
+             }
+        
            }
 
       ?>

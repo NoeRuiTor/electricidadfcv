@@ -70,7 +70,84 @@ function obtenerPresupuestosUsuario($idUser) {
     }
     return $presupuestosUser;
 }
+function obtenerPresupuestosOrdenados($orderBy, $orderDirection) {
+    require("../config/conectar_db.php");
+    $con = conectar_db($bd);   
 
+    $stmt = $con->prepare("SELECT p.*, u.nombre AS nombre_cliente, e.nombre AS nombre_estado
+            FROM presupuesto p
+            JOIN usuario u ON p.id_usuario = u.id
+            JOIN estado e ON p.estado = e.id ORDER BY p.{$orderBy} {$orderDirection}");
+
+    $stmt->execute();
+    $presupuestosOrdenados = array();
+    while($fila = $stmt->fetch()) {
+    $presupuestosOrdenados[] = $fila;    
+    
+    }
+    return $presupuestosOrdenados;
+
+}
+
+function buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmision, $estado) {
+    require("../config/conectar_db.php");
+    $con = conectar_db($bd);
+
+    $sql = "SELECT p.*, u.nombre AS nombre_cliente, e.nombre AS nombre_estado
+            FROM presupuesto p
+            JOIN usuario u ON p.id_usuario = u.id
+            JOIN estado e ON p.estado = e.id
+            WHERE 1 = 1"; // Filtro base para evitar problemas con las condiciones
+
+    // Agregar condiciones según los parámetros de búsqueda ingresados
+    if (!empty($nombreCliente)) {
+        $sql .= " AND u.nombre LIKE :nombreCliente";
+    }
+
+    if (!empty($tipoTrabajo)) {
+        $sql .= " AND p.tipo_trabajo LIKE :tipo_trabajo";
+    }
+
+    if (!empty($fechaEmision)) {
+        $sql .= " AND p.fechaEmision = :fechaEmision";
+    }
+
+    if (!empty($estado)) {
+        // Obtener el identificador del estado por su nombre
+        $subquery = "SELECT id FROM estado WHERE nombre = :estado";
+        $sql .= " AND p.estado IN ($subquery)";
+    }
+
+    $stmt = $con->prepare($sql);
+
+    // Asociar los valores de los parámetros utilizando bindParam()
+    if (!empty($nombreCliente)) {
+        $nombreCliente = "%$nombreCliente%"; // Agregar comodines % al valor
+        $stmt->bindParam(':nombreCliente', $nombreCliente, PDO::PARAM_STR);
+    }
+
+    if (!empty($tipoTrabajo)) {
+        $tipoTrabajo = "%$tipoTrabajo%";
+        $stmt->bindParam(':tipo_trabajo', $tipoTrabajo, PDO::PARAM_STR);
+    }
+
+    if (!empty($fechaEmision)) {
+        $stmt->bindParam(':fechaEmision', $fechaEmision, PDO::PARAM_STR);
+    }
+
+    if (!empty($estado)) {
+        $stmt->bindParam(':estado', $estado, PDO::PARAM_STR);
+    }
+
+    $stmt->execute();
+
+    $presupuestosEncontrados = array();
+    while ($fila = $stmt->fetch()) {
+        $presupuestosEncontrados[] = $fila;
+    }
+
+    return $presupuestosEncontrados;
+}
 
 
 

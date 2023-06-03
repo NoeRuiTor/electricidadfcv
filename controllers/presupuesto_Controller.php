@@ -3,6 +3,21 @@ if(isset($_REQUEST['enviar'])){
 // Llamar al controlador para procesar el formulario
     procesarFormulario();
 }
+function generar_contrasena($longitud) {
+    $caracteres = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+';
+    $contrasena = '';
+    
+    // Generar una contraseña aleatoria
+    for ($i = 0; $i < $longitud; $i++) {
+        $indice = random_int(0, strlen($caracteres) - 1);
+        $contrasena .= $caracteres[$indice];
+    }
+    
+    return $contrasena;
+}
+
+
+
 function procesarFormulario(){
 require_once '../models/presupuesto_Model.php';
 
@@ -16,6 +31,7 @@ require_once '../models/presupuesto_Model.php';
     $fechaActual = date('Y-m-d');
     $privacidad = $_REQUEST['privacidad'];
     $descripcion = $_REQUEST['descripcion'];
+    $pwd = generar_contrasena(6);
 
     // Validar los datos
     if (validarDatos($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo,$privacidad)) {
@@ -151,11 +167,22 @@ function mostrarPresupuestos() {
     include("../views/presupuestosList.php");
   }
 
-function mostrarPresupuestosUsuario() {
+function mostrarPresupuestosUsuario($idUser) {
     require '../models/presupuesto_Model.php';
     $presupuestosUser = obtenerPresupuestosUsuario($idUser);
     include("../views/presupuestosListUser.php");
   }
 
+function mostrarPresupuestosOrdenados($orderBy, $orderDirection) {
+    require '../models/presupuesto_Model.php';
+    $presupuestos = obtenerPresupuestosOrdenados($orderBy, $orderDirection);
+    include("../views/presupuestosList.php");
+  }
+ 
+  function mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo, $fechaEmision, $estado) {
+    require '../models/presupuesto_Model.php';
+    $presupuestos = buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmision, $estado);
+    include("../views/presupuestosList.php");
+  }
 
 ?>

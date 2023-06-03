@@ -1,9 +1,9 @@
 <?php
- if(isset($_SESSION["autentificado"]) && ($_SESSION["autentificado"] == "OK")){
-    header('Location:../public/login.php');
-  }
- include('../config/seguridad.php');
+
+ require('../config/seguridad.php');
+ 
  include_once("../config/funciones.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +46,7 @@
                     
                       </ul>          
                 </nav>
-                <a href="../views/usuarioDashboard.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Mi cuenta</a>
+                <a href="../views/adminDashboard.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Mi cuenta</a>
             </header>
 
       <!--------SCRIPT MENU RESPONSIVE------->
@@ -71,9 +71,8 @@
         menu.classList.toggle('is-active'); // Agrega o quita la clase 'is-active' para mostrar u ocultar el menú
         }
 
-</script>
-    
- 
+</script> 
+
 
 <!----------PANEL ADMINISTRACION INTRANET----->
 
@@ -82,15 +81,15 @@
         <div class="contenedor__row">
             <div class="user__nav-section user__nav-section--heading col-4-12 col-3-12-sm">
                 <h4 class="heading heading-secondary">
-                    <?php //echo $_SESSION['nombre'];?>
+                    <?php $_SESSION['nombre'];?>
                 </h4>
             </div>
             <div class="user__nav-section user__nav-section--doc col-3-12 col-2-12-sm">
-                <a href="adminDashboard.php?navMenu=presupuestos"><i class="fas fa-file"></i>
+                <a href="usuarioDashboard.php?navMenu=presupuestos"><i class="fas fa-file"></i>
                 <p>Documentos</p></a>
             </div>
             <div class="user__nav-section user__nav-section--doc col-2-12 col-2-12-sm">
-                <a href="adminDashboard.php?navMenu=datos"> <i class="fas fa-user"></i>
+                <a href="usuarioDashboard.php?navMenu=datos"> <i class="fas fa-user"></i>
                 <p>Mis datos</p></a>
             </div>           
             <div class="user__nav-section user__nav-section--doc col-2-12 col-1-12-sm">
@@ -102,16 +101,80 @@
 <!------CONTENIDO------>
 
 <main class="contenedor">
+
+  <!---------BUSCADOR------->
    
     <section class="userContent">
-        <div class="contenedor__row">
+       
+            <form class="presupuestos__nav contenedor__row" method="get" action="adminDashboard.php">
+                
+                <div class="col-3-12 col-6-12-sm">                
+                    <label for="tipo_trabajo">Tipo de trabajo</label>
+                    <input type="text" name="tipo_trabajo" id="tipo_trabajo"/>
+                </div>
+                <div class="col-3-12 col-4-12-sm">                
+                    <label for="estado">Estado</label>
+                    <input type="text" name="estado" id="estado"/>
+                </div>
+                <div class="col-2-12 col-4-12-sm">                
+                    <label for="fechaEmision">Fecha Emisión</label>
+                    <input type="text" name="fechaEmision" id="fechaEmision"/>
+                </div>
+                <div class="col-1-12 col-1-12-sm"> 
+                    <button type="submit" name="btnBuscar" id="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+            </form>
+         <!-------------VISTA SEGÚN LOS DATOS ENVIADOS-------------->  
+           
+       <?php
+        require "../controllers/presupuesto_Controller.php";
+
+           if(isset($_REQUEST['navMenu']) && $_REQUEST['navMenu'] == 'presupuestos'){
+
+                if(isset($_REQUEST['orderBy']) && ($_REQUEST['orderDirection'])){
+                    $orderBy = $_REQUEST['orderBy'];
+                    $orderDirection = $_REQUEST['orderDirection'];
+    
+                    mostrarPresupuestosOrdenados($orderBy, $orderDirection);
+                } else{     
+                   mostrarPresupuestos();
+                }
+            }elseif(isset($_REQUEST['btnBuscar'])) {
+                if(isset($_REQUEST['nombre_cliente'])){
+                   $nombreCliente = $_REQUEST['nombre_cliente'];
+                }
+                if(isset($_REQUEST['tipo_trabajo'])){
+                    $tipoTrabajo = $_REQUEST['tipo_trabajo'];
+                }
+                if(isset($_REQUEST['fechaEmision'])){
+                     $fechaEmision = $_REQUEST['fechaEmision'];
+                }
+                if(isset($_REQUEST['estado'])){
+                    $estado = $_REQUEST['estado'];
+                }
+                    mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo, $fechaEmision, $estado);                   
+
+           }else{
+            if(isset($_REQUEST['orderBy']) && ($_REQUEST['orderDirection'])){
+                $orderBy = $_REQUEST['orderBy'];
+                $orderDirection = $_REQUEST['orderDirection'];
+   
+                mostrarPresupuestosOrdenados($orderBy, $orderDirection);
+              } else{     
+               mostrarPresupuestos();
+             }
+        
+           }
+
+      ?>
 
 
 
 
-
-
-        </div>
+        
     </section>
 
 </main>

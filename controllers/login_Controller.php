@@ -1,7 +1,5 @@
 <?php
 
-
-
 // Verificar si el formulario de inicio de sesión se ha enviado
 if (isset($_REQUEST['entrar'])) {
     login();
@@ -26,7 +24,8 @@ function login(){
         $stmt = $con->prepare($query);
         $stmt->execute($params);
         $result = $stmt->rowCount();
-        if ($result > 0) {
+        $hash = password_hash($pwd, PASSWORD_DEFAULT);
+        if ($result > 0 && password_verify($pwd, $hash)) {
             $user = $stmt->fetch();
             $rol = $user['rol'];
 

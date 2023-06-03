@@ -5,11 +5,18 @@
             <td>ID</td>
             <td></td>
             <td>Cliente</td>            
-            <td>Fecha Solicitud</td>
-            <td>Fecha Emisión</td>
+            <td>Fecha Solicitud
+                 <a href="adminDashboard.php?orderBy=fecha_solicitud&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
+                 <a href="adminDashboard.php?orderBy=fecha_solicitud&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
+            </td>
+            <td>Fecha Emisión
+                <a href="adminDashboard.php?orderBy=fechaEmision&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
+                 <a href="adminDashboard.php?orderBy=fechaEmision&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
+            </td>
             <td>Tipo de trabajo</td>           
             <td>Estado</td>
             <td>Importe</td>
+            <td></td>
         </tr>
     <?php
         foreach ($presupuestos as $fila) {
@@ -32,3 +39,13 @@
     ?>
     </table>
 </div>
+<script>
+    const orderArrows = document.querySelectorAll('.order-arrow');
+
+    orderArrows.forEach(arrow => {
+        arrow.addEventListener('click', () => {
+            arrow.classList.toggle('asc');
+            arrow.classList.toggle('desc');
+        });
+    });
+</script>
