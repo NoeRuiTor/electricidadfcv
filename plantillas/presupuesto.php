@@ -59,11 +59,11 @@
            </div>
 
            <div id="errores"> </div>
-           <?php if (!empty($mensajeError)) : ?>
-                <div id="errores">
-                    <?php echo $mensajeError; ?>
-                </div>
-             <?php endif;?>
+           <?php if (isset($_REQUEST['error'])) : ?>
+                 <div id="errores">
+                    <?php echo $_REQUEST['error']; ?>
+                  </div>
+            <?php endif;?>
            
            <div class="presupuesto__formulario-boton">
                <input type="submit" class="btn btn--enviar" id="btenviar" name="enviar" value="Enviar">

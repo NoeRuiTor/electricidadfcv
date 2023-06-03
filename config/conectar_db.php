@@ -1,5 +1,5 @@
 <?php
-
+/*
 use PDO;
 use PDOException;
 use RuntimeException;
@@ -64,7 +64,7 @@ function conectar_db($bd) {
     }
 }
 
-/*
+*/
 
 
 $bd = 'electricidadfcv';
@@ -87,5 +87,5 @@ function conectar_db($bd){
   
   return $conn;
 }
-*/
+
 ?>
