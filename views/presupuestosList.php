@@ -1,3 +1,29 @@
+<form class="presupuestos__nav contenedor__row" method="get" action="adminDashboard.php">
+            <div class="col-3-12 col-4-12-sm">                
+                <label for="nombre_cliente">Nombre cliente</label>
+                <input type="text" name="nombre_cliente" id="nombre_cliente"/>
+            </div>
+            <div class="col-3-12 col-4-12-sm">                
+                <label for="tipo_trabajo">Tipo de trabajo</label>
+                <input type="text" name="tipo_trabajo" id="tipo_trabajo"/>
+            </div>
+            <div class="col-2-12 col-4-12-sm">                
+                <label for="estado">Estado</label>
+                <input type="text" name="estado" id="estado"/>
+            </div>
+            <div class="col-2-12 col-4-12-sm">                
+                <label for="fechaEmision">Fecha Emisión</label>
+                <input type="text" name="fechaEmision" id="fechaEmision"/>
+            </div>
+            <div class="col-1-12 col-1-12-sm"> 
+                 <button type="submit" name="btnBuscar" id="search-button">
+                    <i class="fas fa-search"></i>
+                 </button>
+            </div>
+             
+        </form>
+        
+
 <div class="presupuestos__tabla contenedor__row">
 
     <table class="col-12-12 col-10-12-sm">
@@ -32,8 +58,8 @@
         echo "<td>{$fila["fechaEmision"]}</td>";
         echo "<td>{$fila["tipo_trabajo"]}</td>";
         echo "<td class='estado estado-{$fila["nombre_estado"]}'><p>{$fila["nombre_estado"]}</p></td>";
-        echo "<td>{$fila["importe"]}</td>";
-        echo "<td><a href='editarPresupuesto.php?id='{$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";
+        echo "<td>{$fila["importe"]}€</td>";
+        echo "<td><a href='adminDashboard.php?idPresu={$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";
         echo "</tr>";
         }
     ?>

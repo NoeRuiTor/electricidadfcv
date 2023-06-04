@@ -1,7 +1,28 @@
 <?php
+/*print_r($_REQUEST);
+print_r($_FILES);*/
+
 if(isset($_REQUEST['enviar'])){
 // Llamar al controlador para procesar el formulario
     procesarFormulario();
+}
+if(isset($_REQUEST['modifica'])){
+    // Llamar al controlador para modificar presupuesto
+    modificarDatosPresupuesto();
+}
+
+if(isset($_REQUEST['aceptar'])){
+    // Llamar al controlador para modificar presupuesto
+    $estado = '4';
+    $idPresu = $_REQUEST['id'];
+
+    cambiarEstadoPresu($idPresu,$estado);
+}
+
+if(isset($_REQUEST['rechazar'])){
+    $estado = '5';
+    $idPresu = $_REQUEST['id'];
+    cambiarEstadoPresu($idPresu,$estado);
 }
 function generar_contrasena($longitud) {
     $caracteres = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+';
@@ -36,7 +57,7 @@ require_once '../models/presupuesto_Model.php';
     // Validar los datos
     if (validarDatos($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo,$privacidad)) {
         // Insertar en la base de datos
-        $insertaDatos = insertarSolicitudPresupuesto($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo,$fechaActual);
+        $insertaDatos = insertarSolicitudPresupuesto($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo,$fechaActual,$pwd);
         if ($insertaDatos) {
             //Si existe archivo adjunto
             if( !empty($_FILES['adjunto']) && $_FILES['adjunto']['size']>0) { 
@@ -44,27 +65,35 @@ require_once '../models/presupuesto_Model.php';
                 $tamanio = $_FILES['adjunto']['size'];
                 $maxTamanio = 5 * 1024 * 1024; // 5 MB en bytes
                 if ($tamanio > $maxTamanio) {
-                    $mensajeError = 'El archivo adjunto es demasiado grande.';
+                    $error = 'El archivo adjunto es demasiado grande.';
+                    header("Location: ../public/presupuestos.php?error=$error");
+                     exit();
                 }else{
                  enviarCorreoconAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion,$archivo);
                 }
 
             }else{
                 enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion);
-            }       
+              }    
             // Redirigir a una página de éxito
             header('Location: ../public/success.php');
             exit();
             } else {
             // Mostrar un mensaje de error
-            echo 'Error al insertar en la base de datos';
+            $error = 'Error al insertar en la base de datos';
+            header("Location: ../public/presupuestos.php?error=$error");
+            exit();
             }
     } else {
             // Mostrar un mensaje de error
-          echo 'Datos inválidos';
+          $error = 'Datos inválidos';
+          header("Location: ../public/presupuestos.php?error=$error");
+          exit();
      }
    
 }
+
+
 
 function validarDatos($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo){
   
@@ -83,9 +112,7 @@ function validarDatos($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo){
     if (!isset($telefono) || empty($telefono)){
         return false;
     }
-    if (!isset($nombre) || empty($nombre) ){
-        return false;
-    }
+   
     if ($tipoTrabajo !== "instalacion_electrica_nueva" && $tipoTrabajo !== "reforma_instalacion" && $tipoTrabajo !== "iluminacion_led"
        &&  $tipoTrabajo !== "paneles_solares" && $tipoTrabajo !== "punto_recarga" && $tipoTrabajo !== "otros"){
         return false;
@@ -133,7 +160,9 @@ function enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $
     if (!$mailSent) {
         $lastError = error_get_last();
         $errorMessage = $lastError['message']; // Obtener el mensaje de error
-        echo "Hubo un error al enviar el correo electrónico: " . $errorMessage;
+        $error = "Hubo un error al enviar el correo electrónico: " . $errorMessage;
+        header("Location: ../public/presupuestos.php?error=$error");
+        exit();
     }
 }
 
@@ -156,7 +185,9 @@ function enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabaj
     // Enviar el correo electrónico
     $mailSent = mail($to, $subject, $message);
     if (!$mailSent) {        
-       echo "Hubo un error al enviar el correo electrónico: ";
+       $error = "Hubo un error al enviar el correo electrónico: ";
+       header("Location: ../public/presupuestos.php?error=$error");
+        exit();
     }
 }
 
@@ -169,7 +200,7 @@ function mostrarPresupuestos() {
 
 function mostrarPresupuestosUsuario($idUser) {
     require '../models/presupuesto_Model.php';
-    $presupuestosUser = obtenerPresupuestosUsuario($idUser);
+    $presupuestos = obtenerPresupuestosUsuario($idUser);
     include("../views/presupuestosListUser.php");
   }
 
@@ -184,5 +215,86 @@ function mostrarPresupuestosOrdenados($orderBy, $orderDirection) {
     $presupuestos = buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmision, $estado);
     include("../views/presupuestosList.php");
   }
+ 
+  function mostrarPresupuestosOrdenadosCliente($orderBy, $orderDirection, $idUser) {
+    require '../models/presupuesto_Model.php';
+    $presupuestos = obtenerPresupuestosOrdenadosCliente($orderBy, $orderDirection, $idUser);
+    include("../views/presupuestosListUser.php");
+  }
 
+  function mostrarPresupuestosEncontradosCliente($nombreCliente, $tipoTrabajo, $fechaEmision, $estado, $idUser) {
+    require '../models/presupuesto_Model.php';
+    $presupuestos = buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmision, $estado,$idUser);
+    include("../views/presupuestosListUser.php");
+  }
+
+  function mostrarDetallePresupuesto($idPresu){
+    require '../models/presupuesto_Model.php';
+    $presupuesto = consultaPresupuesto($idPresu);
+    include("../views/editarPresupuesto.php");
+    
+  }
+
+  function mostrarDetallePresupuestoCliente($idPresu){
+    require '../models/presupuesto_Model.php';
+    $presupuesto = consultaPresupuesto($idPresu);
+    include("../views/gestionPresuCliente.php");
+    
+  }
+
+ function modificarDatosPresupuesto(){
+    require_once "../models/presupuesto_Model.php";
+    $estado = '3';
+    $fechaEmision = $_REQUEST['fechaEmision'];
+    $importe = $_REQUEST['importe'];
+    $fechaVencimiento = $_REQUEST['fechaVencimiento'];
+    $numPresu = $_REQUEST['num_presupuesto'];
+    $documento = $_FILES['adjunto']['name'];
+    $idPresu = $_REQUEST['id'];
+
+    // Validar los campos obligatorios
+    if (empty($fechaEmision) || empty($importe) || empty($documento)) {
+        // Mostrar un mensaje de error o redirigir al formulario con un mensaje de error
+        $error = "Por favor, complete todos los campos obligatorios.";
+        header("location:../views/adminDashboard.php?error=$error");
+        exit();
+    }
+        $rutaArchivo = $_FILES['adjunto']['tmp_name'];
+        // Generar el nuevo nombre del archivo con el ID del presupuesto
+        $nuevoNombreArchivo = $idPresu . '_' . $documento;
+        // Ruta de destino para guardar el archivo
+         $rutaDestino = '../public/presupuestos/' . $nuevoNombreArchivo;
+    
+        // Mover el archivo a la carpeta de destino
+        move_uploaded_file($rutaArchivo, $rutaDestino);
+
+    // Procesar los datos y actualizar la base de datos
+    $modificado = modificaPresupuesto($idPresu, $fechaEmision, $importe, $fechaVencimiento, $numPresu, $documento, $estado);
+    if($modificado){
+        $mensaje='El presupuesto se ha editado correctamente';
+        header("location:../views/adminDashboard.php?mensaje=$mensaje");
+        exit();
+    }else{
+      $error = 'Ha habido algún error en la inserción de los datos';
+      header("location:../views/adminDashboard.php?error=$error");
+      exit();
+    }
+  
+}
+
+  function cambiarEstadoPresu($idPresu,$estado){
+    require_once "../models/presupuesto_Model.php";   
+
+    $aceptado = modificaEstadoPresu($idPresu,$estado);
+   
+    if($aceptado){
+        $mensaje='El presupuesto se ha editado correctamente';
+        header("location:../views/adminDashboard.php?mensaje=$mensaje");
+        exit();
+    }else{
+      $error = 'Ha habido algún error en la inserción de los datos';
+      header("location:../views/adminDashboard.php?error=$error");
+      exit();
+    }
+  }
 ?>

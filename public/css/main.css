@@ -852,6 +852,7 @@ body {
   text-align: center;
   font-size: 2.5rem;
   font-style: italic;
+  padding: 1.5rem;
 }
 
 .custom-alert {
@@ -975,6 +976,40 @@ body {
 }
 .presupuestos__tabla table #edit {
   width: 2rem;
+}
+
+.formEdit {
+  background-color: #FFFFFF;
+  width: 90%;
+  height: 40rem;
+  padding: 2rem 5rem;
+  box-shadow: 0.3em 0.3em 1em 0.5em rgba(0, 0, 0, 0.3);
+}
+.formEdit .presupuesto__modifica-heading {
+  align-self: center;
+  justify-self: center;
+}
+.formEdit .presupuesto__modifica-form {
+  width: 100%;
+}
+.formEdit .presupuesto__modifica-form .presupuesto__modifica-input > input {
+  border-radius: 5px;
+  text-align: right;
+  padding: 0.5rem;
+}
+.formEdit .presupuesto__modifica-form .presupuesto__modifica-input {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.formEdit .presupuesto__modifica-form .presupuesto__modifica-input div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.formEdit .presupuesto__modifica-form .condiciones {
+  font-style: italic;
 }
 
 .contenedor {

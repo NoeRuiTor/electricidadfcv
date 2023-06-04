@@ -4,6 +4,7 @@
  
  include_once("../config/funciones.php");
 
+ 
 ?>
 
 <!DOCTYPE html>
@@ -112,30 +113,18 @@
     <!---------BUSCADOR------->
 
     <section class="userContent">
-        <form class="presupuestos__nav contenedor__row" method="get" action="adminDashboard.php">
-            <div class="col-3-12 col-4-12-sm">                
-                <label for="nombre_cliente">Nombre cliente</label>
-                <input type="text" name="nombre_cliente" id="nombre_cliente"/>
-            </div>
-            <div class="col-3-12 col-4-12-sm">                
-                <label for="tipo_trabajo">Tipo de trabajo</label>
-                <input type="text" name="tipo_trabajo" id="tipo_trabajo"/>
-            </div>
-            <div class="col-2-12 col-4-12-sm">                
-                <label for="estado">Estado</label>
-                <input type="text" name="estado" id="estado"/>
-            </div>
-            <div class="col-2-12 col-4-12-sm">                
-                <label for="fechaEmision">Fecha Emisión</label>
-                <input type="text" name="fechaEmision" id="fechaEmision"/>
-            </div>
-            <div class="col-1-12 col-1-12-sm"> 
-                 <button type="submit" name="btnBuscar" id="search-button">
-                    <i class="fas fa-search"></i>
-                 </button>
-            </div>
-             
-        </form>
+        
+        <div id="errores"> </div>
+           <?php if (isset($_REQUEST['error'])) : ?>
+                 <div id="errores">
+                    <?php echo $_REQUEST['error']; ?>
+                  </div>
+        <?php endif;?>
+        <?php if (isset($_REQUEST['mensaje'])) : ?>
+              <div id="mensaje">
+              <?php echo $_REQUEST['mensaje']; ?>
+              </div>
+        <?php endif;?>
 
       <!-------------VISTA SEGÚN LOS DATOS ENVIADOS-------------->  
            
@@ -166,6 +155,12 @@
                     $estado = $_REQUEST['estado'];
                 }
                     mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo, $fechaEmision, $estado);                   
+
+           }elseif(isset($_REQUEST['idPresu'])){
+               $idPresu = $_REQUEST['idPresu'];
+               
+                  mostrarDetallePresupuesto($idPresu);           
+              
 
            }else{
             if(isset($_REQUEST['orderBy']) && ($_REQUEST['orderDirection'])){

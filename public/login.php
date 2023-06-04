@@ -1,7 +1,17 @@
 <?php
 
+session_start();
 include_once("../config/funciones.php");
 
+if(isset($_SESSION['rol'])){
+    if($_SESSION['rol'] == 'usuario'){
+        header('location:../views/usuarioDashboard.php');
+        exit();
+    }else{
+        header('location:../views/adminDashboard.php');
+        exit();
+    }
+}
 
 ?>
 
@@ -47,7 +57,10 @@ include_once("../config/funciones.php");
                     
                       </ul>          
                 </nav>
-                <a href="login.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso usuarios</a>
+                <a href="login.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">
+                <?php if(isset($_SESSION['autentificado']) && $_SESSION['autentificado'] == 'OK'){echo 'Mi cuenta';}
+                else{echo 'Acceso usuarios'; }?>
+                </a>
             </header>
 
       <!--------SCRIPT MENU RESPONSIVE------->

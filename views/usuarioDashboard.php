@@ -1,9 +1,10 @@
 <?php
 
  require('../config/seguridad.php');
- 
+
  include_once("../config/funciones.php");
 
+ $idUser=$_SESSION['id'];
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +47,7 @@
                     
                       </ul>          
                 </nav>
-                <a href="../views/adminDashboard.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Mi cuenta</a>
+                <a href="../views/usuarioDashboard.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Mi cuenta</a>
             </header>
 
       <!--------SCRIPT MENU RESPONSIVE------->
@@ -81,7 +82,7 @@
         <div class="contenedor__row">
             <div class="user__nav-section user__nav-section--heading col-4-12 col-3-12-sm">
                 <h4 class="heading heading-secondary">
-                    <?php $_SESSION['nombre'];?>
+                    <?php echo $_SESSION['nombre'];?>
                 </h4>
             </div>
             <div class="user__nav-section user__nav-section--doc col-3-12 col-2-12-sm">
@@ -106,27 +107,7 @@
    
     <section class="userContent">
        
-            <form class="presupuestos__nav contenedor__row" method="get" action="adminDashboard.php">
-                
-                <div class="col-3-12 col-6-12-sm">                
-                    <label for="tipo_trabajo">Tipo de trabajo</label>
-                    <input type="text" name="tipo_trabajo" id="tipo_trabajo"/>
-                </div>
-                <div class="col-3-12 col-4-12-sm">                
-                    <label for="estado">Estado</label>
-                    <input type="text" name="estado" id="estado"/>
-                </div>
-                <div class="col-2-12 col-4-12-sm">                
-                    <label for="fechaEmision">Fecha Emisión</label>
-                    <input type="text" name="fechaEmision" id="fechaEmision"/>
-                </div>
-                <div class="col-1-12 col-1-12-sm"> 
-                    <button type="submit" name="btnBuscar" id="search-button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-                
-            </form>
+           
          <!-------------VISTA SEGÚN LOS DATOS ENVIADOS-------------->  
            
        <?php
@@ -138,14 +119,12 @@
                     $orderBy = $_REQUEST['orderBy'];
                     $orderDirection = $_REQUEST['orderDirection'];
     
-                    mostrarPresupuestosOrdenados($orderBy, $orderDirection);
+                    mostrarPresupuestosOrdenadosCliente($orderBy, $orderDirection,$idUser);
                 } else{     
-                   mostrarPresupuestos();
+                    mostrarPresupuestosUsuario($idUser);
                 }
             }elseif(isset($_REQUEST['btnBuscar'])) {
-                if(isset($_REQUEST['nombre_cliente'])){
-                   $nombreCliente = $_REQUEST['nombre_cliente'];
-                }
+               
                 if(isset($_REQUEST['tipo_trabajo'])){
                     $tipoTrabajo = $_REQUEST['tipo_trabajo'];
                 }
@@ -155,16 +134,21 @@
                 if(isset($_REQUEST['estado'])){
                     $estado = $_REQUEST['estado'];
                 }
-                    mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo, $fechaEmision, $estado);                   
+                    mostrarPresupuestosEncontradosCliente($nombreCliente, $tipoTrabajo, $fechaEmision, $estado,$idUser);                   
 
+           }elseif(isset($_REQUEST['idPresu'])){
+            $idPresu = $_REQUEST['idPresu'];
+            
+               mostrarDetallePresupuestoCliente($idPresu);
+           
            }else{
             if(isset($_REQUEST['orderBy']) && ($_REQUEST['orderDirection'])){
                 $orderBy = $_REQUEST['orderBy'];
                 $orderDirection = $_REQUEST['orderDirection'];
    
-                mostrarPresupuestosOrdenados($orderBy, $orderDirection);
+                mostrarPresupuestosOrdenadosCliente($orderBy, $orderDirection,$idUser);
               } else{     
-               mostrarPresupuestos();
+                mostrarPresupuestosUsuario($idUser);
              }
         
            }

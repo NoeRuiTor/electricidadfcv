@@ -29,6 +29,7 @@ function login(){
             $user = $stmt->fetch();
             $rol = $user['rol'];
 
+
             // Inicio de sesión exitoso, establecer el tipo de usuario en la sesión
             $_SESSION['rol'] = $rol;
 
@@ -37,7 +38,8 @@ function login(){
                 $_SESSION['usuario'] = $email;  
                 $_SESSION['nombre'] = $user['nombre'];               
                 $_SESSION['autentificado'] = "OK";
-                $_SESSION['id'] = $user['id'];   
+                $_SESSION['id'] = $user['id']; 
+                $_SESSION['rol'] = $rol ; 
 
                 // Redirigir al panel de administrador
                 header('Location: ../views/adminDashboard.php');
@@ -48,6 +50,7 @@ function login(){
                 $_SESSION['nombre'] = $user['nombre'];               
                 $_SESSION['autentificado'] = "OK";
                 $_SESSION['id'] = $user['id']; 
+                $_SESSION['rol'] = $rol;
                 // Redirigir al panel de usuario normal
                 header('Location: ../views/usuarioDashboard.php');
                 exit();
@@ -101,7 +104,7 @@ function logout() {
     session_start();
     $_SESSION = array(); 
     session_destroy();
-    header('Location: ../public/login.php');
+    header('Location: ../public/index.php');
     exit();
 }
 

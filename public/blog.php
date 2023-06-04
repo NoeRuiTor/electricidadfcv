@@ -1,6 +1,6 @@
 
 <?php
-
+include('../config/seguridad.php');
 include_once("../config/funciones.php");
 
 
@@ -46,7 +46,10 @@ include_once("../config/funciones.php");
                     
                       </ul>          
                 </nav>
-                <a href="login.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso usuarios</a>
+                <a href="login.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">
+                  <?php if(isset($_SESSION['autentificado']) && $_SESSION['autentificado'] == 'OK'){echo 'Mi cuenta';}
+                  else{echo 'Acceso usuarios'; }?>
+                </a>
             </header>
       
 <script>
