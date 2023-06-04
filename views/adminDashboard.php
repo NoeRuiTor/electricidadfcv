@@ -107,8 +107,10 @@
     
  <!------CONTENIDO------>
 
-<main class="contenedor">    
-    
+<main class="contenedor">
+
+    <!---------BUSCADOR------->
+
     <section class="userContent">
         <form class="presupuestos__nav contenedor__row" method="get" action="adminDashboard.php">
             <div class="col-3-12 col-4-12-sm">                
@@ -135,7 +137,7 @@
              
         </form>
 
-        
+      <!-------------VISTA SEGÚN LOS DATOS ENVIADOS-------------->  
            
        <?php
         require "../controllers/presupuesto_Controller.php";
