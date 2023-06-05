@@ -33,7 +33,7 @@
                         <i class="fas fa-bars"></i>
                 </div> 
                 <div class="menu-login">
-                 <a href="login.php"><i class="fas fa-sign-in-alt"></i></a>
+                 <a href="../views/adminDashboard.php"><i class="fas fa-sign-in-alt"></i></a>
 
                 </div> 
                 <nav class="col-6-12 header__nav nav" id="bars">
@@ -89,7 +89,7 @@
                 <p>Documentos</p></a>
             </div>
             <div class="user__nav-section user__nav-section--doc col-2-12 col-2-12-sm">
-                <a href="adminDashboard.php?navMenu=clientes"> <i class="fas fa-user"></i>
+                <a href="adminDashboardUsuarios.php?navMenu=clientes"> <i class="fas fa-user"></i>
                 <p>Clientes</p></a>
             </div>
             <div class="user__nav-section user__nav-section--doc col-1-12 col-2-12-sm">

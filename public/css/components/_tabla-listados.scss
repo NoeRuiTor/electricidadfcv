@@ -1,6 +1,6 @@
 //TABLA LISTADO PRESUPUESTOS
 
-    .presupuestos__tabla {
+    .tablaListados {
         width: 90%;
         
 
@@ -18,6 +18,11 @@
 
      .tabla-fila:nth-child(even) {
         background-color: $colorBlanco;
+    }
+    .tabla-fila{
+        .nombre-cli{
+            color:$color4;
+        }
     }
 
      .tabla-head {
@@ -70,6 +75,20 @@
         p{
             background-color: $color1;
             color: $colorNegro;          
+        }
+    }
+
+    .estado-activo {
+        p{
+            background-color: green;
+            color: $colorBlanco;
+        }
+    }
+
+    .estado-inactivo {
+        p{
+            background-color: red;
+            color: $colorBlanco;
         }
     }
     #edit{

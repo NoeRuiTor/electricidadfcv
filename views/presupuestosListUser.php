@@ -1,4 +1,4 @@
-<form class="presupuestos__nav contenedor__row" method="get" action="adminDashboard.php">
+<form class="buscadorListados contenedor__row" method="get" action="adminDashboard.php">
                 
                 <div class="col-3-12 col-6-12-sm">                
                     <label for="tipo_trabajo">Tipo de trabajo</label>
@@ -21,7 +21,7 @@
             </form>
 
 
-<div class="presupuestos__tabla contenedor__row">
+<div class="tablaListados contenedor__row">
 
     <table class="col-12-12 col-10-12-sm">
         <tr class="tabla-head">

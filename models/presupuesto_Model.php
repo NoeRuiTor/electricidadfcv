@@ -1,7 +1,7 @@
 <?php
 
 
-function insertarSolicitudPresupuesto($nombre,$ciudad,$email,$tipoTrabajo,$pwd,$fechaActual,$telefono,$cpostal){
+/*function insertarSolicitudPresupuesto($nombre,$ciudad,$email,$tipoTrabajo,$pwd,$fechaActual,$telefono,$cpostal){
     require("../config/conectar_db.php");
     $con = conectar_db($bd);
 
@@ -44,7 +44,7 @@ function insertarSolicitudPresupuesto($nombre,$ciudad,$email,$tipoTrabajo,$pwd,$
         return $error;
     }
     
-}
+}*/
 
 function listarPresupuestos(){
     require("../config/conectar_db.php");  

@@ -922,59 +922,70 @@ body {
   border-left: 0.1rem #FFFFFF solid;
 }
 
-.presupuestos__tabla {
+.tablaListados {
   width: 90%;
 }
-.presupuestos__tabla table {
+.tablaListados table {
   border-collapse: collapse;
   width: 100%;
 }
-.presupuestos__tabla table td {
+.tablaListados table td {
   border: 0.1 solid #323535;
   padding: 0.8rem;
   text-align: center;
 }
-.presupuestos__tabla table .tabla-fila:nth-child(even) {
+.tablaListados table .tabla-fila:nth-child(even) {
   background-color: #FFFFFF;
 }
-.presupuestos__tabla table .tabla-head {
+.tablaListados table .tabla-fila .nombre-cli {
+  color: #2D86C0;
+}
+.tablaListados table .tabla-head {
   font-weight: bold;
   border-bottom: 0.2rem solid #323535;
 }
-.presupuestos__tabla table .tabla-head td {
+.tablaListados table .tabla-head td {
   font-size: 1.8rem;
 }
-.presupuestos__tabla table .tabla-head td i {
+.tablaListados table .tabla-head td i {
   color: #000000;
 }
-.presupuestos__tabla table .icono-descarga {
+.tablaListados table .icono-descarga {
   display: inline-block;
   width: 2rem;
   background-image: url("../../img/download.svg");
   background-size: cover;
 }
-.presupuestos__tabla table .estado p {
+.tablaListados table .estado p {
   margin: 0.2rem;
   padding: 0.5rem 0;
   border-radius: 1rem;
 }
-.presupuestos__tabla table .estado-pendiente p {
+.tablaListados table .estado-pendiente p {
   background-color: #2D86C0;
   color: #FFFFFF;
 }
-.presupuestos__tabla table .estado-aprobado p {
+.tablaListados table .estado-aprobado p {
   background-color: green;
   color: #FFFFFF;
 }
-.presupuestos__tabla table .estado-rechazado p {
+.tablaListados table .estado-rechazado p {
   background-color: red;
   color: #FFFFFF;
 }
-.presupuestos__tabla table .estado-solicitado p {
+.tablaListados table .estado-solicitado p {
   background-color: #FFDE51;
   color: #000000;
 }
-.presupuestos__tabla table #edit {
+.tablaListados table .estado-activo p {
+  background-color: green;
+  color: #FFFFFF;
+}
+.tablaListados table .estado-inactivo p {
+  background-color: red;
+  color: #FFFFFF;
+}
+.tablaListados table #edit {
   width: 2rem;
 }
 
@@ -1721,10 +1732,10 @@ body {
   font-size: 1.2rem;
   padding: 2rem;
 }
-.userContent .presupuestos__nav div {
+.userContent .buscadorListados div {
   display: flex;
   flex-direction: column;
 }
-.userContent .presupuestos__tabla {
+.userContent .tablaListados {
   margin-top: 2rem;
 }/*# sourceMappingURL=main.css.map */
