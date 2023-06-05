@@ -1,11 +1,36 @@
 <?php
-/*print_r($_REQUEST);
-print_r($_FILES);*/
+
 
 if(isset($_REQUEST['enviar'])){
 // Llamar al controlador para procesar el formulario
-    procesarFormulario();
+  $nombre = $_REQUEST['nombre'];
+  $email = $_REQUEST['email'];
+  $telefono = $_REQUEST['telefono'];
+  $ciudad = $_REQUEST['ciudad'];
+  $cpostal =  $_REQUEST['cpostal'];
+  $tipoTrabajo = $_REQUEST['trabajo'];
+  
+  if(isset($_REQUEST['descripción'])){
+    $descripcion = $_REQUEST['descripción'];
+  }
+  $fechaActual = date('Y-m-d');
+  $pwd = generar_contrasena(6);
+
+    procesaFormulario($nombre,$email,$telefono,$ciudad,$cpostal,$tipoTrabajo,$fechaActual,$pwd);
+    
+    //Si se procesa el formulario correctamente, enviar email también email con los datos
+    
+    if(procesaFormulario($nombre,$email,$telefono,$ciudad,$cpostal,$tipoTrabajo,$fechaActual,$pwd)){
+      if(!empty($_FILES['adjunto']['name']) && $_FILES['adjunto']['size']>0){
+        $documento = $_FILES['adjunto']['name'];
+        enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion,$documento);
+      }else{
+        enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion);
+      }
+    }
+
 }
+
 if(isset($_REQUEST['modifica'])){
     // Llamar al controlador para modificar presupuesto
     modificarDatosPresupuesto();
@@ -37,62 +62,54 @@ function generar_contrasena($longitud) {
     return $contrasena;
 }
 
+function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoTrabajo, $fechaActual, $pwd) {
+  if (validarDatos($nombre, $email, $telefono, $ciudad, $cpostal, $tipoTrabajo) == true) {
+    require("../config/conectar_db.php");
+    $conn = conectar_db($bd);
+
+    // Iniciar una transacción
+    $conn->beginTransaction();
+
+    try {
+      // Inserción en la primera tabla
+      $sql1 = "INSERT INTO usuario (nombre, ciudad, email, psw, telefono, cpostal) VALUES (?, ?, ?, ?, ?,?)";
+      $stmt1 = $conn->prepare($sql1);
+      $stmt1->execute([$nombre, $ciudad, $email, $pwd, $telefono, $cpostal]);
+
+      // Obtener el ID de la última inserción en la primera tabla
+      $idTabla1 = $conn->lastInsertId();
+
+      // Inserción en la segunda tabla relacionada
+      $sql2 = "INSERT INTO presupuesto (id_usuario,tipo_trabajo,fecha_solicitud) VALUES (?, ?, ?)";
+      $stmt2 = $conn->prepare($sql2);
+      $stmt2->execute([$idTabla1, $tipoTrabajo, $fechaActual]);
+
+      // Confirmar la transacción
+      $conn->commit();
+
+      // Redirigir a una página de éxito
+      header('Location: ../public/success.php');
+      exit();
+      
+    } catch (Exception $e) {
+      // En caso de error, deshacer la transacción
+      $conn->rollback();
+      $error = 'Error al insertar en la base de datos'. $e->getMessage();
+      header("Location: ../public/presupuestos.php?error=$error");
+      exit();     
+      
+    }
+
+    // Cerrar la conexión
+    $conn = null;
+  }
+    // Mostrar un mensaje de error
+    $error = 'Datos inválidos';
+    header("Location: ../public/presupuestos.php?error=$error");
+    exit();
 
 
-function procesarFormulario(){
-require_once '../models/presupuesto_Model.php';
-
-    // Obtener los datos del formulario
-    $nombre = $_REQUEST['nombre'];
-    $email = $_REQUEST['email'];
-    $ciudad = $_REQUEST['ciudad'];
-    $telefono = $_REQUEST['telefono'];
-    $cpostal = $_REQUEST['cpostal'];
-    $tipoTrabajo = $_REQUEST['trabajo'];
-    $fechaActual = date('Y-m-d');
-    $privacidad = $_REQUEST['privacidad'];
-    $descripcion = $_REQUEST['descripcion'];
-    $pwd = generar_contrasena(6);
-
-    // Validar los datos
-    if (validarDatos($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo,$privacidad)) {
-        // Insertar en la base de datos
-        $insertaDatos = insertarSolicitudPresupuesto($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo,$fechaActual,$pwd);
-        if ($insertaDatos) {
-            //Si existe archivo adjunto
-            if( !empty($_FILES['adjunto']) && $_FILES['adjunto']['size']>0) { 
-                $archivo = $_FILES['adjunto']['tmp_name'];
-                $tamanio = $_FILES['adjunto']['size'];
-                $maxTamanio = 5 * 1024 * 1024; // 5 MB en bytes
-                if ($tamanio > $maxTamanio) {
-                    $error = 'El archivo adjunto es demasiado grande.';
-                    header("Location: ../public/presupuestos.php?error=$error");
-                     exit();
-                }else{
-                 enviarCorreoconAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion,$archivo);
-                }
-
-            }else{
-                enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion);
-              }    
-            // Redirigir a una página de éxito
-            header('Location: ../public/success.php');
-            exit();
-            } else {
-            // Mostrar un mensaje de error
-            $error = 'Error al insertar en la base de datos';
-            header("Location: ../public/presupuestos.php?error=$error");
-            exit();
-            }
-    } else {
-            // Mostrar un mensaje de error
-          $error = 'Datos inválidos';
-          header("Location: ../public/presupuestos.php?error=$error");
-          exit();
-     }
-   
 }
-
 
 
 function validarDatos($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo){
@@ -113,15 +130,23 @@ function validarDatos($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo){
         return false;
     }
    
-    if ($tipoTrabajo !== "instalacion_electrica_nueva" && $tipoTrabajo !== "reforma_instalacion" && $tipoTrabajo !== "iluminacion_led"
-       &&  $tipoTrabajo !== "paneles_solares" && $tipoTrabajo !== "punto_recarga" && $tipoTrabajo !== "otros"){
+    if ($tipoTrabajo !== "instalacion electrica nueva" && $tipoTrabajo !== "reforma instalacion" && $tipoTrabajo !== "iluminacion led"
+       &&  $tipoTrabajo !== "paneles solares" && $tipoTrabajo !== "punto recarga" && $tipoTrabajo !== "otros"){
         return false;
        }
     return true;
 }
 
-function enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion,$archivo){
-   
+function enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion,$documento){
+             
+                $documento = $_FILES['adjunto']['tmp_name'];
+                $tamanio = $_FILES['adjunto']['size'];
+                $maxTamanio = 5 * 1024 * 1024; // 5 MB en bytes
+                if ($tamanio > $maxTamanio) {
+                    $error = 'El archivo adjunto es demasiado grande.';
+                    header("Location: ../public/presupuestos.php?error=$error");
+                     exit();
+
     $to = 'info@electricidadfcv.com'; // Dirección de correo electrónico a la que se enviará el mensaje
     $subject = 'Nueva solicitud de presupuesto'; // Asunto del correo electrónico
     $boundary = md5(time()); // Generar un valor único para el límite del mensaje
@@ -143,9 +168,9 @@ function enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $
     $message .= "--$boundary\r\n";
     $message .= "Content-Type: application/octet-stream\r\n";
     $message .= "Content-Transfer-Encoding: base64\r\n";
-    $message .= "Content-Disposition: attachment; filename=\"" . basename($archivo) . "\"\r\n";
+    $message .= "Content-Disposition: attachment; filename=\"" . basename($documento) . "\"\r\n";
     $message .= "\r\n";
-    $message .= chunk_split(base64_encode(file_get_contents($archivo)));
+    $message .= chunk_split(base64_encode(file_get_contents($documento)));
     $message .= "\r\n";
     $message .= "--$boundary--";
 
@@ -164,6 +189,7 @@ function enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $
         header("Location: ../public/presupuestos.php?error=$error");
         exit();
     }
+ }
 }
 
 function enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion){
@@ -297,4 +323,5 @@ function mostrarPresupuestosOrdenados($orderBy, $orderDirection) {
       exit();
     }
   }
+  
 ?>

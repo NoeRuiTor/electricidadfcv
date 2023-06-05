@@ -24,9 +24,9 @@ if(isset($_SESSION['rol'])){
     <meta name="description" content="<?php parametro_plantilla("description"); ?>">
     <meta name="Keywords" content="<?php parametro_plantilla("keywords"); ?>"> 
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">    
+    <link rel="stylesheet" href="css/main.css"> 
     <script defer src="js/alertInfo.js" ></script>    
-    <script defer src="js/login.js" ></script>   
-    <link rel="stylesheet" href="css/main.css">     
+    <script defer src="js/login.js" ></script>       
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<title><?php parametro_plantilla("titulo_pagina"); ?></title>
     

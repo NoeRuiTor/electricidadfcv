@@ -1,6 +1,6 @@
 
 <?php
-include('../config/seguridad.php');
+session_start();
 include_once("../config/funciones.php");
 
 

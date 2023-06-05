@@ -56,7 +56,12 @@
         echo "<td>{$fila["tipo_trabajo"]}</td>";
         echo "<td class='estado estado-{$fila["nombre_estado"]}'><p>{$fila["nombre_estado"]}</p></td>";
         echo "<td>{$fila["importe"]}€</td>";  
-        echo "<td><a href='usuarioDashboard.php?idPresu={$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";      
+        if($fila['nombre_estado'] == 'pendiente'){
+            echo "<td><a href='usuarioDashboard.php?idPresu={$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";  
+           
+        }else{
+            echo "<td></td>";
+        }
         echo "</tr>";
         }
     ?>

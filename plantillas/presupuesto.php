@@ -30,19 +30,19 @@
                 <label for="tipo_trabajo">Seleccione tipo de trabajo:</label>
             </div>  
             <div class="presupuesto__formulario-radio"> 
-                <input type="radio" name="trabajo" value="instalacion_electrica_nueva">  Instalación eléctrica de obra nueva
+                <input type="radio" name="trabajo" value="instalacion electrica nueva">  Instalación eléctrica de obra nueva
             </div>
             <div class="presupuesto__formulario-radio">
-                <input type="radio" name="trabajo" value="reforma_instalacion">  Reforma de instalación eléctrica
+                <input type="radio" name="trabajo" value="reforma instalacion">  Reforma de instalación eléctrica
             </div>
             <div class="presupuesto__formulario-radio">
-                <input type="radio" name="trabajo" value="iluminacion_led">  Instalar iluminación LED
+                <input type="radio" name="trabajo" value="iluminacion led">  Instalar iluminación LED
             </div>
             <div class="presupuesto__formulario-radio">
-                <input type="radio" name="trabajo" value="paneles_solares">  Instalar paneles solares
+                <input type="radio" name="trabajo" value="paneles solares">  Instalar paneles solares
             </div>
             <div class="presupuesto__formulario-radio">
-                <input type="radio" name="trabajo" value="punto_recarga">  Instalar punto de recarga
+                <input type="radio" name="trabajo" value="punto recarga">  Instalar punto de recarga
             </div>
             <div class="presupuesto__formulario-radio">
                 <input type="radio" name="trabajo" value="otros">  Otros trabajos de electricidad

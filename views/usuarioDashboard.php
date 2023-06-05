@@ -16,7 +16,8 @@
     <meta name="description" content="<?php parametro_plantilla("description"); ?>">
     <meta name="Keywords" content="<?php parametro_plantilla("keywords"); ?>"> 
     <link rel="shortcut icon" type="image/x-icon" href="../public/img/favicon.png">    
-    <link rel="stylesheet" href="../public/css/main.css">     
+    <link rel="stylesheet" href="../public/css/main.css">
+    <script defer src="js/mensajes.js" ></script>     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<title><?php parametro_plantilla("titulo_pagina"); ?></title>
     
@@ -106,7 +107,17 @@
   <!---------BUSCADOR------->
    
     <section class="userContent">
-       
+         <div id="errores"> </div>
+           <?php if (isset($_REQUEST['error'])) : ?>
+                 <div id="errores">
+                    <?php echo $_REQUEST['error']; ?>
+                </div>
+        <?php endif;?>
+        <?php if (isset($_REQUEST['mensaje'])) : ?>
+              <div id="mensaje">
+              <?php echo $_REQUEST['mensaje']; ?>
+              </div>
+        <?php endif;?>
            
          <!-------------VISTA SEGÚN LOS DATOS ENVIADOS-------------->  
            

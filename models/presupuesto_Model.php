@@ -1,7 +1,7 @@
 <?php
 
 
-function insertarSolicitudPresupuesto($nombre,$ciudad,$cpostal,$telefono,$email,$tipoTrabajo,$fechaActual,$pwd){
+function insertarSolicitudPresupuesto($nombre,$ciudad,$email,$tipoTrabajo,$pwd,$fechaActual,$telefono,$cpostal){
     require("../config/conectar_db.php");
     $con = conectar_db($bd);
 
@@ -40,7 +40,8 @@ function insertarSolicitudPresupuesto($nombre,$ciudad,$cpostal,$telefono,$email,
     } catch (PDOException $e) {
         // Ocurrió un error, deshacer la transacción
         $con->rollback();
-        return false;
+        $error = $e -> getMessage();
+        return $error;
     }
     
 }
