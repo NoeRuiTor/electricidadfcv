@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // Verificar si el formulario de inicio de sesión se ha enviado
 if (isset($_REQUEST['entrar'])) {
@@ -7,6 +8,10 @@ if (isset($_REQUEST['entrar'])) {
     cambiaPassword();
 } elseif (isset($_REQUEST['logout']) && $_REQUEST['logout'] === 'logout') {
     logout();
+} else {
+    $error = "Ha habido problemas al gestionar el login, vuelva a intentarlo";
+    header("location: ../public/login.php?error=$error");
+    exit();
 }
 
 function login(){
@@ -34,7 +39,7 @@ function login(){
             $_SESSION['rol'] = $rol;
 
             if ($rol === 'administrador') {
-                session_start();
+                
                 $_SESSION['usuario'] = $email;  
                 $_SESSION['nombre'] = $user['nombre'];               
                 $_SESSION['autentificado'] = "OK";
@@ -45,7 +50,7 @@ function login(){
                 header('Location: ../views/adminDashboard.php');
                 exit();
             } elseif ($rol === 'usuario') {
-                session_start();
+                
                 $_SESSION['usuario'] = $email;  
                 $_SESSION['nombre'] = $user['nombre'];               
                 $_SESSION['autentificado'] = "OK";
@@ -94,6 +99,7 @@ function cambiaPassword(){
         } else {
         $error = 'ERROR AL INTRODUCIR LOS DATOS, VUELVA A INTENTARLO';
                     header("location:../public/login.php?error=$error");
+                    exit();
         }   
     
 }

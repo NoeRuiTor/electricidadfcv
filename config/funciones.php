@@ -44,7 +44,7 @@ function getGoogleReviews($placeId, $apiKey) {
 
   // Función para encriptar la clave de la API
   
-  $key = 'AIzaSyA06oKEJamlVVmyAmO08VrqSe3I9yN6Ibw';
+  $key = 'AIzaSyBl1SZodGjiwv-vOCIw16sYC67Aqo7CYSY';
   $encryptionKey = 'FCV840729';
 
 function encryptAPIKey($key, $encryptionKey) {
