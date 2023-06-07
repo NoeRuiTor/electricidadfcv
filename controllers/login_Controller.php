@@ -110,7 +110,7 @@ function logout() {
     session_start();
     $_SESSION = array(); 
     session_destroy();
-    header('Location: ../public/index.php');
+    header('Location: ../index.php');
     exit();
 }
 

@@ -1,5 +1,5 @@
 <?php
-include_once("../config/funciones.php");
+include_once("config/funciones.php");
 
 $placeId = 'ChIJHboAG0rcc60RSLukREubePw';
 $apiKey = decryptAPIKey($encryptedKey, $encryptionKey);
