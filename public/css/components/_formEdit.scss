@@ -1,18 +1,19 @@
-//FORMULARIO EDICION DE PRESUPUESTOS Y CLIENTES
+//FORMULARIO EDICION DE PRESUPUESTOS
 
 .formEdit{
     background-color: $colorBlanco;  
-    width: 90%;
-    height: 40rem;
-    padding: 2rem 5rem;
-    box-shadow: 0.3em 0.3em 1em 0.5em rgba(0,0,0,0.3);     
+    width: 90%;   
+    padding:5rem;
+    box-shadow: 0.3em 0.3em 1em 0.5em rgba(0,0,0,0.3);  
+   
     
     .presupuesto__modifica-heading{
        @include centra-items;
     }
     .presupuesto__modifica-form{
       
-        width: 100%;       
+        width: 100%; 
+        height: 90%;      
         
     .presupuesto__modifica-input>input{
             border-radius: 5px;
@@ -28,7 +29,21 @@
                 display:flex;
                 flex-direction: column;
                 margin: 1rem;
+                label{
+                    color:$color4;
+                    font-family: $fuente2;
+                }
+                input{
+                    padding: 0.5rem;
+                    font-family: $fuente1;
+                    font-size: $s-size;
+                }
             }
+            #id{
+                width: 25%;
+            }
+            
+            
         }
     .condiciones{
         font-style: italic;

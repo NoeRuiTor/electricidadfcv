@@ -282,7 +282,7 @@ function mostrarPresupuestosOrdenados($orderBy, $orderDirection) {
     if (empty($fechaEmision) || empty($importe) || empty($documento)) {
         // Mostrar un mensaje de error o redirigir al formulario con un mensaje de error
         $error = "Por favor, complete todos los campos obligatorios.";
-        header("location:../views/adminDashboard.php?error=$error");
+        header("location:../public/adminDashboard.php?error=$error");
         exit();
     }
         $rutaArchivo = $_FILES['adjunto']['tmp_name'];
@@ -298,11 +298,11 @@ function mostrarPresupuestosOrdenados($orderBy, $orderDirection) {
     $modificado = modificaPresupuesto($idPresu, $fechaEmision, $importe, $fechaVencimiento, $numPresu, $documento, $estado);
     if($modificado){
         $mensaje='El presupuesto se ha editado correctamente';
-        header("location:../views/adminDashboard.php?mensaje=$mensaje");
+        header("location:../public/adminDashboard.php?mensaje=$mensaje");
         exit();
     }else{
       $error = 'Ha habido algún error en la inserción de los datos';
-      header("location:../views/adminDashboard.php?error=$error");
+      header("location:../public/adminDashboard.php?error=$error");
       exit();
     }
   
@@ -315,11 +315,11 @@ function mostrarPresupuestosOrdenados($orderBy, $orderDirection) {
    
     if($aceptado){
         $mensaje='El presupuesto se ha editado correctamente';
-        header("location:../views/adminDashboard.php?mensaje=$mensaje");
+        header("location:../public/adminDashboard.php?mensaje=$mensaje");
         exit();
     }else{
       $error = 'Ha habido algún error en la inserción de los datos';
-      header("location:../views/adminDashboard.php?error=$error");
+      header("location:../public/adminDashboard.php?error=$error");
       exit();
     }
   }

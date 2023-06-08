@@ -1,4 +1,4 @@
-<form class="buscadorListados contenedor__row" method="get" action="adminDashboard.php">
+<form class="buscadorListados contenedor__row" method="get" action="../public/usuarioDashboard.php">
                 
                 <div class="col-3-12 col-6-12-sm">                
                     <label for="tipo_trabajo">Tipo de trabajo</label>
@@ -28,12 +28,12 @@
             <td>ID</td>
             <td>PDF</td>                            
             <td>Fecha Solicitud
-                 <a href="usuarioDashboard.php?orderBy=fecha_solicitud&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
-                 <a href="usuarioDashboard.php?orderBy=fecha_solicitud&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
+                 <a href="../public/usuarioDashboard.php?orderBy=fecha_solicitud&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
+                 <a href="../public/usuarioDashboard.php?orderBy=fecha_solicitud&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
             </td>
             <td>Fecha Emisión
-                <a href="usuarioDashboard.php?orderBy=fechaEmision&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
-                 <a href="usuarioDashboard.php?orderBy=fechaEmision&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
+                <a href="../public/usuarioDashboard.php?orderBy=fechaEmision&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
+                 <a href="../public/usuarioDashboard.php?orderBy=fechaEmision&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
             </td>
             <td>Tipo de trabajo</td>           
             <td>Estado</td>
@@ -57,7 +57,7 @@
         echo "<td class='estado estado-{$fila["nombre_estado"]}'><p>{$fila["nombre_estado"]}</p></td>";
         echo "<td>{$fila["importe"]}€</td>";  
         if($fila['nombre_estado'] == 'pendiente'){
-            echo "<td><a href='usuarioDashboard.php?idPresu={$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";  
+            echo "<td><a href='../public/usuarioDashboard.php?idPresu={$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";  
            
         }else{
             echo "<td></td>";

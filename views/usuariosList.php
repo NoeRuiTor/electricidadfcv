@@ -1,4 +1,4 @@
-<form class="buscadorListados contenedor__row" method="get" action="adminDashboardUsuarios.php">
+<form class="buscadorListados contenedor__row" method="get" action="../public/adminDashboardUsuarios.php">
             <div class="col-6-12 col-4-12-sm">                
                 <label for="nombre">Nombre cliente</label>
                 <input type="text" name="nombre" id="nombre"/>
@@ -13,40 +13,51 @@
                  </button>
             </div>
              
-        </form>
+</form>
 
 <div class="tablaListados contenedor__row">
 
-<table class="col-12-12 col-10-12-sm">
-    <tr class="tabla-head">
-        <td>ID</td>        
-        <td>Cliente
-            <a href="adminDashboardUsuarios.php?orderBy=nombre&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
-             <a href="adminDashboardUsuarios.php?orderBy=nombre&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
-        </td>            
-        <td>Ciudad
-             <a href="adminDashboardUsuarios.php?orderBy=ciudad&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
-             <a href="adminDashboardUsuarios.php?orderBy=ciudad&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
-        </td>        
-        <td>C.Postal</td>
-        <td>Email</td>
-        <td>Teléfono</td>           
-        <td>Estado</td>        
-        <td></td>
-    </tr>
-<?php
-foreach ($usuarios as $fila) {
-    echo "<tr class='tabla-fila'>";
-    echo "<td>{$fila["id"]}</td>";
-    echo "<td class='nombre-cli'>{$fila["nombre"]}</td>";
-    echo "<td>{$fila["ciudad"]}</td>";
-    echo "<td>{$fila["cpostal"]}</td>";
-    echo "<td>{$fila["email"]}</td>";
-    echo "<td>{$fila["telefono"]}</td>";
-    echo "<td class='estado estado-{$fila["nombre_estado"]}'><p>{$fila["nombre_estado"]}</p></td>";    
-    echo "<td><a href='adminDashboardUsuarios.php?idCliente={$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";
-    echo "</tr>";
-    }
-?>
-</table>
+    <table class="col-12-12 col-10-12-sm">
+        <tr class="tabla-head">
+            <td>ID</td>        
+            <td>Cliente
+                <a href="../public/adminDashboardUsuarios.php?orderBy=nombre&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
+                <a href="../public/adminDashboardUsuarios.php?orderBy=nombre&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
+            </td>            
+            <td>Ciudad
+                <a href="../public/adminDashboardUsuarios.php?orderBy=ciudad&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
+                <a href="../public/adminDashboardUsuarios.php?orderBy=ciudad&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
+            </td>        
+            <td>C.Postal</td>
+            <td>Email</td>
+            <td></td>
+            <td>Teléfono</td>           
+            <td>Estado</td>        
+            <td></td>
+        </tr>
+    <?php
+    foreach ($usuarios as $fila) {
+        echo "<tr class='tabla-fila'>";
+        echo "<td>{$fila["id"]}</td>";
+        echo "<td class='nombre-cli'>{$fila["nombre"]}</td>";
+        echo "<td>{$fila["ciudad"]}</td>";
+        echo "<td>{$fila["cpostal"]}</td>";
+        echo "<td>{$fila["email"]}     <a class='td-contact' href='mailto:{$fila["email"]}'>
+                <i class='fas fa-envelope'></i>
+                </a>";      
+        echo "</td>";
+        echo "<td>{$fila["telefono"]}   <a class='td-contact' href='tel:{$fila["telefono"]}'>
+                <i class='fas fa-phone'></i>
+                </a>";
+        echo "</td>";
+        echo "<td class='estado estado-{$fila["nombre_estado"]}'><p>{$fila["nombre_estado"]}</p></td>";    
+        echo "<td><a href='../public/adminDashboardUsuarios.php?idUser={$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";
+        echo "<td><i class='fas fa-eye' id='darAccesoCliente'></i></td>";
+        echo "</tr>";
+        
+        }
+        
+    ?>
+     <script src="accesocliente.js"></script>
+    </table>
 </div>

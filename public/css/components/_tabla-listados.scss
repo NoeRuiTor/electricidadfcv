@@ -2,11 +2,12 @@
 
     .tablaListados {
         width: 90%;
-        
+        margin-bottom: 5rem;
 
       table {
         border-collapse: collapse;
-        width: 100%;    
+        width: 100%;
+      
     
 
         td {
@@ -19,10 +20,15 @@
      .tabla-fila:nth-child(even) {
         background-color: $colorBlanco;
     }
-    .tabla-fila{
+    .tabla-fila{     
         .nombre-cli{
             color:$color4;
         }
+       .td-contact{
+         color:$color2
+       }
+      
+      
     }
 
      .tabla-head {
@@ -41,7 +47,10 @@
         background-image: url('../../img/download.svg');
         background-size: cover;        
     }
-    
+    #darAccesoCliente {
+        cursor: pointer;
+        font-size: 2.4rem;
+      }
     
     .estado{
         p{

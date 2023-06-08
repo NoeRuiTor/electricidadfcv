@@ -1,5 +1,4 @@
 <?php
-
  require('../config/seguridad.php');
  
  include_once("../config/funciones.php");
@@ -15,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php parametro_plantilla("description"); ?>">
     <meta name="Keywords" content="<?php parametro_plantilla("keywords"); ?>"> 
-    <link rel="shortcut icon" type="image/x-icon" href="../public/img/favicon.png">     
-    <link rel="stylesheet" href="../public/css/main.css">  
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">     
+    <link rel="stylesheet" href="css/main.css">  
     <script defer src="js/mensajes.js" ></script>   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<title><?php parametro_plantilla("titulo_pagina"); ?></title>
@@ -27,28 +26,28 @@
 
             <header class="header contenedor__row">
                 <div class="header__logo col-3-12 col-12-12-sm">
-                    <img class="logo" src="../public/img/logo.png" alt="electricidadFCV" width="150" height="150" >
+                    <img class="logo" src="img/logo.png" alt="electricidadFCV" width="150" height="150" >
                 </div>
                 <div class="menu-icon">
                         <i class="fas fa-bars"></i>
                 </div> 
                 <div class="menu-login">
-                 <a href="../views/adminDashboard.php"><i class="fas fa-sign-in-alt"></i></a>
+                 <a href="adminDashboard.php"><i class="fas fa-sign-in-alt"></i></a>
 
                 </div> 
                 <nav class="col-6-12 header__nav nav" id="bars">
                                
                      <ul class="menu" id="menu-items">
                             <li class="menu__opcion"><a class="<?php active('index.php'); ?>" href="../index.php">Inicio</a></li>
-                            <li class="menu__opcion"><a class="<?php active('servicios.php'); ?>" href="../public/servicios.php">Servicios</a></li>                
-                            <li class="menu__opcion"><a class="<?php active('trabajos.php'); ?>" href="../public/trabajos.php">Trabajos</a></li> 
-                            <li class="menu__opcion"><a class="<?php active('presupuesto.php'); ?>" href="../public/presupuestos.php">Presupuesto</a></li>
-                            <li class="menu__opcion"><a class="<?php active('blog.php'); ?>" href="../public/blog.php">Blog</a></li>       
-                            <li class="menu__opcion"><a class="<?php active('contacto.php'); ?>" href="../public/contacto.php">Contacto</a></li>
+                            <li class="menu__opcion"><a class="<?php active('servicios.php'); ?>" href="servicios.php">Servicios</a></li>                
+                            <li class="menu__opcion"><a class="<?php active('trabajos.php'); ?>" href="trabajos.php">Trabajos</a></li> 
+                            <li class="menu__opcion"><a class="<?php active('presupuesto.php'); ?>" href="presupuestos.php">Presupuesto</a></li>
+                            <li class="menu__opcion"><a class="<?php active('blog.php'); ?>" href="blog.php">Blog</a></li>       
+                            <li class="menu__opcion"><a class="<?php active('contacto.php'); ?>" href="contacto.php">Contacto</a></li>
                     
                       </ul>          
                 </nav>
-                <a href="../views/adminDashboard.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Mi cuenta</a>
+                <a href="adminDashboard.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Mi cuenta</a>
             </header>
 
       <!--------SCRIPT MENU RESPONSIVE------->
@@ -108,74 +107,63 @@
     </section>
     
  <!------CONTENIDO------>
+ <main class="contenedor">
 
-<main class="contenedor">
+<!---------BUSCADOR------->
 
-    <!---------BUSCADOR------->
-
-    <section class="userContent">
-        
-        <div id="errores"> </div>
-           <?php if (isset($_REQUEST['error'])) : ?>
-                 <div id="errores">
-                    <?php echo $_REQUEST['error']; ?>
-                  </div>
-        <?php endif;?>
-        <?php if (isset($_REQUEST['mensaje'])) : ?>
-              <div id="mensaje">
-              <?php echo $_REQUEST['mensaje']; ?>
-              </div>
-        <?php endif;?>
-
-      <!-------------VISTA SEGÚN LOS DATOS ENVIADOS-------------->  
-           
-       <?php
-        require "../controllers/presupuesto_Controller.php";
-
-           if(isset($_REQUEST['navMenu']) && $_REQUEST['navMenu'] == 'presupuestos'){
-
-                if(isset($_REQUEST['orderBy']) && ($_REQUEST['orderDirection'])){
-                    $orderBy = $_REQUEST['orderBy'];
-                    $orderDirection = $_REQUEST['orderDirection'];
+<section class="userContent">
     
-                    mostrarPresupuestosOrdenados($orderBy, $orderDirection);
-                } else{     
-                   mostrarPresupuestos();
-                }
-            }elseif(isset($_REQUEST['btnBuscar'])) {
-                if(isset($_REQUEST['nombre_cliente'])){
-                   $nombreCliente = $_REQUEST['nombre_cliente'];
-                }
-                if(isset($_REQUEST['tipo_trabajo'])){
-                    $tipoTrabajo = $_REQUEST['tipo_trabajo'];
-                }
-                if(isset($_REQUEST['fechaEmision'])){
-                     $fechaEmision = $_REQUEST['fechaEmision'];
-                }
-                if(isset($_REQUEST['estado'])){
-                    $estado = $_REQUEST['estado'];
-                }
-                    mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo, $fechaEmision, $estado);                   
+    <div id="errores"> </div>
+       <?php if (isset($_REQUEST['error'])) : ?>
+             <div id="errores">
+                <?php echo $_REQUEST['error']; ?>
+              </div>
+    <?php endif;?>
+    <?php if (isset($_REQUEST['mensaje'])) : ?>
+          <div id="mensaje">
+          <?php echo $_REQUEST['mensaje']; ?>
+          </div>
+    <?php endif;?>
 
-           }elseif(isset($_REQUEST['idPresu'])){
-               $idPresu = $_REQUEST['idPresu'];
-               
-                  mostrarDetallePresupuesto($idPresu);           
-              
+  <!-------------VISTA SEGÚN LOS DATOS ENVIADOS-------------->  
+       
+   <?php
+    require "../controllers/usuario_Controller.php";
 
-           }else{
-            if(isset($_REQUEST['orderBy']) && ($_REQUEST['orderDirection'])){
-                $orderBy = $_REQUEST['orderBy'];
-                $orderDirection = $_REQUEST['orderDirection'];
-   
-                mostrarPresupuestosOrdenados($orderBy, $orderDirection);
-              } else{     
-               mostrarPresupuestos();
-             }
-        
-           }
+       
+    if(isset($_REQUEST['navMenu']) && $_REQUEST['navMenu'] == 'clientes'){
 
-      ?>
+        if(isset($_REQUEST['orderBy']) && ($_REQUEST['orderDirection'])){
+            $orderBy = $_REQUEST['orderBy'];
+            $orderDirection = $_REQUEST['orderDirection'];
+
+            mostrarUsuariosOrdenados($orderBy, $orderDirection);
+        } else{     
+           mostrarUsuarios();
+        }
+    }elseif(isset($_REQUEST['btnBuscar'])) {
+        if(isset($_REQUEST['nombre'])){
+           $nombre = $_REQUEST['nombre'];
+        }
+        if(isset($_REQUEST['estado'])){
+            $estado = $_REQUEST['estado'];
+        }
+            mostrarUsuariosEncontrados($nombre,$estado); 
+
+    }elseif(isset($_REQUEST['idUser'])){
+        $idUser = $_REQUEST['idUser'];
+          mostrarUsuarioDetalle($idUser);
+    
+    }elseif(isset($_REQUEST['orderBy']) && ($_REQUEST['orderDirection'])){
+        $orderBy = $_REQUEST['orderBy'];
+        $orderDirection = $_REQUEST['orderDirection'];
+
+        mostrarUsuariosOrdenados($orderBy, $orderDirection);
+      } else{     
+        mostrarUsuarios();
+    }  
+
+    ?>
 
         
     </section>
@@ -185,4 +173,4 @@
 
 include("../plantillas/info-contacto.php");
 include("../plantillas/pie.php");
-?>           
+?>   

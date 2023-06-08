@@ -1,12 +1,13 @@
 
 <div class="presupuesto__modifica formEdit contenedor__row">
+    <div class="presupuesto__modifica-heading col-12-12 col-12-12-sm">
+        <h3 class="heading heading-terciary">
+            Gestionar presupuesto
+        </h3>
+    </div>
 
-    <h3 class="presupuesto__modifica-heading heading heading-terciary col-12-12 col-12-12-sm">
-        Gestionar presupuesto
-    </h3>
-
-
-    <form class="presupuesto__modifica-form  col-12-12 col-12-12-sm" action="../controllers/presupuesto_Controller.php" method="post" enctype="multipart/form-data">
+    <div class="presupuesto__modifica-form  col-12-12 col-12-12-sm">
+       <form  action="../controllers/presupuesto_Controller.php" method="post" enctype="multipart/form-data">
             <div class="presupuesto__modifica-input">
                 <div>
                     <input type="hidden" name="id" value="<?php echo $presupuesto['id'];?>">
@@ -51,5 +52,6 @@
                 <input type="submit" class="btn btn--enviar" id="btaceptar" name="aceptar" value="Aceptar Presuspuesto">
                 <input type="submit" class="btn btn--enviar" id="btrechazar" name="rechazar" value="Rechazar Presupuesto">
             </div>
-    </form>
+      </form>
+    </div>
 </div>

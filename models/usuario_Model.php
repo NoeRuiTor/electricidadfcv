@@ -72,4 +72,36 @@ function buscarUsuarios($nombre, $estado) {
 
     return $usuariosEncontrados;
 }
+
+function obtenerUsuarioDetalle($idUser){
+    require("../config/conectar_db.php");  
+    $conn=conectar_db($bd);
+    $stmt = $conn->prepare('SELECT u.id, u.nombre ,u.ciudad, u.email, u.telefono, u.cpostal, e.nombre AS estado_cliente
+                            FROM usuario u
+                            INNER JOIN estado e ON u.estado = e.id
+                            WHERE u.id = :id');        
+        $stmt->execute([':id'=>$idUser]);       
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $usuario;
+}
+
+
+function modificaCliente($idUser, $nombre, $ciudad, $email, $telefono, $cpostal, $estado) {
+    require("../config/conectar_db.php");  
+    $conn = conectar_db($bd);
+    $stmt = $conn->prepare("UPDATE usuario SET nombre=:nombre, ciudad=:ciudad, email=:email, estado=:estado, telefono=:telefono, cpostal=:cpostal WHERE id = :id;");
+    $result = $stmt->execute([
+        ':id' => $idUser,
+        ':nombre' => $nombre,
+        ':ciudad' => $ciudad,
+        ':email' => $email,
+        ':estado' => $estado,
+        ':telefono' => $telefono,
+        ':cpostal' => $cpostal,        
+        
+    ]);
+
+    return $result !== false; // Devuelve true si la ejecución fue exitosa, false en caso contrario
+}
 ?>

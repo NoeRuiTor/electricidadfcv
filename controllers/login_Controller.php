@@ -47,7 +47,7 @@ function login(){
                 $_SESSION['rol'] = $rol ; 
 
                 // Redirigir al panel de administrador
-                header('Location: ../views/adminDashboard.php');
+                header('Location: ../public/adminDashboard.php');
                 exit();
             } elseif ($rol === 'usuario') {
                 
@@ -57,7 +57,7 @@ function login(){
                 $_SESSION['id'] = $user['id']; 
                 $_SESSION['rol'] = $rol;
                 // Redirigir al panel de usuario normal
-                header('Location: ../views/usuarioDashboard.php');
+                header('Location: ../public/usuarioDashboard.php');
                 exit();
             }
         } else {
