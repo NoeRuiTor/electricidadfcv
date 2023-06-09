@@ -97,64 +97,25 @@
          <!-------------VISTA SEGÚN LOS DATOS ENVIADOS-------------->  
            
        <?php
-        require "../controllers/presupuesto_Controller.php";
+        require "../controllers/usuario_Controller.php";
 
-           if(isset($_REQUEST['navMenu']) && $_REQUEST['navMenu'] == 'presupuestos'){
+         if(isset($_REQUEST['navMenu']) && $_REQUEST['navMenu'] == 'datos'){
 
-                if(isset($_REQUEST['orderBy']) && ($_REQUEST['orderDirection'])){
-                    $orderBy = $_REQUEST['orderBy'];
-                    $orderDirection = $_REQUEST['orderDirection'];
+            mostrarUsuarioDetalleCliente($idUser);
+
+         }
+      ?> 
+        </section>
+
+        </main>
+        <?php
+        
+        include("../plantillas/info-contacto.php");
+        include("../plantillas/pie.php");
+        ?>   
+         <script defer src="js/nav-responsive.js" ></script>        
+         <script defer src="js/mensajes.js" ></script>
     
-                    mostrarPresupuestosOrdenadosCliente($orderBy, $orderDirection,$idUser);
-                } else{     
-                    mostrarPresupuestosUsuario($idUser);
-                }
-            }elseif(isset($_REQUEST['btnBuscar'])) {
-               
-                if(isset($_REQUEST['tipo_trabajo'])){
-                    $tipoTrabajo = $_REQUEST['tipo_trabajo'];
-                }
-                if(isset($_REQUEST['fechaEmision'])){
-                     $fechaEmision = $_REQUEST['fechaEmision'];
-                }
-                if(isset($_REQUEST['estado'])){
-                    $estado = $_REQUEST['estado'];
-                }
-                    mostrarPresupuestosEncontradosCliente($nombreCliente, $tipoTrabajo, $fechaEmision, $estado,$idUser);                   
-
-           }elseif(isset($_REQUEST['idPresu'])){
-            $idPresu = $_REQUEST['idPresu'];
-            
-               mostrarDetallePresupuestoCliente($idPresu);
-           
-           }else{
-            if(isset($_REQUEST['orderBy']) && ($_REQUEST['orderDirection'])){
-                $orderBy = $_REQUEST['orderBy'];
-                $orderDirection = $_REQUEST['orderDirection'];
-   
-                mostrarPresupuestosOrdenadosCliente($orderBy, $orderDirection,$idUser);
-              } else{     
-                mostrarPresupuestosUsuario($idUser);
-             }
+     </body>
         
-           }
-
-      ?>
-
-
-
-
-        
-    </section>
-
-</main>
-<?php
-
-include("../plantillas/info-contacto.php");
-include("../plantillas/pie.php");
-?>   
- <script defer src="js/nav-responsive.js" ></script>        
- <script defer src="js/mensajes.js" ></script>
-</body>
-
 </html>

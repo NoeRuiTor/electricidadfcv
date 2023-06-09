@@ -31,14 +31,22 @@ function mostrarUsuarios() {
     $usuario = obtenerUsuarioDetalle($idUser);
     include("../views/gestionUsuarios.php");
   }
+  function mostrarUsuarioDetalleCliente($idUser){
+    require '../models/usuario_Model.php';
+    $usuario = obtenerUsuarioDetalle($idUser);
+    include("../views/gestionUsuarioCliente.php");
+  }
 
   function modificarDatosUsuario(){
     require_once "../models/usuario_Model.php";
-    if($_REQUEST['estado'] == 'activo'){
+    if(isset($_REQUEST['estado']) && $_REQUEST['estado']== 'activo'){
       $estado = '1';
     }
-    if($_REQUEST['estado'] == 'inactivo'){
+    if(isset($_REQUEST['estado']) && $_REQUEST['estado'] == 'inactivo'){
       $estado = '2';
+    }
+    if(!isset($_REQUEST['estado'])){
+      $estado = '1';
     }
     $nombre = $_REQUEST['nombre'];
     $ciudad = $_REQUEST['ciudad'];
@@ -51,13 +59,25 @@ function mostrarUsuarios() {
     // Procesar los datos y actualizar la base de datos
     $modificado = modificaCliente($idUser, $nombre, $ciudad, $email, $telefono, $cpostal, $estado);
     if($modificado){
-        $mensaje='El usuario se ha editado correctamente';
-        header("location:../public/adminDashboardUsuarios.php?mensaje=$mensaje");
-        exit();
+        if($_REQUEST['rol'] == 'usuario'){
+            $mensaje='El usuario se ha editado correctamente';
+            header("location:../public/usuarioDashboard.php?mensaje=$mensaje");
+            exit();
+          }else{
+            $mensaje='El usuario se ha editado correctamente';
+            header("location:../public/adminDashboardUsuarios.php?mensaje=$mensaje");
+            exit();
+        }
     }else{
-      $error = 'Ha habido algún error en la inserción de los datos';
-      header("location:../public/adminDashboardUsuarios.php?error=$error");
-      exit();
+        if($_REQUEST['rol'] == 'usuario'){
+          $error = 'Ha habido algún error en la inserción de los datos';
+          header("location:../public/usuarioDashboard.php?error=$error");
+          exit();
+        }else{
+          $error = 'Ha habido algún error en la inserción de los datos';
+          header("location:../public/adminDashboardUsuarios.php?error=$error");
+          exit();
+        }
     }
   
 

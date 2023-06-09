@@ -1,21 +1,4 @@
-document.getElementById("darAccesoCliente").addEventListener("click", function() {
-    // Realizar una solicitud al servidor para enviar el correo electrónico
-    fetch("enviar_correo.php")
-      .then(function(response) {
-        if (response.ok) {
-          // El correo electrónico ha sido enviado exitosamente
-          mostrarMensaje("El correo electrónico ha sido enviado exitosamente.", "success");
-          cambiarColorIcono("blue");
-        } else {
-          // Ha ocurrido un error al enviar el correo electrónico
-          mostrarMensaje("Ha ocurrido un error al enviar el correo electrónico.", "error");
-        }
-      })
-      .catch(function(error) {
-        // Ha ocurrido un error al enviar el correo electrónico
-        mostrarMensaje("Ha ocurrido un error al enviar el correo electrónico.", "error");
-      });
-  });
+
   
   function mostrarMensaje(mensaje, tipo) {
     // Crear un elemento de mensaje

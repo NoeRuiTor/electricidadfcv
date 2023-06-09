@@ -17,7 +17,7 @@
 
 <div class="tablaListados contenedor__row">
 
-    <table class="col-12-12 col-10-12-sm">
+    <table class="col-12-12 col-8-12-sm">
         <tr class="tabla-head">
             <td>ID</td>        
             <td>Cliente
@@ -29,14 +29,16 @@
                 <a href="../public/adminDashboardUsuarios.php?orderBy=ciudad&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
             </td>        
             <td>C.Postal</td>
-            <td>Email</td>
-            <td></td>
+            <td>Email</td>            
             <td>Teléfono</td>           
             <td>Estado</td>        
-            <td></td>
+            <td>Edit</td>
+            <td>Access</td>
         </tr>
     <?php
+    $contador = 0;
     foreach ($usuarios as $fila) {
+        $idIconoOjo = "icono-ojo-" . $contador;
         echo "<tr class='tabla-fila'>";
         echo "<td>{$fila["id"]}</td>";
         echo "<td class='nombre-cli'>{$fila["nombre"]}</td>";
@@ -52,12 +54,73 @@
         echo "</td>";
         echo "<td class='estado estado-{$fila["nombre_estado"]}'><p>{$fila["nombre_estado"]}</p></td>";    
         echo "<td><a href='../public/adminDashboardUsuarios.php?idUser={$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";
-        echo "<td><i class='fas fa-eye' id='darAccesoCliente'></i></td>";
+        echo "<td><i class='fas fa-eye' id ='$idIconoOjo' data-cliente-id={$fila["id"]}></i></td>";
         echo "</tr>";
-        
+        $contador++;
         }
         
     ?>
-     <script src="accesocliente.js"></script>
+     
     </table>
+  
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    <?php foreach ($usuarios as $contador => $fila) { ?>
+      // Obtener el ID único del icono del ojo
+      var idIconoOjo = "icono-ojo-<?php echo $contador; ?>";
+
+      // Obtener el elemento del icono del ojo utilizando el ID
+      var iconoOjo = document.getElementById(idIconoOjo);
+
+      // Asignar el evento de clic al icono del ojo
+      iconoOjo.addEventListener('click', function() {
+        // Obtener el ID del cliente desde un atributo de datos (por ejemplo, data-cliente-id)
+        var clienteId = this.getAttribute('data-cliente-id');
+      
+    fetch("../controllers/enviar_acceso.php?clienteId=" + clienteId)
+    .then(function(response) {
+      if (response.ok) {
+        // El correo electrónico ha sido enviado exitosamente
+        mostrarMensaje("El correo electrónico ha sido enviado exitosamente.", "success");
+        activarIcono(iconoOjo,"blue");
+      } else {
+        // Ha ocurrido un error al enviar el correo electrónico
+        mostrarMensaje("Ha ocurrido un error al enviar el correo electrónico.", "error");
+      }
+    })
+    .catch(function(error) {
+      // Ha ocurrido un error al enviar el correo electrónico
+      mostrarMensaje("Ha ocurrido un error al enviar el correo electrónico.", "error");
+    });
+      });
+    <?php } ?>
+  });
+   
+  function mostrarMensaje(mensaje, tipo) {
+    // Crear un elemento de mensaje
+    var mensajeElemento = document.createElement("div");
+    mensajeElemento.textContent = mensaje;
+  
+    // Asignar la clase de estilo según el tipo de mensaje
+    if (tipo === "success") {
+      mensajeElemento.classList.add("success");
+    } else if (tipo === "error") {
+      mensajeElemento.classList.add("error");
+    }
+  
+    // Agregar el mensaje al documento
+    var contenedorMensajes = document.getElementById("errores");
+    contenedorMensajes.appendChild(mensajeElemento);
+  }
+
+  function activarIcono(iconoId, color) {
+  var icono = document.getElementById(iconoId);
+  if (icono) {
+    icono.style.fill = color;
+  }
+}
+
+</script>
+

@@ -76,7 +76,7 @@ function buscarUsuarios($nombre, $estado) {
 function obtenerUsuarioDetalle($idUser){
     require("../config/conectar_db.php");  
     $conn=conectar_db($bd);
-    $stmt = $conn->prepare('SELECT u.id, u.nombre ,u.ciudad, u.email, u.telefono, u.cpostal, e.nombre AS estado_cliente
+    $stmt = $conn->prepare('SELECT u.*, e.nombre AS estado_cliente
                             FROM usuario u
                             INNER JOIN estado e ON u.estado = e.id
                             WHERE u.id = :id');        

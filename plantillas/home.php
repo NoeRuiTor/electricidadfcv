@@ -85,35 +85,35 @@
                 <div class="servicios__carrousel  carrousel col-12-12 col-12-12-sm">
                     <div class="carrousel__grande">
                         <div class="articulo">
-                            <img class="articulo-img" src="public/img/iluminacion_led.jpg" alt="Imagen 1" >
+                            <img class="articulo-img" src="../public/img/iluminacion_led.jpg" alt="Imagen 1" >
                             <h3 class="articulo-heading heading heading-terciary">Iluminación led</h3>                            
                             <p class="articulo-text">Le asesoramos en la elección de los elementos de iluminación que mejor se 
                                 ajusten a su vivienda o local.</p>
                         </div>
                         <div class="articulo">
-                            <img class="articulo-img" src="public/img/renovables.png" alt="Imagen 2" >
+                            <img class="articulo-img" src="../public/img/renovables.png" alt="Imagen 2" >
                             <h3 class="articulo-heading heading heading-terciary">Energías renovables</h3>                            
                             <p class="articulo-text">Soluciones de auto-consumo tanto para empresas como para viviendas particulares.</p>
                         </div>
                         <div class="articulo">
-                            <img class="articulo-img" src="public/img/instalaciones_electricas.png" alt="Imagen 3" >
+                            <img class="articulo-img" src="../public/img/instalaciones_electricas.png" alt="Imagen 3" >
                             <h3 class="articulo-heading heading heading-terciary">Instalaciones eléctricas</h3>                            
                             <p class="articulo-text">Realizamos y mantenemos cualquier tipo de instalación eléctrica en viviendas, 
                                 locales, naves industriales, etc.</p>
                         </div>
                         <div class="articulo">
-                            <img class="articulo-img" src="public/img/cargador-carga-electro-car-cerca.jpg" alt="Imagen 4" >
+                            <img class="articulo-img" src="../public/img/cargador-carga-electro-car-cerca.jpg" alt="Imagen 4" >
                             <h3 class="articulo-heading heading heading-terciary">Puntos de recarga</h3>                            
                             <p class="articulo-text">Instalamos puntos de recarga tango en viviendas particulares cómo en garaje colectivos.</p>
                         </div> 
                         <div class="articulo">
-                            <img class="articulo-img" src="public/img/iluminacion_led.jpg" alt="Imagen 5" >
+                            <img class="articulo-img" src="../public/img/iluminacion_led.jpg" alt="Imagen 5" >
                             <h3 class="articulo-heading heading heading-terciary">Iluminación led</h3>                            
                             <p class="articulo-text">Le asesoramos en la elección de los elementos de iluminación que mejor se 
                                 ajusten a su vivienda o local.</p>
                         </div>
                         <div class="articulo">
-                            <img class="articulo-img" src="public/img/renovables.png" alt="Imagen 6" >
+                            <img class="articulo-img" src="../public/img/renovables.png" alt="Imagen 6" >
                             <h3 class="articulo-heading heading heading-terciary">Energías renovables</h3>                            
                             <p class="articulo-text">Soluciones de auto-consumo tanto para empresas como para viviendas particulares.</p>
                         </div> 
@@ -150,7 +150,7 @@
    
                 </div>
 
-   <?php include("plantillas/reseñasGoogle.php");?>
+   <?php include("../plantillas/reseñasGoogle.php");?>
 
                 <div class="info__extra contenedor__row">
                      <div class="info__extra-slogan col-6-12 col-12-12-sm">

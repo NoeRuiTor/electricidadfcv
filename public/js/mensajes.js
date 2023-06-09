@@ -1,12 +1,13 @@
-window.addEventListener('DOMContentLoaded', function() {
+window.onload = function() {
     mostrarSiContenido('errores');
     mostrarSiContenido('mensaje');
-});
+};
 
 function mostrarSiContenido(elementId) {
     var elemento = document.getElementById(elementId);
     
-    if (elemento.textContent.trim() !== '') {
+    if (elemento && elemento.textContent.trim() !== '') {
         elemento.style.display = 'block';
     }
 }
+

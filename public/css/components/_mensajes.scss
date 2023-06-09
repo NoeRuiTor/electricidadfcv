@@ -2,10 +2,12 @@
 
 #errores, #mensaje{
     width: 100%;    
-    color:$color2;
+    color:$color4;
+    font-weight: 800;
     text-align: center;
     font-size: $m-size;
     font-style: italic;
-    padding: 1.5rem;   
+    padding: 1.5rem; 
+    margin-bottom: 1.5rem;
    
 }

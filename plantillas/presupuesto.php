@@ -58,7 +58,9 @@
                 <input type="checkbox" name="privacidad" id="ppriva" value="privacidad"> He leído y acepto la <a href="#">POLÍTICA DE PRIVACIDAD</a>
            </div>
 
-           <div id="errores"> </div>
+           <div id="errores"></div>
+            <div id="mensaje"></div>
+
            <?php if (isset($_REQUEST['error'])) : ?>
                  <div id="errores">
                     <?php echo $_REQUEST['error']; ?>

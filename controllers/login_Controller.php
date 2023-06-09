@@ -22,7 +22,7 @@ function login(){
         $email=$_REQUEST['email'];
         $pwd=$_REQUEST['password'];
 
-        $query = "SELECT * FROM usuario WHERE email = :email";
+        $query = "SELECT * FROM usuario WHERE email = :email AND estado = '1'";
         $params = array(
             ':email' => $email
              );
@@ -62,7 +62,7 @@ function login(){
             }
         } else {
             // Credenciales inválidas, mostrar mensaje de error
-            $error = 'Credenciales inválidas';
+            $error = 'Credenciales inválidas, pongase en contacto con nosotros.Gracias';
             header("Location: ../public/login.php?error=$error");
             exit();
         }
@@ -110,7 +110,7 @@ function logout() {
     session_start();
     $_SESSION = array(); 
     session_destroy();
-    header('Location: ../index.php');
+    header('Location: ../public/index.php');
     exit();
 }
 

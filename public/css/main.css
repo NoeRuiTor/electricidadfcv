@@ -635,6 +635,7 @@ body {
   border: #323535;
   background-color: #F1F1EA;
   color: #323535;
+  padding: 1rem;
 }
 .contactar__form-form .form-boton {
   display: flex;
@@ -847,11 +848,13 @@ body {
 
 #errores, #mensaje {
   width: 100%;
-  color: #323535;
+  color: #2D86C0;
+  font-weight: 800;
   text-align: center;
   font-size: 2.5rem;
   font-style: italic;
   padding: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .custom-alert {
@@ -959,6 +962,10 @@ body {
   background-image: url("../../img/download.svg");
   background-size: cover;
 }
+.tablaListados table .fa-eye {
+  cursor: pointer;
+  font-size: 2.4rem;
+}
 .tablaListados table .estado p {
   margin: 0.2rem;
   padding: 0.5rem 0;
@@ -1033,9 +1040,6 @@ body {
 }
 .formEdit .presupuesto__modifica-form .presupuesto__modifica-input #id {
   width: 25%;
-}
-.formEdit .presupuesto__modifica-form .presupuesto__modifica-input #darAccesoCliente {
-  cursor: pointer;
 }
 .formEdit .presupuesto__modifica-form .condiciones {
   font-style: italic;

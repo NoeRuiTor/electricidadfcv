@@ -6,13 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php parametro_plantilla("description"); ?>">
     <meta name="Keywords" content="<?php parametro_plantilla("keywords"); ?>"> 
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-    <script defer src="js/carrousel.js" ></script> 
-    <script defer src="js/formpresupuesto.js" ></script>
-    <script defer src="js/formcontacto.js" ></script> 
-    <script defer src="js/alertInfo.js" ></script> 
-    <script defer src="js/cookies.js" ></script> 
-    <script defer src="js/login.js" ></script>   
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">    
     <link rel="stylesheet" href="css/main.css">     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<title><?php parametro_plantilla("titulo_pagina"); ?></title>
@@ -44,28 +38,9 @@
                     
                       </ul>          
                 </nav>
-                <a href="login.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">Acceso usuarios</a>
+                <a href="login.php" class="header__btn btn btn--login col-3-12 col-3-12-sm">
+                <?php if(isset($_SESSION['autentificado']) && $_SESSION['autentificado'] == 'OK'){echo 'Mi cuenta';}
+                else{echo 'Acceso usuarios'; }?>
+                </a>
             </header>
       
-<script>
-const limit_size_screen = window.matchMedia('screen and (max-width: 768px)');
-const menu = document.querySelector('#bars');
-const menuIcon = document.querySelector('.menu-icon');
-
-function validation(event) {
-  if (event.matches) {
-    menuIcon.addEventListener('click', hideShow);
-  } else {
-    menuIcon.removeEventListener('click', hideShow);
-    menu.classList.remove('is-active'); // Asegurarse de ocultar el menú en pantallas grandes
-  }
-}
-
-validation(limit_size_screen);
-
-function hideShow() {
-  menu.classList.toggle('is-active'); // Agrega o quita la clase 'is-active' para mostrar u ocultar el menú
-}
-
-</script>
-    
