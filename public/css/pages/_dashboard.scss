@@ -4,7 +4,7 @@
     font-size: $xs-size;
     padding: 2rem;
     .buscadorListados{
-        
+        margin-top: 1rem;
         div{
             display: flex;
             flex-direction: column;
@@ -15,5 +15,14 @@
     .tablaListados{
         margin-top: 2rem;
     }
-    
+    .boton-alta{
+    padding: 1rem;
+      background-color:$color2;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      text-decoration: none; /* Quitar subrayado en enlace */
+    }
+
 }

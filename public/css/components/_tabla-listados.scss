@@ -1,13 +1,16 @@
 //TABLA LISTADO PRESUPUESTOS
 
     .tablaListados {
-        width: 90%;
+        
         margin-bottom: 5rem;
+       
+       
 
       table {
         border-collapse: collapse;
         width: 100%;
-      
+        table-layout: auto;
+       
     
 
         td {
@@ -20,7 +23,8 @@
      .tabla-fila:nth-child(even) {
         background-color: $colorBlanco;
     }
-    .tabla-fila{     
+    .tabla-fila{   
+        
         .nombre-cli{
             color:$color4;
         }
@@ -39,17 +43,27 @@
             i{
                 color:$colorNegro;
             }
+            @include mobile{
+                font-size: $xs-size;
+                
+            }       
+            
         }
+        
     }
     .icono-descarga {
         display: inline-block;
         width: 2rem;        
         background-image: url('../../img/download.svg');
-        background-size: cover;        
+        background-size: cover;
+                
     }
-    .fa-eye {
+    .fa-eye-slash {
         cursor: pointer;
-        font-size: 2.4rem;
+        font-size: $s-size;
+        @include mobile{
+            font-size: 2rem;
+        }
       }
     
     .estado{
@@ -102,6 +116,7 @@
     }
     #edit{
         width: 2rem;
+        
     }
    
     }

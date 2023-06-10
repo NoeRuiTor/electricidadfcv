@@ -925,12 +925,12 @@ body {
 }
 
 .tablaListados {
-  width: 90%;
   margin-bottom: 5rem;
 }
 .tablaListados table {
   border-collapse: collapse;
   width: 100%;
+  table-layout: auto;
 }
 .tablaListados table td {
   border: 0.1 solid #323535;
@@ -956,15 +956,25 @@ body {
 .tablaListados table .tabla-head td i {
   color: #000000;
 }
+@media screen and (max-width: 834px) {
+  .tablaListados table .tabla-head td {
+    font-size: 1.2rem;
+  }
+}
 .tablaListados table .icono-descarga {
   display: inline-block;
   width: 2rem;
   background-image: url("../../img/download.svg");
   background-size: cover;
 }
-.tablaListados table .fa-eye {
+.tablaListados table .fa-eye-slash {
   cursor: pointer;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
+}
+@media screen and (max-width: 834px) {
+  .tablaListados table .fa-eye-slash {
+    font-size: 2rem;
+  }
 }
 .tablaListados table .estado p {
   margin: 0.2rem;
@@ -1302,6 +1312,7 @@ body {
 .info-contacto {
   background-color: #2D86C0;
   max-width: 100%;
+  width: 100%;
   margin-top: 1rem;
 }
 .info-contacto .contacto {
@@ -1754,10 +1765,22 @@ body {
   font-size: 1.2rem;
   padding: 2rem;
 }
+.userContent .buscadorListados {
+  margin-top: 1rem;
+}
 .userContent .buscadorListados div {
   display: flex;
   flex-direction: column;
 }
 .userContent .tablaListados {
   margin-top: 2rem;
+}
+.userContent .boton-alta {
+  padding: 1rem;
+  background-color: #323535;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  text-decoration: none; /* Quitar subrayado en enlace */
 }/*# sourceMappingURL=main.css.map */

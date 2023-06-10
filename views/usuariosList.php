@@ -15,9 +15,10 @@
              
 </form>
 
+
 <div class="tablaListados contenedor__row">
 
-    <table class="col-12-12 col-8-12-sm">
+    <table class="col-12-12 col-12-12-sm">
         <tr class="tabla-head">
             <td>ID</td>        
             <td>Cliente
@@ -32,13 +33,13 @@
             <td>Email</td>            
             <td>Teléfono</td>           
             <td>Estado</td>        
-            <td>Edit</td>
+            <td >Edit</td>
             <td>Access</td>
         </tr>
     <?php
     $contador = 0;
     foreach ($usuarios as $fila) {
-        $idIconoOjo = "icono-ojo-" . $contador;
+        $iconoID = "icono-ojo-" . $contador;
         echo "<tr class='tabla-fila'>";
         echo "<td>{$fila["id"]}</td>";
         echo "<td class='nombre-cli'>{$fila["nombre"]}</td>";
@@ -54,25 +55,25 @@
         echo "</td>";
         echo "<td class='estado estado-{$fila["nombre_estado"]}'><p>{$fila["nombre_estado"]}</p></td>";    
         echo "<td><a href='../public/adminDashboardUsuarios.php?idUser={$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";
-        echo "<td><i class='fas fa-eye' id ='$idIconoOjo' data-cliente-id={$fila["id"]}></i></td>";
+        echo "<td><i class='fas fa-eye-slash' id ='$iconoID' data-cliente-id={$fila["id"]}></i></td>";
         echo "</tr>";
         $contador++;
         }
         
     ?>
      
-    </table>
-  
+    </table>   
+   
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     <?php foreach ($usuarios as $contador => $fila) { ?>
       // Obtener el ID único del icono del ojo
-      var idIconoOjo = "icono-ojo-<?php echo $contador; ?>";
+      var iconoID = "icono-ojo-<?php echo $contador; ?>";
 
       // Obtener el elemento del icono del ojo utilizando el ID
-      var iconoOjo = document.getElementById(idIconoOjo);
+      var iconoOjo = document.getElementById(iconoID);
 
       // Asignar el evento de clic al icono del ojo
       iconoOjo.addEventListener('click', function() {
@@ -115,11 +116,20 @@
     contenedorMensajes.appendChild(mensajeElemento);
   }
 
-  function activarIcono(iconoId, color) {
-  var icono = document.getElementById(iconoId);
-  if (icono) {
-    icono.style.fill = color;
-  }
+  function alternarIcono(iconoId) {
+      var icono = document.getElementById(iconoId);
+      if (icono) {
+        if (icono.classList.contains('fa-eye-slash')) {
+          // Si el icono actual es el ojo tachado, cambiarlo al ojo sin tachar
+          icono.classList.remove('fa-eye-slash');
+          icono.classList.add('fa-eye');
+        } else {
+          // Si el icono actual es el ojo sin tachar, cambiarlo al ojo tachado
+          icono.classList.remove('fa-eye');
+          icono.classList.add('fa-eye-slash');
+        }
+      }
+    
 }
 
 </script>

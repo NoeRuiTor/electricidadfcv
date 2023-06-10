@@ -26,7 +26,7 @@
 
 <div class="tablaListados contenedor__row">
 
-    <table class="col-12-12 col-10-12-sm">
+    <table class="col-12-12 col-12-12-sm">
         <tr class="tabla-head">
             <td>ID</td>
             <td></td>

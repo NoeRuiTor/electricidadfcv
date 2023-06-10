@@ -147,7 +147,9 @@ require('../config/seguridad.php');
     }  
 
     ?>
-
+    <a href="https://www.ejemplo.com/pagina-destino" class="boton-alta col-2-12 col-2-12-sm">
+    <i class="fas fa-plus"></i>
+    </a>
         
     </section>
   

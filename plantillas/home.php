@@ -163,7 +163,7 @@
 
                     <div class="info__extra-asocia col-6-12 col-12-12-sm">
                         <h3 class="heading heading-terciary">Asociado:</h3>
-                        <img class="imagen" alt="apeme" src="img/logo-apeme.png">
+                        <img class="imagen" alt="apeme" src="../public/img/logo-apeme.png">
                     </div>
 
                 </div>
