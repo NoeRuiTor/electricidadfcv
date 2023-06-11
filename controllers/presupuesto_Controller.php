@@ -66,47 +66,81 @@ function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoT
   if (validarDatos($nombre, $email, $telefono, $ciudad, $cpostal, $tipoTrabajo) == true) {
     require("../config/conectar_db.php");
     $conn = conectar_db($bd);
+    
+    //COMPROBAR SI EL USUARIO EXISTE Y SI EXISTE SOLO INSERTAR EN LA TABLA PRESUPUESTO
 
-    // Iniciar una transacción
-    $conn->beginTransaction();
+    $sentencia = $conn->prepare("SELECT * FROM usuario WHERE email like :email");
+    $resultado = $sentencia->execute([':email'=>$email]); 
+    $fila = $sentencia->rowCount();
 
-    try {
-      // Inserción en la primera tabla
-      $sql1 = "INSERT INTO usuario (nombre, ciudad, email, psw, telefono, cpostal) VALUES (?, ?, ?, ?, ?,?)";
-      $stmt1 = $conn->prepare($sql1);
-      $stmt1->execute([$nombre, $ciudad, $email, $pwd, $telefono, $cpostal]);
+    if($fila == 1){
+     
+      $sentencia = $conn->prepare("SELECT id FROM usuario WHERE email LIKE :email");
+      $sentencia->execute([':email' => $email]); 
+      $resultado = $sentencia->fetch(); // Obtener el resultado de la consulta
+  
+      $idUser = $resultado['id']; // Obtener el ID del usuario
 
-      // Obtener el ID de la última inserción en la primera tabla
-      $idTabla1 = $conn->lastInsertId();
+      $sql = "INSERT INTO presupuesto (id_usuario,tipo_trabajo,fecha_solicitud) VALUES (?, ?, ?)";
+      $stmt = $conn->prepare($sql);
+      if($stmt->execute([$idUser, $tipoTrabajo, $fechaActual])){
+         // Redirigir a una página de éxito
+          header('Location: ../public/success.php');
+          exit();
 
-      // Inserción en la segunda tabla relacionada
-      $sql2 = "INSERT INTO presupuesto (id_usuario,tipo_trabajo,fecha_solicitud) VALUES (?, ?, ?)";
-      $stmt2 = $conn->prepare($sql2);
-      $stmt2->execute([$idTabla1, $tipoTrabajo, $fechaActual]);
+      }else{
+        $error = 'Error al insertar en la base de datos';
+        header("Location: ../public/presupuestos.php?error=$error");
+        exit();  
+      }
 
-      // Confirmar la transacción
-      $conn->commit();
+     //SI EL USUARIO NO EXISTE EN LA BASE DE DATOS
+        
+    }else{
+          
+          // Iniciar una transacción
+          $conn->beginTransaction();
 
-      // Redirigir a una página de éxito
-      header('Location: ../public/success.php');
-      exit();
-      
-    } catch (Exception $e) {
-      // En caso de error, deshacer la transacción
-      $conn->rollback();
-      $error = 'Error al insertar en la base de datos'. $e->getMessage();
-      header("Location: ../public/presupuestos.php?error=$error");
-      exit();     
-      
+          try {
+            // Inserción en la primera tabla
+            $sql1 = "INSERT INTO usuario (nombre, ciudad, email, psw, telefono, cpostal) VALUES (?, ?, ?, ?, ?,?)";
+            $stmt1 = $conn->prepare($sql1);
+            $stmt1->execute([$nombre, $ciudad, $email, $pwd, $telefono, $cpostal]);
+
+            // Obtener el ID de la última inserción en la primera tabla
+            $idTabla1 = $conn->lastInsertId();
+
+            // Inserción en la segunda tabla relacionada
+            $sql2 = "INSERT INTO presupuesto (id_usuario,tipo_trabajo,fecha_solicitud) VALUES (?, ?, ?)";
+            $stmt2 = $conn->prepare($sql2);
+            $stmt2->execute([$idTabla1, $tipoTrabajo, $fechaActual]);
+
+            // Confirmar la transacción
+            $conn->commit();
+
+            // Redirigir a una página de éxito
+            header('Location: ../public/success.php');
+            exit();
+            
+          } catch (Exception $e) {
+            // En caso de error, deshacer la transacción
+            $conn->rollback();
+            $error = 'Error al insertar en la base de datos'. $e->getMessage();
+            header("Location: ../public/presupuestos.php?error=$error");
+            exit();     
+            
+          }
+
+          // Cerrar la conexión
+          $conn = null;
+        }
     }
-
-    // Cerrar la conexión
-    $conn = null;
-  }
+ 
     // Mostrar un mensaje de error
     $error = 'Datos inválidos';
     header("Location: ../public/presupuestos.php?error=$error");
     exit();
+
 
 
 }

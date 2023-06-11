@@ -52,13 +52,11 @@
         
     }
     .icono-descarga {
-        display: inline-block;
-        width: 2rem;        
-        background-image: url('../../img/download.svg');
-        background-size: cover;
+        display: inline-block;             
+       
                 
     }
-    .fa-eye-slash {
+    .fa-eye-slash, .fa-eye{
         cursor: pointer;
         font-size: $s-size;
         @include mobile{

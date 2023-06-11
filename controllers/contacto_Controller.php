@@ -1,16 +1,16 @@
 <?php
 function procesarFormContacto(){
-    $nombre = $_REQUEST['nombre'];
-    $telefono = $_REQUEST['telefono'];
-    $email = $_REQUEST['email'];
-    $consulta = $_REQUEST['consulta'];
-    
+    $nombre = filter_var($_POST['nombre'],FILTER_SANITIZE_STRING);
+    $telefono = filter_var($_POST['telefono'], FILTER_SANITIZE_NUMBER_INT);
+    $email = filter_var ($_POST['email'],FILTER_SANITIZE_EMAIL);
+    $consulta = $_POST['consulta'];
+    $from ='fundeanuconstantin@gmail.com';
 
-        $to = 'info@electricidadfcv.com'; // Dirección de correo electrónico a la que se enviará el mensaje
-        $subject = 'Nueva solicitud de presupuesto'; // Asunto del correo electrónico
+        $to ='info@electricidadfcv.com'; // Dirección de correo electrónico a la que se enviará el mensaje
+        $subject = 'Contacto desde la web'; // Asunto del correo electrónico
     
         // Construir el cuerpo del mensaje
-        $message = "Se ha recibido una nueva solicitud de presupuesto con los siguientes datos:\n\n";
+        $message = "Se ha recibido una nueva solicitud de contacto desde la web:\n\n";
         $message .= "Nombre: " . $nombre . "\n";
         $message .= "Email: " . $email . "\n";       
         $message .= "Teléfono: " . $telefono . "\n";       
@@ -18,17 +18,18 @@ function procesarFormContacto(){
         
     
         // Enviar el correo electrónico
-        $mailSent = mail($to, $subject, $message);
-        if ($mailSent) {        
-            header('Location: ../public/success.php');
+        $mailSent = mail($to, $subject, $message,$from);
+       
+        /*if ($mailSent) {        
+           */ header('Location: ../public/success.php');
             exit();
-        }else{
+        /*}else{
             $error="Fallo al enviar el email. Vuelva a intentarlo o contacte con nosotros";
             header("location:../public/contacto.php?error=$error");
             exit();
         }
     
-    
+    */
     
 }
 

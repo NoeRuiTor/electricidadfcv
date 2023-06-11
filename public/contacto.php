@@ -58,18 +58,18 @@ include("../plantillas/cabecera.php");
                         <p>Formulario de <span id="color">contacto</span> </p>
                         <span></span>
                     </h3>
-                    <form class="contactar__form-form form-contacto" action="../controllers/contacto_Controller.php" method="post" onsubmit="return validaDatosContacto()">
+                    <form class="contactar__form-form form-contacto" action="../controllers/contacto_Controller.php" method="POST" onsubmit="return validaDatosContacto()">
                         <div class="form-input">
-                                <input type="text" name="nombre" id="nom" placeholder="nombre" >
+                                <input type="text" name="nombre" id="nom" autocapitalize="word" placeholder="nombre" autocomplete="off">
                         </div>
                         <div class="form-input">
-                                <input type="email" name="email" id="emeal" placeholder="email">
+                                <input type="email" name="email" id="emeal" placeholder="email" autocomplete="off">
                         </div>
                         <div class="form-input">
-                                <input type="tel" name="telefono" id="tel" placeholder="teléfono">
+                                <input type="tel" name="telefono" id="tel" placeholder="teléfono" autocomplete="off">
                         </div>
                         <div class="form-descripcion">
-                            <textarea id="descripcion" name="descripcion" cols="40" rows="10"placeholder="Consulta..."></textarea>
+                            <textarea id="consulta" name="consulta" cols="40" rows="10"placeholder="Consulta..."></textarea>
                         </div>
                         <div class="form-privacidad">
                         <input type="checkbox" name="privacidad"  value="privacidad" id="ppriva"> He leído y acepto la <a href="#">POLÍTICA DE PRIVACIDAD</a>

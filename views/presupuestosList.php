@@ -50,7 +50,9 @@
         echo "<td>{$fila["id"]}</td>";
         echo "<td>";
         if (!empty($fila["documento"])) {
-            echo "<span class='icono-descarga'></span>";
+            echo "<span class='icono-descarga'>
+            <a href='../public/presupuestos/{$fila["id"]}_{$fila["documento"]}' download><img id='edit' src='../public/img/download.svg'>
+            </span>";
         }
         echo "</td>";
         echo "<td class='nombre-cli'>{$fila["nombre_cliente"]}</td>";

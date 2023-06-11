@@ -135,7 +135,7 @@ require('../config/seguridad.php');
 
     }elseif(isset($_REQUEST['idUser'])){
         $idUser = $_REQUEST['idUser'];
-          mostrarUsuarioDetalle($idUser);
+          mostrarUsuarioDetalle($idUser);       
     
     }elseif(isset($_REQUEST['orderBy']) && ($_REQUEST['orderDirection'])){
         $orderBy = $_REQUEST['orderBy'];

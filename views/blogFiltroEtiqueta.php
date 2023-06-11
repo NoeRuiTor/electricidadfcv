@@ -1,4 +1,4 @@
-<div class="blog__posts col-12-12 col-12-12-sm">
+<div class="blog__posts col-9-12 col-12-12-sm">
     <?php
               // Cantidad de resultados por página
           $resultadosPorPagina = 2;
@@ -45,6 +45,8 @@
         
 
     </div>
+
+    
     <div class="paginacion col-12-12 col-12-12-sm">
         <?php
             // Mostrar la paginación

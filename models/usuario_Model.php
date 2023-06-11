@@ -40,7 +40,7 @@ function buscarUsuarios($nombre, $estado) {
     $sql = "SELECT u.*, e.nombre AS nombre_estado
             FROM usuario u
             JOIN estado e ON u.estado = e.id
-            WHERE 1 = 1 AND u.rol != 'administrador'"; // Filtro base para evitar problemas con las condiciones
+            WHERE 1 = 1 AND u.rol != 'administrador'"; 
 
     // Agregar condiciones según los parámetros de búsqueda ingresados
     if (!empty($nombre)) {

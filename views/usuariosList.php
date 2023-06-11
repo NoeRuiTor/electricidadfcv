@@ -55,7 +55,7 @@
         echo "</td>";
         echo "<td class='estado estado-{$fila["nombre_estado"]}'><p>{$fila["nombre_estado"]}</p></td>";    
         echo "<td><a href='../public/adminDashboardUsuarios.php?idUser={$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";
-        echo "<td><i class='fas fa-eye-slash' id ='$iconoID' data-cliente-id={$fila["id"]} onclick='alternarIcono()'></i></td>";
+        echo "<td><i class='fas fa-eye-slash' id ='iconoID' data-cliente-id={$fila["id"]} onclick='alternarIcono(this)'></i></td>";
         echo "</tr>";
         $contador++;
         }
@@ -77,15 +77,17 @@
 
       // Asignar el evento de clic al icono del ojo
       iconoOjo.addEventListener('click', function() {
+        alternarIcono(iconoId);
         // Obtener el ID del cliente desde un atributo de datos (por ejemplo, data-cliente-id)
-        var clienteId = this.getAttribute('data-cliente-id');
+        //var clienteId = this.getAttribute('data-cliente-id');
       
-    fetch("../controllers/enviar_acceso.php?clienteId=" + clienteId)
+    /*fetch("../controllers/enviar_acceso.php?clienteId=" + clienteId)
     .then(function(response) {
       if (response.ok) {
         // El correo electrónico ha sido enviado exitosamente
         mostrarMensaje("El correo electrónico ha sido enviado exitosamente.", "success");
-        activarIcono(iconoOjo,"blue");
+        alternarIcono(iconoId);
+        
       } else {
         // Ha ocurrido un error al enviar el correo electrónico
         mostrarMensaje("Ha ocurrido un error al enviar el correo electrónico.", "error");
@@ -94,7 +96,7 @@
     .catch(function(error) {
       // Ha ocurrido un error al enviar el correo electrónico
       mostrarMensaje("Ha ocurrido un error al enviar el correo electrónico.", "error");
-    });
+    });*/
       });
     <?php } ?>
   });
@@ -116,21 +118,21 @@
     contenedorMensajes.appendChild(mensajeElemento);
   }
 
-  function alternarIcono(iconoId) {
-      var icono = document.getElementById(iconoId);
-      if (icono) {
-        if (icono.classList.contains('fa-eye-slash')) {
-          // Si el icono actual es el ojo tachado, cambiarlo al ojo sin tachar
-          icono.classList.remove('fa-eye-slash');
-          icono.classList.add('fa-eye');
-        } else {
-          // Si el icono actual es el ojo sin tachar, cambiarlo al ojo tachado
-          icono.classList.remove('fa-eye');
-          icono.classList.add('fa-eye-slash');
-        }
-      }
+  function alternarIcono(icono) {
+      var icon = icono;
+       // Comprobar si el elemento tiene la clase 'fa-eye-slash'
+    if (icon.classList.contains('fa-eye-slash')) {
+      // Cambiar la clase a 'fa-eye'
+      icon.classList.remove('fa-eye-slash');
+      icon.classList.add('fa-eye');
+    } else {
+      // Cambiar la clase a 'fa-eye-slash'
+      icon.classList.remove('fa-eye');
+      icon.classList.add('fa-eye-slash');
+    }
+  }
     
-}
+
 
 </script>
 

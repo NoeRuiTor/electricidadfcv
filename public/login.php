@@ -41,11 +41,11 @@ include("../plantillas/cabecera.php");
                 <form class="admin__login-form col-12-12 col-12-12-sm" action="../controllers/login_Controller.php" method="post" onsubmit="return enviaForm()">
                     <div class="form-input">
                         <label class="label-login" for="email">Usuario*</label>
-                        <input class="input-login" type="email" name="email" id="user" placeholder="email">
+                        <input class="input-login" type="email" name="email" id="user" placeholder="email" autocomplete="off">
                     </div>
                     <div class="form-input">
                         <label class="label-login" for="email">Contraseña*</label>
-                        <input class="input-login" type="password" name="password" id="password" placeholder="*********">
+                        <input class="input-login" type="password" name="password" id="password" placeholder="*********" autocomplete="off">
                     </div>
                     <div id="errores"> </div>
                     <?php if (isset($_REQUEST['error'])) : ?>
@@ -120,8 +120,7 @@ include("../plantillas/cabecera.php");
 include("../plantillas/info-contacto.php");
 include("../plantillas/pie.php");
 ?> 
-<script defer src="js/nav-responsive.js" ></script>
-<script defer src="js/alertInfo.js" ></script>    
+<script defer src="js/nav-responsive.js" ></script>   
 <script defer src="js/login.js" ></script>           
 </body>
 

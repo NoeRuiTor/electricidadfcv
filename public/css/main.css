@@ -803,10 +803,6 @@ body {
   max-height: 90%;
 }
 
-.post--filtrado {
-  width: 90%;
-}
-
 #volver {
   width: 80%;
   margin: 3rem;
@@ -963,16 +959,13 @@ body {
 }
 .tablaListados table .icono-descarga {
   display: inline-block;
-  width: 2rem;
-  background-image: url("../../img/download.svg");
-  background-size: cover;
 }
-.tablaListados table .fa-eye-slash {
+.tablaListados table .fa-eye-slash, .tablaListados table .fa-eye {
   cursor: pointer;
   font-size: 1.8rem;
 }
 @media screen and (max-width: 834px) {
-  .tablaListados table .fa-eye-slash {
+  .tablaListados table .fa-eye-slash, .tablaListados table .fa-eye {
     font-size: 2rem;
   }
 }
