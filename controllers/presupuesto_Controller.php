@@ -19,7 +19,7 @@ if(isset($_REQUEST['enviar'])){
     procesaFormulario($nombre,$email,$telefono,$ciudad,$cpostal,$tipoTrabajo,$fechaActual,$pwd);
     
     //Si se procesa el formulario correctamente, enviar email también email con los datos
-    
+    /*
     if(procesaFormulario($nombre,$email,$telefono,$ciudad,$cpostal,$tipoTrabajo,$fechaActual,$pwd)){
       if(!empty($_FILES['adjunto']['name']) && $_FILES['adjunto']['size']>0){
         $documento = $_FILES['adjunto']['name'];
@@ -27,7 +27,7 @@ if(isset($_REQUEST['enviar'])){
       }else{
         enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion);
       }
-    }
+    }*/
 
 }
 

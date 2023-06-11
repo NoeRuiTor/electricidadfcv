@@ -55,7 +55,7 @@
         echo "</td>";
         echo "<td class='estado estado-{$fila["nombre_estado"]}'><p>{$fila["nombre_estado"]}</p></td>";    
         echo "<td><a href='../public/adminDashboardUsuarios.php?idUser={$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";
-        echo "<td><i class='fas fa-eye-slash' id ='$iconoID' data-cliente-id={$fila["id"]}></i></td>";
+        echo "<td><i class='fas fa-eye-slash' id ='$iconoID' data-cliente-id={$fila["id"]} onclick='alternarIcono()'></i></td>";
         echo "</tr>";
         $contador++;
         }

@@ -1,8 +1,17 @@
 <?php
 session_start();
-include_once("../config/funciones.php");
-include("../plantillas/cabecera.php");
 
+
+
+$titulo_pagina = "Electricidad FCV - Contacto";
+$description = "Electricista en Castalla y toda la provincia de Alicante, instalaciones eléctricas, 
+energias renovables, reformas de instalaciones, memoria técnica de diseño, presupuestos en general, tienda de iluminación led";
+$keywords = "electricidad, electricista, iluminación, energías renovables, reformas electricas, Castalla";
+$current_page = 'contacto.php';
+
+include_once("../config/funciones.php");
+
+include("../plantillas/cabecera.php");
 ?>
 
   

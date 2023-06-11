@@ -1196,6 +1196,11 @@ body {
   color: #2D86C0;
   border-top: 0.1rem solid #000000;
 }
+.nav li .active {
+  text-decoration: none;
+  color: #2D86C0;
+  border-top: 0.1rem solid #000000;
+}
 @media screen and (max-width: 834px) {
   .nav {
     position: fixed;
