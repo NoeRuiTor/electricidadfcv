@@ -111,6 +111,7 @@ require('../config/seguridad.php');
   <!-------------VISTA SEGÚN LOS DATOS ENVIADOS-------------->  
        
    <?php
+ 
     require "../controllers/usuario_Controller.php";
 
        

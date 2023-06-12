@@ -55,7 +55,7 @@
         echo "</td>";
         echo "<td class='estado estado-{$fila["nombre_estado"]}'><p>{$fila["nombre_estado"]}</p></td>";    
         echo "<td><a href='../public/adminDashboardUsuarios.php?idUser={$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";
-        echo "<td><i class='fas fa-eye-slash' id ='iconoID' data-cliente-id={$fila["id"]} onclick='alternarIcono(this)'></i></td>";
+        echo "<td><i class='fas fa-eye-slash' id ='$iconoID' data-cliente-id={$fila["id"]}'></i></td>";
         echo "</tr>";
         $contador++;
         }
@@ -77,16 +77,17 @@
 
       // Asignar el evento de clic al icono del ojo
       iconoOjo.addEventListener('click', function() {
-        alternarIcono(iconoId);
-        // Obtener el ID del cliente desde un atributo de datos (por ejemplo, data-cliente-id)
-        //var clienteId = this.getAttribute('data-cliente-id');
+       
+        //Obtener el ID del cliente desde un atributo de datos (por ejemplo, data-cliente-id)
+        var clienteId = this.getAttribute('data-cliente-id');
       
-    /*fetch("../controllers/enviar_acceso.php?clienteId=" + clienteId)
+    fetch("../controllers/enviar_acceso.php?clienteId=" + clienteId)
     .then(function(response) {
       if (response.ok) {
         // El correo electrónico ha sido enviado exitosamente
-        mostrarMensaje("El correo electrónico ha sido enviado exitosamente.", "success");
         alternarIcono(iconoId);
+        mostrarMensaje("El correo electrónico ha sido enviado exitosamente.", "success");
+       
         
       } else {
         // Ha ocurrido un error al enviar el correo electrónico
@@ -96,7 +97,7 @@
     .catch(function(error) {
       // Ha ocurrido un error al enviar el correo electrónico
       mostrarMensaje("Ha ocurrido un error al enviar el correo electrónico.", "error");
-    });*/
+    });
       });
     <?php } ?>
   });

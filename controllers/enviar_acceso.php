@@ -2,7 +2,8 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../PHPMailer/autoload.php';
+
+require '../vendor/autoload.php';
 
 // Crea una nueva instancia de PHPMailer
 $mail = new PHPMailer(true);
