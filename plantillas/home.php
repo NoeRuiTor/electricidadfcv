@@ -150,7 +150,7 @@
    
                 </div>
 
-   <?php include("../plantillas/reseñasGoogle.php");?>
+   <?php include("../plantillas/resenasGoogle.php");?>
 
                 <div class="info__extra contenedor__row">
                      <div class="info__extra-slogan col-6-12 col-12-12-sm">
