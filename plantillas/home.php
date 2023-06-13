@@ -22,7 +22,7 @@
                       <span class="heading-secondary--color">eléctricas</span>
                     </h2>
                     <p class="heading-main">Hacemos todo tipo de instalaciones y 
-                        mantenimientos eléctricos. <a href="#">LLame ahora.</a></p>
+                        mantenimientos eléctricos. <a href="tel:<?php parametro_plantilla("movil");?>">LLame ahora.</a></p>
 
                 </div>
                 <div class="inicio__text col-4-12 col-12-12-sm">
@@ -150,7 +150,7 @@
    
                 </div>
 
-   <?php include("../plantillas/resenasGoogle.php");?>
+   <?php include("resenasGoogle.php");?>
 
                 <div class="info__extra contenedor__row">
                      <div class="info__extra-slogan col-6-12 col-12-12-sm">
@@ -163,7 +163,7 @@
 
                     <div class="info__extra-asocia col-6-12 col-12-12-sm">
                         <h3 class="heading heading-terciary">Asociado:</h3>
-                        <img class="imagen" alt="apeme" src="../public/img/logo-apeme.png">
+                        <img class="imagen" alt="apeme" src="img/logo-apeme.png">
                     </div>
 
                 </div>

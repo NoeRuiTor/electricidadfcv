@@ -5,7 +5,7 @@ session_start();
 if (isset($_REQUEST['entrar'])) {
     login();
 } elseif (isset($_REQUEST['cambiar'])) {
-    cambiaPassword();
+    generaPassword();
 } elseif (isset($_REQUEST['logout']) && $_REQUEST['logout'] === 'logout') {
     logout();
 } else {
@@ -68,6 +68,7 @@ function login(){
         }
     
 }
+/*
 function cambiaPassword(){
     require("../config/conectar_db.php");
     $con = conectar_db($bd);
@@ -102,7 +103,45 @@ function cambiaPassword(){
                     exit();
         }   
     
+}*/
+
+function generaPassword(){
+    require("../config/conectar_db.php");
+    $con = conectar_db($bd);
+
+    $email = $_REQUEST['email'];
+    $newPwd = $_REQUEST['new-password'];
+    $confirmPwd = $_REQUEST['confirm-password'];
+
+    // Validar que los campos no estén vacíos
+    if (empty($email) || empty($newPwd) || empty($confirmPwd)) {
+        $error = 'Por favor, complete todos los campos.';
+        header("location:../public/login.php?error=$error");
+        exit();
+    }
+
+    // Validar que las contraseñas coincidan
+    if ($newPwd !== $confirmPwd) {
+        $error = 'Las contraseñas no coinciden. Vuelva a intentarlo.';
+        header("location:../public/login.php?error=$error");
+        exit();
+    }
+
+    // Generar contraseña aleatoria
+    $pwdHash = password_hash($newPwd, PASSWORD_DEFAULT);
+
+    $sentencia = $con->prepare("UPDATE usuario SET psw = :psw WHERE email = :email ;");
+    if ($sentencia->execute(array(':psw' => $pwdHash, ':email' => $email))) {
+        $mensaje = 'CONTRASEÑA ACTUALIZADA';
+        header("location:../public/login.php?mensaje=$mensaje");
+        exit();
+    } else {
+        $error = 'ERROR AL INTRODUCIR LOS DATOS, VUELVA A INTENTARLO';
+        header("location:../public/login.php?error=$error");
+        exit();
+    }
 }
+
 
 
 function logout() {

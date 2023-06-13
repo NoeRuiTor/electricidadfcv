@@ -45,7 +45,7 @@ include("../plantillas/cabecera.php");
                     </div>
                     <div class="form-input">
                         <label class="label-login" for="email">Contraseña*</label>
-                        <input class="input-login" type="password" name="password" id="password" placeholder="*********" autocomplete="off">
+                        <input class="input-login" type="password" name="password" id="password" placeholder="*********" autocomplete="off" maxlength="8">
                     </div>
                     <div id="errores"> </div>
                     <?php if (isset($_REQUEST['error'])) : ?>
@@ -66,21 +66,21 @@ include("../plantillas/cabecera.php");
                      
                  </form>
                  <div class="admin__remember col-12-12 col-12-12-sm">   
-                    <a id="cambiar-contrasena" class="admin__remember-psw" href="#"><p>Cambiar contraseña</p></a>              
+                    <a id="cambiar-contrasena" class="admin__remember-psw" href="#"><p>Crear nueva contraseña</p></a>              
                  </div>
 
                  <form id="seccion-cambiar-contrasena" class="col-12-12 col-12-12-sm" action="../controllers/login_Controller.php" method="post"style="display: none; ">
                     <div class="form-input">
                         <label class="label-login" for="email">Usuario*</label>
-                        <input class="input-login" type="email" name="email" id="user" placeholder="email">
+                        <input class="input-login" type="email" name="email" id="user" placeholder="email" autocomplete="off">
                     </div>
                     <div class="form-input">
-                        <label class="label-login" for="old-password">Contraseña antigua*</label>
-                        <input class="input-login" type="password" name="old-password" id="old-password" placeholder="Contraseña antigua">
+                        <label class="label-login" for="new-password">Contraseña*</label>
+                        <input class="input-login" type="password" name="new-password" id="new-password" placeholder="********" maxlength="8" autocomplete="off">
                     </div>
                     <div class="form-input">
-                        <label class="label-login" for="new-password">Nueva contraseña*</label>
-                        <input class="input-login" type="password" name="new-password" id="new-password" placeholder="Nueva contraseña">
+                        <label class="label-login" for="confirm-password">Repita contraseña*</label>
+                        <input class="input-login" type="password" name="confirm-password" id="confirm-password" placeholder="*******" maxlength="8" autocomplete="off">
                     </div>
                     <div class="form-boton">
                          <input type="submit" class="btn btn--enviar" name="cambiar" value="Enviar">

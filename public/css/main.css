@@ -208,7 +208,7 @@ body {
 }
 
 .banner__head--blog {
-  background-image: url(../img/bannerBlog.jpg);
+  background-image: url(../img/fondo-tecnologia-onda-fractal-abstracto-azul.jpg);
 }
 
 .fixed-icons {
@@ -1745,7 +1745,9 @@ body {
   background-color: #FFFFFF;
 }
 .success__box {
-  background-color: #FFFFFF;
+  line-height: 3rem;
+  background-color: #323535;
+  color: #FFFFFF;
   width: 90%;
   height: 30rem;
   padding: 2rem 5rem;
@@ -1753,8 +1755,17 @@ body {
   margin: 2rem;
   text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.success__box-content {
+  font-size: 1.8rem;
+  width: 70%;
+  padding: 2rem;
+}
+.success__box-content span {
+  font-style: italic;
 }
 
 .userContent {
