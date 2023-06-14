@@ -47,14 +47,13 @@ include("../plantillas/cabecera.php");
               <h2 class="feature__text-heading heading heading-secondary">
                 Instalaciones <span>eléctricas</span>
               </h2>
-              <p class="feature__text-desc">Vestibulum non magna efficitur, bibendum leo eget, 
-                ullamcorper arcu. Suspendisse in malesuada sapien. Curabitur id massa id 
-                tortor vehicula commodo id nec metus. Ut vel nulla consequat, sollicitudin nibh ac, 
-                convallis sem. Duis vel imperdiet sem. Etiam venenatis, mi eget vehicula rutrum, ante 
-                nisi auctor metus, ut cursus massa lacus ut mauris. Sed justo nunc, consequat ut auctor at, 
-                fermentum quis ipsum. Integer id quam vestibulum, tincidunt est vel, ornare neque. In hac 
-                habitasse platea dictumst. Maecenas vitae urna est. Aenean nec convallis dui, in vulputate nibh. 
-                Cras ullamcorper fermentum metus.</p>
+              <p class="feature__text-desc">Realizamos cualquier tipo de instalación eléctrica, en viviendas, 
+                locales comerciales, empresas, naves, oficinas, obras, espacios públicos, reformas integrales de viviendas.
+                Ofrecemos servicios personalizados para emprender proyectos, ampliaciones o modificaciones, así como realizar
+                 un eficaz mantenimiento de tus instalaciones eléctricas. Realizamos proyectos para instalaciones eléctricas tanto
+                  en locales como en viviendas: Cambios de tensiones, Boletines eléctricos, Tramitamos gestiones en Industria e 
+                  Iberdrola, Certificados de instalación (boletines).
+              </p>
               <a href="presupuestos.php" class="feature__text-btn btn btn--presupuesto">Pida su presupuesto</a>  
 
           </div>
@@ -73,14 +72,16 @@ include("../plantillas/cabecera.php");
               <h2 class="feature__text-heading heading heading-secondary">
                 Instalaciones <span>fotovoltáicas</span>
               </h2>
-              <p class="feature__text-desc">Vestibulum non magna efficitur, bibendum leo eget, 
-                ullamcorper arcu. Suspendisse in malesuada sapien. Curabitur id massa id 
-                tortor vehicula commodo id nec metus. Ut vel nulla consequat, sollicitudin nibh ac, 
-                convallis sem. Duis vel imperdiet sem. Etiam venenatis, mi eget vehicula rutrum, ante 
-                nisi auctor metus, ut cursus massa lacus ut mauris. Sed justo nunc, consequat ut auctor at, 
-                fermentum quis ipsum. Integer id quam vestibulum, tincidunt est vel, ornare neque. In hac 
-                habitasse platea dictumst. Maecenas vitae urna est. Aenean nec convallis dui, in vulputate nibh. 
-                Cras ullamcorper fermentum metus.</p>
+              <p class="feature__text-desc">¡No pagues de más por tu factura de la luz! En un momento en el 
+                que su precio está más caro que nunca, la energía solar supone una alternativa medioambiental y rentable.
+                Produce tu propia energía y evita experimentar los cambios de precio de las energías tradicionales. 
+                Aprovecha ahora las subvenciones y ayudas para particulares interesados en instalar placas solares. 
+                Ahorra en la instalación, ahorra en tu factura de la luz. 
+                 Una vez realizada la visita, y teniendo en cuenta el estudio inicial, se lleva a cabo la elaboración
+                  del proyecto técnico definitivo, así como la preparación de toda la documentación necesaria para iniciar 
+                  los trámites administrativos, de cara a obtener los permisos imprescindibles para la ejecución de la instalación. 
+                  Estos trámites variarán según la administración pública correspondiente. Adicionalmente, en función de la tipología 
+                 de instalación fotovoltaica, puede ser necesario gestionar permisos con la compañía distribuidora correspondiente.</p>
               <a href="presupuestos.php" class="featue_text-btn btn btn--presupuesto">Pida su presupuesto</a>  
 
           </div>
@@ -100,14 +101,15 @@ include("../plantillas/cabecera.php");
               <h2 class="feature__text-heading heading heading-secondary">
                 Iluminación <span>Led</span>
               </h2>
-              <p class="feature__text-desc">Vestibulum non magna efficitur, bibendum leo eget, 
-                ullamcorper arcu. Suspendisse in malesuada sapien. Curabitur id massa id 
-                tortor vehicula commodo id nec metus. Ut vel nulla consequat, sollicitudin nibh ac, 
-                convallis sem. Duis vel imperdiet sem. Etiam venenatis, mi eget vehicula rutrum, ante 
-                nisi auctor metus, ut cursus massa lacus ut mauris. Sed justo nunc, consequat ut auctor at, 
-                fermentum quis ipsum. Integer id quam vestibulum, tincidunt est vel, ornare neque. In hac 
-                habitasse platea dictumst. Maecenas vitae urna est. Aenean nec convallis dui, in vulputate nibh. 
-                Cras ullamcorper fermentum metus.</p>
+              <p class="feature__text-desc">Instalación de luminarias. Trabajo con primeras marcas. 
+                Amplia variedad y diseños. Gracias a la iluminación artificial somos capaces de generar ambiente, 
+                diferenciar espacios dentro de una misma habitación, potenciar los puntos fuertes de un espacio e 
+                incluso pueden provocar distintas sensaciones adaptadas a cada momento de uso de la habitación. Es 
+                por ello, que para eso, hay que saber elegir una buena opción, generalmente la opción que consuma 
+                poco y que dure mucho. Las luces tipo led cumplen a la perfeccion estos dos requisitos, ya que la 
+                duración es aproximadamente unas 30 mil horas y el gasto de toda su vida útil no suele llegar a superar
+                 los 16 euros.
+               </p>
               <a href="presupuestos.php" class="feature__text-btn btn btn--presupuesto">Pida su presupuesto</a>  
 
           </div>
