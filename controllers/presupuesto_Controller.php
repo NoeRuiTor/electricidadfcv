@@ -24,8 +24,10 @@ if(isset($_REQUEST['enviar'])){
       if(!empty($_FILES['adjunto']['name']) && $_FILES['adjunto']['size']>0){
         $documento = $_FILES['adjunto']['name'];
         enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion,$documento);
+        enviarCorreoUsuarioRegistrado($nombre, $email, $pwd);
       }else{
         enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion);
+        enviarCorreoUsuarioRegistrado($nombre, $email, $pwd);
       }
     }*/
 
@@ -249,6 +251,34 @@ function enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabaj
        header("Location: ../public/presupuestos.php?error=$error");
         exit();
     }
+}
+
+function enviarCorreoUsuarioRegistrado($nombre, $email, $pwd) {
+  $to = $email; // Dirección de correo electrónico del usuario registrado
+  $subject = 'Registro exitoso'; // Asunto del correo electrónico
+
+  // Construir el cuerpo del mensaje
+  $message = "Hola " . $nombre . ",\r\n\r\n";
+  $message .= "Su presupuesto se ha registrado correctamente.\r\n";
+  $message .= "Tus datos de acceso son:\r\n";
+  $message .= "Usuario: " . $email . "\r\n";
+  $message .= "Contraseña: " . $pwd. "\r\n\r\n";
+  $message .= "Gracias por confiar en nosotros. ¡Bienvenido!\r\n";
+
+  // Encabezados adicionales para el correo electrónico
+  $headers = "From: info@electricidadfcv.com\r\n";
+  $headers .= "Reply-To: info@electricidadfcv.com\r\n";
+  $headers .= "MIME-Version: 1.0\r\n";
+  $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+  // Enviar el correo electrónico
+  $mailSent = mail($to, $subject, $message, $headers);
+
+  if (!$mailSent) {        
+     $error = "Hubo un error al enviar el correo electrónico: ";
+     header("Location: presupuestos.php?error=$error");
+      exit();
+  }
 }
 
 
