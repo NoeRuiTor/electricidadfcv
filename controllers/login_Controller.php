@@ -5,7 +5,7 @@ session_start();
 if (isset($_REQUEST['entrar'])) {
     login();
 } elseif (isset($_REQUEST['cambiar'])) {
-    generaPassword();
+    cambiaPassword();
 } elseif (isset($_REQUEST['logout']) && $_REQUEST['logout'] === 'logout') {
     logout();
 } else {
@@ -68,7 +68,7 @@ function login(){
         }
     
 }
-/*
+
 function cambiaPassword(){
     require("../config/conectar_db.php");
     $con = conectar_db($bd);
@@ -103,8 +103,9 @@ function cambiaPassword(){
                     exit();
         }   
     
-}*/
+}
 
+/*
 function generaPassword(){
     require("../config/conectar_db.php");
     $con = conectar_db($bd);
@@ -141,7 +142,7 @@ function generaPassword(){
         exit();
     }
 }
-
+*/
 
 
 function logout() {

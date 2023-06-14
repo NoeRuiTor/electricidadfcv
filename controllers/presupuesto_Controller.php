@@ -86,8 +86,9 @@ function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoT
       $sql = "INSERT INTO presupuesto (id_usuario,tipo_trabajo,fecha_solicitud) VALUES (?, ?, ?)";
       $stmt = $conn->prepare($sql);
       if($stmt->execute([$idUser, $tipoTrabajo, $fechaActual])){
-         // Redirigir a una página de éxito
-          header('Location: ../public/success.php');
+      
+          $mensaje = 'Hemos recibido su solicitud de presupuesto';
+          header("Location: ../public/presupuestos.php?mensaje=$mensaje");
           exit();
 
       }else{
@@ -120,8 +121,8 @@ function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoT
             // Confirmar la transacción
             $conn->commit();
 
-            // Redirigir a una página de éxito
-            header('Location: ../public/success.php');
+            // Redirigir a una página de éxito            
+            header("Location: ../public/success.php?contrasena=$pwd");
             exit();
             
           } catch (Exception $e) {
