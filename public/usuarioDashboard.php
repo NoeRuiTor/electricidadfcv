@@ -117,7 +117,7 @@
                 if(isset($_REQUEST['fechaEmisionIni'])){
                     $fechaEmisionIni = $_REQUEST['fechaEmisionIni'];
                }
-               if(isset($_REQUEST['fechaEmisionFin'])){
+                if(isset($_REQUEST['fechaEmisionFin'])){
                    $fechaEmisionFin = $_REQUEST['fechaEmisionFin'];
                }
                 if(isset($_REQUEST['estado'])){
