@@ -60,12 +60,16 @@
 
            <div id="errores"></div>
             <div id="mensaje"></div>
-
-           <?php if (isset($_REQUEST['error'])) : ?>
+            <?php if (isset($_REQUEST['error'])) : ?>
                  <div id="errores">
                     <?php echo $_REQUEST['error']; ?>
-                  </div>
-            <?php endif;?>
+                </div>
+        <?php endif;?>
+        <?php if (isset($_REQUEST['mensaje'])) : ?>
+              <div id="mensaje">
+              <?php echo $_REQUEST['mensaje']; ?>
+              </div>
+        <?php endif;?>
            
            <div class="presupuesto__formulario-boton">
                <input type="submit" class="btn btn--enviar" id="btenviar" name="enviar" value="Enviar">
