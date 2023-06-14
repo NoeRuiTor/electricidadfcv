@@ -1,10 +1,11 @@
 <?php
 function procesarFormContacto(){
-    $nombre = filter_var($_POST['nombre'],FILTER_SANITIZE_STRING);
+    $nombre = $_POST['nombre'];
     $telefono = filter_var($_POST['telefono'], FILTER_SANITIZE_NUMBER_INT);
     $email = filter_var ($_POST['email'],FILTER_SANITIZE_EMAIL);
     $consulta = $_POST['consulta'];
-    $from ='fundeanuconstantin@gmail.com';
+	
+    
 
         $to ='info@electricidadfcv.com'; // Dirección de correo electrónico a la que se enviará el mensaje
         $subject = 'Contacto desde la web'; // Asunto del correo electrónico
@@ -18,19 +19,19 @@ function procesarFormContacto(){
         
     
         // Enviar el correo electrónico
-        $mailSent = mail($to, $subject, $message,$from);
+        $mailSent = mail($to, $subject, $message);
        
-        /*if ($mailSent) {*/
+        if ($mailSent) {       
             $mensaje="Hemos recibido su mensaje, en breve contactaremos con usted, gracias!";
-            header("Location: ../public/contacto.php?mensaje=$mensaje");
+            header("Location:contacto.php?mensaje=$mensaje");
             exit();
-        /*}else{
+        }else{
             $error="Fallo al enviar el email. Vuelva a intentarlo o contacte con nosotros";
-            header("location:../public/contacto.php?error=$error");
+            header("location:contacto.php?error=$error");
             exit();
         }
     
-    */
+    
     
 }
 
