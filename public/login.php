@@ -76,11 +76,11 @@ include("../plantillas/cabecera.php");
                     </div>
                     <div class="form-input">
                         <label class="label-login" for="old-password">Contraseña antigua*</label>
-                        <input class="input-login" type="password" name="old-password" id="old-password" placeholder="Contraseña antigua">
+                        <input class="input-login" type="password" name="old-password" id="old-password" placeholder="Contraseña antigua" autocomplete="off" maxlength="8">
                     </div>
                     <div class="form-input">
                         <label class="label-login" for="new-password">Nueva contraseña*</label>
-                        <input class="input-login" type="password" name="new-password" id="new-password" placeholder="Nueva contraseña">
+                        <input class="input-login" type="password" name="new-password" id="new-password" placeholder="Nueva contraseña" autocomplete="off" maxlength="8">
                     </div>
                     <div class="form-boton">
                          <input type="submit" class="btn btn--enviar" name="cambiar" value="Enviar">
