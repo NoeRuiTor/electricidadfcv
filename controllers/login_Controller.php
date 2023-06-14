@@ -69,48 +69,41 @@ function login(){
     
 }
 
-function cambiaPassword() {
+function cambiaPassword(){
     require("../config/conectar_db.php");
     $con = conectar_db($bd);
-
-    $email = $_REQUEST['email'];
-    $pwd = $_REQUEST['old-password'];
-    $newPwd = $_REQUEST['new-password'];
-
-    $query = "SELECT * FROM usuario WHERE email = :email";
-    $params = array(
-        ':email' => $email
-    );
-    $stmt = $con->prepare($query);
-    $stmt->execute($params);
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($result) {
-        $hashedPwd = $result['psw'];
-
-        if (password_verify($pwd, $hashedPwd)) {
-            $pwdHash = password_hash($newPwd, PASSWORD_DEFAULT);
-
-            $sentencia = $con->prepare("UPDATE usuario SET psw = :psw WHERE email = :email;");
-            if ($sentencia->execute(array(':psw' => $pwdHash, ':email' => $email))) {
-                $mensaje = 'CONTRASEÑA ACTUALIZADA';
-                header("location:../public/login.php?mensaje=$mensaje");
-                exit();
-            } else {
-                $error = 'ERROR AL INTRODUCIR LOS DATOS, VUELVA A INTENTARLO';
-                header("location:../public/login.php?error=$error");
-                exit();
-            }
+    
+        $email=$_REQUEST['email'];
+        $pwd=$_REQUEST['old-password'];
+        $newPwd=$_REQUEST['new-password'];
+        $query = "SELECT * FROM usuario WHERE email = :email AND psw = :psw";
+        $params = array(
+            ':email' => $email,
+            ':psw' => $pwd
+        );
+        $stmt = $con->prepare($query);
+        $stmt->execute($params);
+        $result = $stmt->rowCount();
+        $hash = password_hash($pwd, PASSWORD_DEFAULT);
+        if ($result > 0 && password_verify($pwd, $hash)) {
+            $pwdHash=password_hash($newPwd, PASSWORD_DEFAULT);
+            
+            $sentencia = $con->prepare ("UPDATE usuario SET psw = :psw WHERE email = :email ;");
+                if($sentencia -> execute(array(':psw' => $pwdHash,':email' => $email))){            
+                    $mensaje='CONTRASEÑA ACTUALIZADA';
+                    header("location:../public/login.php?mensaje=$mensaje");
+                    exit();   
+                }else {
+                    $error = 'ERROR AL INTRODUCIR LOS DATOS, VUELVA A INTENTARLO';
+                    header("location:../public/login.php?error=$error");
+                    exit();
+                }
         } else {
-            $error = 'CONTRASEÑA ANTIGUA INCORRECTA';
-            header("location:../public/login.php?error=$error");
-            exit();
-        }
-    } else {
-        $error = 'USUARIO NO ENCONTRADO';
-        header("location:../public/login.php?error=$error");
-        exit();
-    }
+        $error = 'ERROR AL INTRODUCIR LOS DATOS, VUELVA A INTENTARLO';
+                    header("location:../public/login.php?error=$error");
+                    exit();
+        }   
+    
 }
 
 
