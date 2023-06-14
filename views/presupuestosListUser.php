@@ -4,13 +4,17 @@
                     <label for="tipo_trabajo">Tipo de trabajo</label>
                     <input type="text" name="tipo_trabajo" id="tipo_trabajo"/>
                 </div>
-                <div class="col-3-12 col-4-12-sm">                
+                <div class="col-2-12 col-4-12-sm">                
                     <label for="estado">Estado</label>
                     <input type="text" name="estado" id="estado"/>
                 </div>
                 <div class="col-2-12 col-4-12-sm">                
-                    <label for="fechaEmision">Fecha Emisión</label>
-                    <input type="text" name="fechaEmision" id="fechaEmision"/>
+                <label for="fechaEmisionIni">Fecha Emisión (Desde)</label>
+                <input type="date" name="fechaEmisionIni" id="fechaEmisionIni"/>
+                </div>
+                <div class="col-2-12 col-4-12-sm">                
+                    <label for="fechaEmisionFin">Fecha Emisión (Hasta)</label>
+                    <input type="date" name="fechaEmisionFin" id="fechaEmisionFin"/>
                 </div>
                 <div class="col-1-12 col-1-12-sm"> 
                     <button type="submit" name="btnBuscar" id="search-button">

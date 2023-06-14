@@ -50,7 +50,7 @@ function obtenerPresupuestosOrdenados($orderBy, $orderDirection) {
 
 }
 
-function buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmision, $estado) {
+function buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmisionIni, $fechaEmisionFin, $estado) {
     require("../config/conectar_db.php");
     $con = conectar_db($bd);
 
@@ -69,8 +69,8 @@ function buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmision, $estado
         $sql .= " AND p.tipo_trabajo LIKE :tipo_trabajo";
     }
 
-    if (!empty($fechaEmision)) {
-        $sql .= " AND p.fechaEmision = :fechaEmision";
+    if (!empty($fechaEmisionIni) && !empty($fechaEmisionFin)) {
+        $sql .= " AND p.fechaEmision BETWEEN :fechaEmisionIni AND :fechaEmisionFin";
     }
 
     if (!empty($estado)) {
@@ -92,8 +92,9 @@ function buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmision, $estado
         $stmt->bindParam(':tipo_trabajo', $tipoTrabajo, PDO::PARAM_STR);
     }
 
-    if (!empty($fechaEmision)) {
-        $stmt->bindParam(':fechaEmision', $fechaEmision, PDO::PARAM_STR);
+    if (!empty($fechaEmisionIni) && !empty($fechaEmisionFin)) {
+        $stmt->bindParam(':fechaEmisionIni', $fechaEmisionIni, PDO::PARAM_STR);
+        $stmt->bindParam(':fechaEmisionFin', $fechaEmisionFin, PDO::PARAM_STR);
     }
 
     if (!empty($estado)) {
@@ -129,7 +130,7 @@ function obtenerPresupuestosOrdenadosCliente($orderBy, $orderDirection,$idUser) 
 
 }
 
-function buscarPresupuestosCliente($nombreCliente, $tipoTrabajo, $fechaEmision, $estado, $idUser) {
+function buscarPresupuestosCliente($nombreCliente, $tipoTrabajo,  $fechaEmisionIni, $fechaEmisionFin, $estado, $idUser) {
     require("../config/conectar_db.php");
     $con = conectar_db($bd);
 
@@ -148,8 +149,8 @@ function buscarPresupuestosCliente($nombreCliente, $tipoTrabajo, $fechaEmision, 
         $sql .= " AND p.tipo_trabajo LIKE :tipo_trabajo";
     }
 
-    if (!empty($fechaEmision)) {
-        $sql .= " AND p.fechaEmision = :fechaEmision";
+    if (!empty($fechaEmisionIni) && !empty($fechaEmisionFin)) {
+        $sql .= " AND p.fechaEmision BETWEEN :fechaEmisionIni AND :fechaEmisionFin";
     }
 
     if (!empty($estado)) {
@@ -173,8 +174,9 @@ function buscarPresupuestosCliente($nombreCliente, $tipoTrabajo, $fechaEmision, 
         $stmt->bindParam(':tipo_trabajo', $tipoTrabajo, PDO::PARAM_STR);
     }
 
-    if (!empty($fechaEmision)) {
-        $stmt->bindParam(':fechaEmision', $fechaEmision, PDO::PARAM_STR);
+    if (!empty($fechaEmisionIni) && !empty($fechaEmisionFin)) {
+        $stmt->bindParam(':fechaEmisionIni', $fechaEmisionIni, PDO::PARAM_STR);
+        $stmt->bindParam(':fechaEmisionFin', $fechaEmisionFin, PDO::PARAM_STR);
     }
 
     if (!empty($estado)) {

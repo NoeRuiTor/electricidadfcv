@@ -20,8 +20,9 @@ function procesarFormContacto(){
         // Enviar el correo electrónico
         $mailSent = mail($to, $subject, $message,$from);
        
-        /*if ($mailSent) {        
-           */ header('Location: ../public/success.php');
+        /*if ($mailSent) {*/
+            $mensaje="Hemos recibido su mensaje, en breve contactaremos con usted, gracias!";
+            header("Location: ../public/contacto.php?mensaje=$mensaje");
             exit();
         /*}else{
             $error="Fallo al enviar el email. Vuelva a intentarlo o contacte con nosotros";

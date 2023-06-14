@@ -270,9 +270,9 @@ function mostrarPresupuestosOrdenados($orderBy, $orderDirection) {
     include("../views/presupuestosList.php");
   }
  
-  function mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo, $fechaEmision, $estado) {
+  function mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo,$fechaEmisionIni,$fechaEmisionFin,$estado) {
     require '../models/presupuesto_Model.php';
-    $presupuestos = buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmision, $estado);
+    $presupuestos = buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmisionIni,$fechaEmisionFin, $estado);
     include("../views/presupuestosList.php");
   }
  
@@ -282,9 +282,9 @@ function mostrarPresupuestosOrdenados($orderBy, $orderDirection) {
     include("../views/presupuestosListUser.php");
   }
 
-  function mostrarPresupuestosEncontradosCliente($nombreCliente, $tipoTrabajo, $fechaEmision, $estado, $idUser) {
+  function mostrarPresupuestosEncontradosCliente($nombreCliente, $tipoTrabajo,$fechaEmisionIni,$fechaEmisionFin, $estado, $idUser) {
     require '../models/presupuesto_Model.php';
-    $presupuestos = buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmision, $estado,$idUser);
+    $presupuestos = buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmisionIni,$fechaEmisionFin, $estado,$idUser);
     include("../views/presupuestosListUser.php");
   }
 

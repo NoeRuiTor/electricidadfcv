@@ -134,13 +134,16 @@ include_once("../config/funciones.php");
                 if(isset($_REQUEST['tipo_trabajo'])){
                     $tipoTrabajo = $_REQUEST['tipo_trabajo'];
                 }
-                if(isset($_REQUEST['fechaEmision'])){
-                     $fechaEmision = $_REQUEST['fechaEmision'];
+                if(isset($_REQUEST['fechaEmisionIni'])){
+                     $fechaEmisionIni = $_REQUEST['fechaEmisionIni'];
+                }
+                if(isset($_REQUEST['fechaEmisionFin'])){
+                    $fechaEmisionFin = $_REQUEST['fechaEmisionFin'];
                 }
                 if(isset($_REQUEST['estado'])){
                     $estado = $_REQUEST['estado'];
                 }
-                    mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo, $fechaEmision, $estado);                   
+                    mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo, $fechaEmisionIni,$fechaEmisionFin,$estado);                   
 
            }elseif(isset($_REQUEST['idPresu'])){
                $idPresu = $_REQUEST['idPresu'];

@@ -1,4 +1,4 @@
-<form class="buscadorListados contenedor__row" method="get" action="../public/adminDashboardUsuarios.php">
+<form class="buscadorListados contenedor__row" method="get" action="adminDashboardUsuarios.php">
             <div class="col-6-12 col-4-12-sm">                
                 <label for="nombre">Nombre cliente</label>
                 <input type="text" name="nombre" id="nombre"/>
@@ -22,12 +22,12 @@
         <tr class="tabla-head">
             <td>ID</td>        
             <td>Cliente
-                <a href="../public/adminDashboardUsuarios.php?orderBy=nombre&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
-                <a href="../public/adminDashboardUsuarios.php?orderBy=nombre&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
+                <a href="adminDashboardUsuarios.php?orderBy=nombre&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
+                <a href="adminDashboardUsuarios.php?orderBy=nombre&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
             </td>            
             <td>Ciudad
-                <a href="../public/adminDashboardUsuarios.php?orderBy=ciudad&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
-                <a href="../public/adminDashboardUsuarios.php?orderBy=ciudad&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
+                <a href="adminDashboardUsuarios.php?orderBy=ciudad&orderDirection=ASC"><i class="fas fa-chevron-up"></i></a>
+                <a href="adminDashboardUsuarios.php?orderBy=ciudad&orderDirection=DESC"><i class="fas fa-chevron-down"></i></a>
             </td>        
             <td>C.Postal</td>
             <td>Email</td>            
@@ -53,7 +53,7 @@
                 </a>";
         echo "</td>";
         echo "<td class='estado estado-{$fila["nombre_estado"]}'><p>{$fila["nombre_estado"]}</p></td>";    
-        echo "<td><a href='../public/adminDashboardUsuarios.php?idUser={$fila["id"]}'><img id='edit' src='../public/img/edit.svg'></a></td>";        
+        echo "<td><a href='adminDashboardUsuarios.php?idUser={$fila["id"]}'><img id='edit' src='img/edit.svg'></a></td>";        
         echo "</tr>";
       
         }

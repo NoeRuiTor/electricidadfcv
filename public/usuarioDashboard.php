@@ -114,13 +114,16 @@
                 if(isset($_REQUEST['tipo_trabajo'])){
                     $tipoTrabajo = $_REQUEST['tipo_trabajo'];
                 }
-                if(isset($_REQUEST['fechaEmision'])){
-                     $fechaEmision = $_REQUEST['fechaEmision'];
-                }
+                if(isset($_REQUEST['fechaEmisionIni'])){
+                    $fechaEmisionIni = $_REQUEST['fechaEmisionIni'];
+               }
+               if(isset($_REQUEST['fechaEmisionFin'])){
+                   $fechaEmisionFin = $_REQUEST['fechaEmisionFin'];
+               }
                 if(isset($_REQUEST['estado'])){
                     $estado = $_REQUEST['estado'];
                 }
-                    mostrarPresupuestosEncontradosCliente($nombreCliente, $tipoTrabajo, $fechaEmision, $estado,$idUser);                   
+                    mostrarPresupuestosEncontradosCliente($nombreCliente, $tipoTrabajo, $fechaEmisionIni,$fechaEmisionFin, $estado,$idUser);                   
 
            }elseif(isset($_REQUEST['idPresu'])){
             $idPresu = $_REQUEST['idPresu'];

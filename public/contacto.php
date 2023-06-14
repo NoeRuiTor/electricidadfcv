@@ -79,6 +79,11 @@ include("../plantillas/cabecera.php");
                             <?php echo $_REQUEST['error']; ?>
                         </div>
                          <?php endif;?>
+                         <?php if (isset($_REQUEST['mensaje'])) : ?>
+                        <div id="mensaje">
+                        <?php echo $_REQUEST['mensaje']; ?>
+                        </div>
+                        <?php endif;?>
                         
                         <div class="form-boton">
                             <input type="submit" class="btn btn--contactar" name="enviar" value="Enviar">
