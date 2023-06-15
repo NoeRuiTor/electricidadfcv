@@ -14,6 +14,8 @@
                     <label for="id presupuesto">Id Presupuesto</label>
                     <input type="text" name="id" id="id" disabled value="<?php echo $presupuesto['id'];?>">
                 </div> 
+            </div>
+            <div class="presupuesto__modifica-input">
                 <div>
                     <label for="nombre cliente">Nombre Cliente</label>
                     <input type="text" name="nombre_cliente" id="nombre_cliente" disabled value= "<?php echo $presupuesto['nombre_cliente'];?>">                
@@ -33,16 +35,19 @@
                     <label for="fecha emisión">Fecha Emisión</label>
                     <input type="text" name="fechaEmision" id="fechaEmision" value="<?php echo $presupuesto['fechaEmision'];?>" disabled>
                 </div>
+            </div>
+            <div class="presupuesto__modifica-input">
                 <div>    
                     <label for="fecha vencimiento">Fecha Vencimiento</label>
                     <input type="date" name="fechaVencimiento" id="fechaVencimiento" disabled value="<?php echo $presupuesto['fechaVencimiento'];?>">
-                </div>
-            </div>
-            <div class="presupuesto__modifica-input">
+                </div>           
+            
                  <div>
                     <label for="importe">Importe presupuesto</label>
                     <input type="text" name="importe" id="importe" value="<?php echo $presupuesto['importe'];?>" disabled>
                 </div> 
+            </div>
+            <div class="presupuesto__modifica-input">
                 <div> 
                    <p class="condiciones">La aceptación del presupuesto significa la conformidad con el contenido, 
                     así como la aceptación de las condiciones e importe del mismo.</p>     

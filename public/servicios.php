@@ -73,10 +73,8 @@ include("../plantillas/cabecera.php");
                 Instalaciones <span>fotovoltáicas</span>
               </h2>
               <p class="feature__text-desc">¡No pagues de más por tu factura de la luz! En un momento en el 
-                que su precio está más caro que nunca, la energía solar supone una alternativa medioambiental y rentable.
-                Produce tu propia energía y evita experimentar los cambios de precio de las energías tradicionales. 
-                Aprovecha ahora las subvenciones y ayudas para particulares interesados en instalar placas solares. 
-                Ahorra en la instalación, ahorra en tu factura de la luz. 
+                que su precio está más caro que nunca, la energía solar supone una alternativa medioambiental y rentable.                
+                Aprovecha ahora las subvenciones y ayudas para particulares interesados en instalar placas solares.              
                  Una vez realizada la visita, y teniendo en cuenta el estudio inicial, se lleva a cabo la elaboración
                   del proyecto técnico definitivo, así como la preparación de toda la documentación necesaria para iniciar 
                   los trámites administrativos, de cara a obtener los permisos imprescindibles para la ejecución de la instalación. 

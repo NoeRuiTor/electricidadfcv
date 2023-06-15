@@ -19,7 +19,7 @@
                 <label for="fechaEmisionFin">Fecha Emisión (Hasta)</label>
                 <input type="date" name="fechaEmisionFin" id="fechaEmisionFin"/>
             </div>
-            <div class="col-1-12 col-1-12-sm"> 
+            <div class="col-1-12 col-2-12-sm"> 
                  <button type="submit" name="btnBuscar" id="search-button">
                     <i class="fas fa-search"></i>
                  </button>
