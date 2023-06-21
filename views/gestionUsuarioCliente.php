@@ -6,7 +6,7 @@
         </h3>
    </div>
    <div class="presupuesto__modifica-form  col-12-12 col-12-12-sm">
-    <form  action="../controllers/usuario_Controller.php" method="post">
+    <form  action="usuario_Controller.php" method="post">
        
             <div class="presupuesto__modifica-input">
                 <div>

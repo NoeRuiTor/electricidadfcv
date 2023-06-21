@@ -38,7 +38,7 @@ include("../plantillas/cabecera.php");
                         INICIA SESIÓN
                     </h3>
                 </div>
-                <form class="admin__login-form col-12-12 col-12-12-sm" action="../controllers/login_Controller.php" method="post" onsubmit="return enviaForm()">
+                <form class="admin__login-form col-12-12 col-12-12-sm" action="login_Controller.php" method="post" onsubmit="return enviaForm()">
                     <div class="form-input">
                         <label class="label-login" for="email">Usuario*</label>
                         <input class="input-login" type="email" name="email" id="user" placeholder="email" autocomplete="off">
@@ -69,18 +69,18 @@ include("../plantillas/cabecera.php");
                     <a id="cambiar-contrasena" class="admin__remember-psw" href="#"><p>Crear nueva contraseña</p></a>              
                  </div>
 
-                 <form id="seccion-cambiar-contrasena" class="col-12-12 col-12-12-sm" action="../controllers/login_Controller.php" method="post"style="display: none; ">
+                 <form id="seccion-cambiar-contrasena" class="col-12-12 col-12-12-sm" action="login_Controller.php" method="post"style="display: none; ">
                     <div class="form-input">
                         <label class="label-login" for="email">Usuario*</label>
                         <input class="input-login" type="email" name="email" id="user" placeholder="email" autocomplete="off">
                     </div>
                     <div class="form-input">
                         <label class="label-login" for="old-password">Contraseña antigua*</label>
-                        <input class="input-login" type="password" name="old-password" id="old-password" placeholder="Contraseña antigua" autocomplete="off" maxlength="8">
+                        <input class="input-login" type="password" name="old-password" id="old-password" placeholder="Contraseña antigua" maxlength="8">
                     </div>
                     <div class="form-input">
                         <label class="label-login" for="new-password">Nueva contraseña*</label>
-                        <input class="input-login" type="password" name="new-password" id="new-password" placeholder="Nueva contraseña" autocomplete="off" maxlength="8">
+                        <input class="input-login" type="password" name="new-password" id="new-password" placeholder="Nueva contraseña" maxlength="8">
                     </div>
                     <div class="form-boton">
                          <input type="submit" class="btn btn--enviar" name="cambiar" value="Enviar">

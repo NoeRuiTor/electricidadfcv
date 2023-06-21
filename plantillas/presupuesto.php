@@ -12,7 +12,7 @@
             (reforma o instalación de electricidad). Puede adjuntar fotos y documentación para una mejor descripción.</p>
       </div>     
 
-      <form class="presupuesto__formulario col-12-12 col-12-12-sm" action="../controllers/presupuesto_Controller.php" method="post" enctype="multipart/form-data" onsubmit="return enviaForm()">
+      <form class="presupuesto__formulario col-12-12 col-12-12-sm" action="presupuesto_Controller.php" method="post" enctype="multipart/form-data" onsubmit="return enviaForm()">
            <div class="presupuesto__formulario-input">
                 <input type="text" name="nombre" id="nombre" placeholder="nombre">
            </div>
@@ -59,17 +59,18 @@
            </div>
 
            <div id="errores"></div>
-            <div id="mensaje"></div>
-            <?php if (isset($_REQUEST['error'])) : ?>
+            <div id="mensaje"></div>	
+		  
+		   <?php if (isset($_REQUEST['error'])) : ?>
                  <div id="errores">
                     <?php echo $_REQUEST['error']; ?>
                 </div>
-        <?php endif;?>
-        <?php if (isset($_REQUEST['mensaje'])) : ?>
+          <?php endif;?>
+          <?php if (isset($_REQUEST['mensaje'])) : ?>
               <div id="mensaje">
               <?php echo $_REQUEST['mensaje']; ?>
               </div>
-        <?php endif;?>
+          <?php endif;?>
            
            <div class="presupuesto__formulario-boton">
                <input type="submit" class="btn btn--enviar" id="btenviar" name="enviar" value="Enviar">

@@ -69,7 +69,7 @@
                 <p>Mis datos</p></a>
             </div>           
             <div class="user__nav-section user__nav-section--doc col-2-12 col-1-12-sm">
-                <a href="../controllers/login_Controller.php?logout=logout"><i class="fas fa-sign-out-alt"></i>
+                <a href="login_Controller.php?logout=logout"><i class="fas fa-sign-out-alt"></i>
                 <p>Logout</p></a>
             </div>
         </div>
@@ -97,7 +97,7 @@
          <!-------------VISTA SEGÚN LOS DATOS ENVIADOS-------------->  
            
        <?php
-        require "../controllers/presupuesto_Controller.php";
+        require "presupuesto_Controller.php";
 
            if(isset($_REQUEST['navMenu']) && $_REQUEST['navMenu'] == 'presupuestos'){
 
@@ -123,7 +123,7 @@
                 if(isset($_REQUEST['estado'])){
                     $estado = $_REQUEST['estado'];
                 }
-                    mostrarPresupuestosEncontradosCliente($nombreCliente, $tipoTrabajo, $fechaEmisionIni,$fechaEmisionFin, $estado,$idUser);                   
+                    mostrarPresupuestosEncontradosCliente($nombreCliente, $tipoTrabajo, $fechaEmisionIni, $fechaEmisionFin, $estado,$idUser);                   
 
            }elseif(isset($_REQUEST['idPresu'])){
             $idPresu = $_REQUEST['idPresu'];
@@ -143,10 +143,6 @@
            }
 
       ?>
-
-
-
-
         
     </section>
 

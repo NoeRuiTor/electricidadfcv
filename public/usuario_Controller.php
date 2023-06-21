@@ -61,21 +61,21 @@ function mostrarUsuarios() {
     if($modificado){
         if($_REQUEST['rol'] == 'usuario'){
             $mensaje='El usuario se ha editado correctamente';
-            header("location:../public/usuarioDashboard.php?mensaje=$mensaje");
+            header("location:usuarioDashboard.php?mensaje=$mensaje");
             exit();
           }else{
             $mensaje='El usuario se ha editado correctamente';
-            header("location:../public/adminDashboardUsuarios.php?mensaje=$mensaje");
+            header("location:adminDashboardUsuarios.php?mensaje=$mensaje");
             exit();
         }
     }else{
         if($_REQUEST['rol'] == 'usuario'){
           $error = 'Ha habido algún error en la inserción de los datos';
-          header("location:../public/usuarioDashboard.php?error=$error");
+          header("location:usuarioDashboard.php?error=$error");
           exit();
         }else{
           $error = 'Ha habido algún error en la inserción de los datos';
-          header("location:../public/adminDashboardUsuarios.php?error=$error");
+          header("location:adminDashboardUsuarios.php?error=$error");
           exit();
         }
     }

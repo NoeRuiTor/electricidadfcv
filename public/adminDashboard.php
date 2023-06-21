@@ -2,7 +2,7 @@
 require('../config/seguridad.php'); 
 if (isset($_SESSION['rol'])){
     if($_SESSION['rol'] == 'usuario'){
-    header("location:../public/usuarioDashboard.php");
+    header("location:usuarioDashboard.php");
     exit();
     }
 }
@@ -85,7 +85,7 @@ include_once("../config/funciones.php");
                 <p>Trabajos</p></a>
             </div>
             <div class="user__nav-section user__nav-section--doc col-2-12 col-1-12-sm">
-                <a href="../controllers/login_Controller.php?logout=logout"><i class="fas fa-sign-out-alt"></i>
+                <a href="login_Controller.php?logout=logout"><i class="fas fa-sign-out-alt"></i>
                 <p>Logout</p></a>
             </div>
         </div>
@@ -115,7 +115,7 @@ include_once("../config/funciones.php");
       <!-------------VISTA SEGÚN LOS DATOS ENVIADOS-------------->  
            
        <?php
-        require "../controllers/presupuesto_Controller.php";
+        require "presupuesto_Controller.php";
 
            if(isset($_REQUEST['navMenu']) && $_REQUEST['navMenu'] == 'presupuestos'){
 
@@ -127,7 +127,7 @@ include_once("../config/funciones.php");
                 } else{     
                    mostrarPresupuestos();
                 }
-            }elseif(isset($_REQUEST['btnBuscar'])) {
+             }elseif(isset($_REQUEST['btnBuscar'])) {
                 if(isset($_REQUEST['nombre_cliente'])){
                    $nombreCliente = $_REQUEST['nombre_cliente'];
                 }
@@ -143,8 +143,8 @@ include_once("../config/funciones.php");
                 if(isset($_REQUEST['estado'])){
                     $estado = $_REQUEST['estado'];
                 }
-                    mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo, $fechaEmisionIni,$fechaEmisionFin,$estado);                   
-
+                    mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo, $fechaEmisionIni,$fechaEmisionFin,$estado); 
+			   
            }elseif(isset($_REQUEST['idPresu'])){
                $idPresu = $_REQUEST['idPresu'];
                

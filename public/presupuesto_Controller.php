@@ -1,36 +1,35 @@
 <?php
 
-
-if(isset($_REQUEST['enviar'])){
+if(isset($_POST['enviar'])){
 // Llamar al controlador para procesar el formulario
-  $nombre = $_REQUEST['nombre'];
-  $email = $_REQUEST['email'];
-  $telefono = $_REQUEST['telefono'];
-  $ciudad = $_REQUEST['ciudad'];
-  $cpostal =  $_REQUEST['cpostal'];
-  $tipoTrabajo = $_REQUEST['trabajo'];
+  $nombre = $_POST['nombre'];
+  $email = $_POST['email'];
+  $telefono = $_POST['telefono'];
+  $ciudad = $_POST['ciudad'];
+  $cpostal =  $_POST['cpostal'];
+  $tipoTrabajo = $_POST['trabajo'];
   
-  if(isset($_REQUEST['descripción'])){
-    $descripcion = $_REQUEST['descripción'];
+  if(isset($_POST['descripción'])){
+    $descripcion = $_POST['descripción'];
   }
   $fechaActual = date('Y-m-d');
   $pwd = generar_contrasena(6);
 
     procesaFormulario($nombre,$email,$telefono,$ciudad,$cpostal,$tipoTrabajo,$fechaActual,$pwd);
     
-    //Si se procesa el formulario correctamente, enviar email también email con los datos
-    /*
+   // Si se procesa el formulario correctamente, enviar email también email con los datos
+    
     if(procesaFormulario($nombre,$email,$telefono,$ciudad,$cpostal,$tipoTrabajo,$fechaActual,$pwd)){
       if(!empty($_FILES['adjunto']['name']) && $_FILES['adjunto']['size']>0){
         $documento = $_FILES['adjunto']['name'];
         enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion,$documento);
-        enviarCorreoUsuarioRegistrado($nombre, $email, $pwd);
+		enviarCorreoUsuarioRegistrado($nombre, $email, $pwd);
       }else{
         enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion);
-        enviarCorreoUsuarioRegistrado($nombre, $email, $pwd);
+		enviarCorreoUsuarioRegistrado($nombre, $email, $pwd);
       }
-    }*/
-
+    }
+      
 }
 
 if(isset($_REQUEST['modifica'])){
@@ -86,14 +85,14 @@ function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoT
       $sql = "INSERT INTO presupuesto (id_usuario,tipo_trabajo,fecha_solicitud) VALUES (?, ?, ?)";
       $stmt = $conn->prepare($sql);
       if($stmt->execute([$idUser, $tipoTrabajo, $fechaActual])){
-      
-          $mensaje = 'Hemos recibido su solicitud de presupuesto';
-          header("Location: ../public/presupuestos.php?mensaje=$mensaje");
+       
+		  $mensaje = 'Hemos recibido su solicitud de presupuesto';
+          header("Location:presupuestos.php?error==$mensaje");
           exit();
 
       }else{
         $error = 'Error al insertar en la base de datos';
-        header("Location: ../public/presupuestos.php?error=$error");
+        header("Location:presupuestos.php?error=$error");
         exit();  
       }
 
@@ -120,16 +119,15 @@ function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoT
 
             // Confirmar la transacción
             $conn->commit();
-
-            // Redirigir a una página de éxito            
-            header("Location: ../public/success.php?contrasena=$pwd");
+            
+            header("Location:success.php?contrasena=$pwd");
             exit();
             
           } catch (Exception $e) {
             // En caso de error, deshacer la transacción
             $conn->rollback();
             $error = 'Error al insertar en la base de datos'. $e->getMessage();
-            header("Location: ../public/presupuestos.php?error=$error");
+            header("Location: presupuestos.php?error=$error");
             exit();     
             
           }
@@ -141,7 +139,7 @@ function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoT
  
     // Mostrar un mensaje de error
     $error = 'Datos inválidos';
-    header("Location: ../public/presupuestos.php?error=$error");
+    header("Location: presupuestos.php?error=$error");
     exit();
 
 
@@ -174,16 +172,7 @@ function validarDatos($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo){
     return true;
 }
 
-function enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion,$documento){
-             
-                $documento = $_FILES['adjunto']['tmp_name'];
-                $tamanio = $_FILES['adjunto']['size'];
-                $maxTamanio = 5 * 1024 * 1024; // 5 MB en bytes
-                if ($tamanio > $maxTamanio) {
-                    $error = 'El archivo adjunto es demasiado grande.';
-                    header("Location: ../public/presupuestos.php?error=$error");
-                     exit();
-
+function enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo, $descripcion, $documento) {
     $to = 'info@electricidadfcv.com'; // Dirección de correo electrónico a la que se enviará el mensaje
     $subject = 'Nueva solicitud de presupuesto'; // Asunto del correo electrónico
     $boundary = md5(time()); // Generar un valor único para el límite del mensaje
@@ -216,18 +205,16 @@ function enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
 
-// Enviar el correo electrónico
+    // Enviar el correo electrónico
     $mailSent = mail($to, $subject, $message, $headers);
 
     if (!$mailSent) {
-        $lastError = error_get_last();
-        $errorMessage = $lastError['message']; // Obtener el mensaje de error
-        $error = "Hubo un error al enviar el correo electrónico: " . $errorMessage;
-        header("Location: ../public/presupuestos.php?error=$error");
+        $error = "Hubo un error al enviar el correo electrónico.";
+        header("Location: presupuestos.php?error=$error");
         exit();
     }
- }
 }
+
 
 function enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion){
 
@@ -249,38 +236,39 @@ function enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabaj
     $mailSent = mail($to, $subject, $message);
     if (!$mailSent) {        
        $error = "Hubo un error al enviar el correo electrónico: ";
-       header("Location: ../public/presupuestos.php?error=$error");
+       header("Location: presupuestos.php?error=$error");
         exit();
     }
 }
 
 function enviarCorreoUsuarioRegistrado($nombre, $email, $pwd) {
-  $to = $email; // Dirección de correo electrónico del usuario registrado
-  $subject = 'Registro exitoso'; // Asunto del correo electrónico
+    $to = $email; // Dirección de correo electrónico del usuario registrado
+    $subject = 'Registro exitoso'; // Asunto del correo electrónico
 
-  // Construir el cuerpo del mensaje
-  $message = "Hola " . $nombre . ",\r\n\r\n";
-  $message .= "Su presupuesto se ha registrado correctamente.\r\n";
-  $message .= "Tus datos de acceso son:\r\n";
-  $message .= "Usuario: " . $email . "\r\n";
-  $message .= "Contraseña: " . $pwd. "\r\n\r\n";
-  $message .= "Gracias por confiar en nosotros. ¡Bienvenido!\r\n";
+    // Construir el cuerpo del mensaje
+    $message = "Hola " . $nombre . ",\r\n\r\n";
+    $message .= "Su presupuesto se ha registrado correctamente.\r\n";
+    $message .= "Tus datos de acceso son:\r\n";
+    $message .= "Usuario: " . $email . "\r\n";
+    $message .= "Contraseña: " . $pwd. "\r\n\r\n";
+    $message .= "Gracias por confiar en nosotros. ¡Bienvenido!\r\n";
 
-  // Encabezados adicionales para el correo electrónico
-  $headers = "From: info@electricidadfcv.com\r\n";
-  $headers .= "Reply-To: info@electricidadfcv.com\r\n";
-  $headers .= "MIME-Version: 1.0\r\n";
-  $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    // Encabezados adicionales para el correo electrónico
+    $headers = "From: info@electricidadfcv.com\r\n";
+    $headers .= "Reply-To: info@electricidadfcv.com\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-  // Enviar el correo electrónico
-  $mailSent = mail($to, $subject, $message, $headers);
+    // Enviar el correo electrónico
+    $mailSent = mail($to, $subject, $message, $headers);
 
-  if (!$mailSent) {        
-     $error = "Hubo un error al enviar el correo electrónico: ";
-     header("Location: presupuestos.php?error=$error");
-      exit();
-  }
+    if (!$mailSent) {        
+       $error = "Hubo un error al enviar el correo electrónico: ";
+       header("Location: presupuestos.php?error=$error");
+        exit();
+    }
 }
+
 
 
 function mostrarPresupuestos() {
@@ -301,7 +289,7 @@ function mostrarPresupuestosOrdenados($orderBy, $orderDirection) {
     include("../views/presupuestosList.php");
   }
  
-  function mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo,$fechaEmisionIni,$fechaEmisionFin,$estado) {
+ function mostrarPresupuestosEncontrados($nombreCliente, $tipoTrabajo,$fechaEmisionIni,$fechaEmisionFin,$estado) {
     require '../models/presupuesto_Model.php';
     $presupuestos = buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmisionIni,$fechaEmisionFin, $estado);
     include("../views/presupuestosList.php");
@@ -318,6 +306,7 @@ function mostrarPresupuestosOrdenados($orderBy, $orderDirection) {
     $presupuestos = buscarPresupuestos($nombreCliente, $tipoTrabajo, $fechaEmisionIni,$fechaEmisionFin, $estado,$idUser);
     include("../views/presupuestosListUser.php");
   }
+
 
   function mostrarDetallePresupuesto($idPresu){
     require '../models/presupuesto_Model.php';
@@ -347,14 +336,14 @@ function mostrarPresupuestosOrdenados($orderBy, $orderDirection) {
     if (empty($fechaEmision) || empty($importe) || empty($documento)) {
         // Mostrar un mensaje de error o redirigir al formulario con un mensaje de error
         $error = "Por favor, complete todos los campos obligatorios.";
-        header("location:../public/adminDashboard.php?error=$error");
+        header("location:adminDashboard.php?error=$error");
         exit();
     }
         $rutaArchivo = $_FILES['adjunto']['tmp_name'];
         // Generar el nuevo nombre del archivo con el ID del presupuesto
         $nuevoNombreArchivo = $idPresu . '_' . $documento;
         // Ruta de destino para guardar el archivo
-         $rutaDestino = '../public/presupuestos/' . $nuevoNombreArchivo;
+         $rutaDestino = 'presupuestos/' . $nuevoNombreArchivo;
     
         // Mover el archivo a la carpeta de destino
         move_uploaded_file($rutaArchivo, $rutaDestino);
@@ -363,11 +352,11 @@ function mostrarPresupuestosOrdenados($orderBy, $orderDirection) {
     $modificado = modificaPresupuesto($idPresu, $fechaEmision, $importe, $fechaVencimiento, $numPresu, $documento, $estado);
     if($modificado){
         $mensaje='El presupuesto se ha editado correctamente';
-        header("location:../public/adminDashboard.php?mensaje=$mensaje");
+        header("location:adminDashboard.php?mensaje=$mensaje");
         exit();
     }else{
       $error = 'Ha habido algún error en la inserción de los datos';
-      header("location:../public/adminDashboard.php?error=$error");
+      header("location:adminDashboard.php?error=$error");
       exit();
     }
   
@@ -380,11 +369,11 @@ function mostrarPresupuestosOrdenados($orderBy, $orderDirection) {
    
     if($aceptado){
         $mensaje='El presupuesto se ha editado correctamente';
-        header("location:../public/adminDashboard.php?mensaje=$mensaje");
+        header("location:adminDashboard.php?mensaje=$mensaje");
         exit();
     }else{
       $error = 'Ha habido algún error en la inserción de los datos';
-      header("location:../public/adminDashboard.php?error=$error");
+      header("location:adminDashboard.php?error=$error");
       exit();
     }
   }

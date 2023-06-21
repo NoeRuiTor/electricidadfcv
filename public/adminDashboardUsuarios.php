@@ -2,7 +2,7 @@
 require('../config/seguridad.php');
  if (isset($_SESSION['rol'])){
     if($_SESSION['rol'] == 'usuario'){
-    header("location:../public/usuarioDashboard.php");
+    header("location:usuarioDashboard.php");
     exit();
     }
 }
@@ -82,7 +82,7 @@ require('../config/seguridad.php');
                 <p>Trabajos</p></a>
             </div>
             <div class="user__nav-section user__nav-section--doc col-2-12 col-1-12-sm">
-                <a href="../controllers/login_Controller.php?logout=logout"><i class="fas fa-sign-out-alt"></i>
+                <a href="login_Controller.php?logout=logout"><i class="fas fa-sign-out-alt"></i>
                 <p>Logout</p></a>
             </div>
         </div>
@@ -112,7 +112,7 @@ require('../config/seguridad.php');
        
    <?php
  
-    require "../controllers/usuario_Controller.php";
+    require "usuario_Controller.php";
 
        
     if(isset($_REQUEST['navMenu']) && $_REQUEST['navMenu'] == 'clientes'){

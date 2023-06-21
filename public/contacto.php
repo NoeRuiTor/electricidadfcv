@@ -58,7 +58,7 @@ include("../plantillas/cabecera.php");
                         <p>Formulario de <span id="color">contacto</span> </p>
                         <span></span>
                     </h3>
-                    <form class="contactar__form-form form-contacto" action="../controllers/contacto_Controller.php" method="POST" onsubmit="return validaDatosContacto()">
+                    <form class="contactar__form-form form-contacto" action="contacto_Controller.php" method="POST" onsubmit="return validaDatosContacto()">
                         <div class="form-input">
                                 <input type="text" name="nombre" id="nom" autocapitalize="word" placeholder="nombre" autocomplete="off">
                         </div>
@@ -79,6 +79,7 @@ include("../plantillas/cabecera.php");
                             <?php echo $_REQUEST['error']; ?>
                         </div>
                          <?php endif;?>
+						
                          <?php if (isset($_REQUEST['mensaje'])) : ?>
                         <div id="mensaje">
                         <?php echo $_REQUEST['mensaje']; ?>

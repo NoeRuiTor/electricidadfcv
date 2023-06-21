@@ -10,7 +10,7 @@ if (isset($_REQUEST['entrar'])) {
     logout();
 } else {
     $error = "Ha habido problemas al gestionar el login, vuelva a intentarlo";
-    header("location: ../public/login.php?error=$error");
+    header("location: login.php?error=$error");
     exit();
 }
 
@@ -47,7 +47,7 @@ function login(){
                 $_SESSION['rol'] = $rol ; 
 
                 // Redirigir al panel de administrador
-                header('Location: ../public/adminDashboard.php');
+                header('Location: adminDashboard.php');
                 exit();
             } elseif ($rol === 'usuario') {
                 
@@ -57,13 +57,13 @@ function login(){
                 $_SESSION['id'] = $user['id']; 
                 $_SESSION['rol'] = $rol;
                 // Redirigir al panel de usuario normal
-                header('Location: ../public/usuarioDashboard.php');
+                header('Location:usuarioDashboard.php');
                 exit();
             }
         } else {
             // Credenciales inválidas, mostrar mensaje de error
             $error = 'Credenciales inválidas, pongase en contacto con nosotros.Gracias';
-            header("Location: ../public/login.php?error=$error");
+            header("Location:login.php?error=$error");
             exit();
         }
     
@@ -91,29 +91,27 @@ function cambiaPassword(){
             $sentencia = $con->prepare ("UPDATE usuario SET psw = :psw WHERE email = :email ;");
                 if($sentencia -> execute(array(':psw' => $pwdHash,':email' => $email))){            
                     $mensaje='CONTRASEÑA ACTUALIZADA';
-                    header("location:../public/login.php?mensaje=$mensaje");
+                    header("location:login.php?mensaje=$mensaje");
                     exit();   
                 }else {
                     $error = 'ERROR AL INTRODUCIR LOS DATOS, VUELVA A INTENTARLO';
-                    header("location:../public/login.php?error=$error");
+                    header("location:login.php?error=$error");
                     exit();
                 }
         } else {
         $error = 'ERROR AL INTRODUCIR LOS DATOS, VUELVA A INTENTARLO';
-                    header("location:../public/login.php?error=$error");
+                    header("location:login.php?error=$error");
                     exit();
         }   
     
 }
-
-
 
 function logout() {
     // Cerrar sesión y redirigir al formulario de inicio de sesión
     session_start();
     $_SESSION = array(); 
     session_destroy();
-    header('Location: ../public/index.php');
+    header('Location: index.php');
     exit();
 }
 

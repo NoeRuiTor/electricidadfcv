@@ -1,6 +1,6 @@
 <?php
 function procesarFormContacto(){
-    $nombre = $_POST['nombre'];
+    $nombre = filter_var($_POST['nombre'],FILTER_SANITIZE_STRING);
     $telefono = filter_var($_POST['telefono'], FILTER_SANITIZE_NUMBER_INT);
     $email = filter_var ($_POST['email'],FILTER_SANITIZE_EMAIL);
     $consulta = $_POST['consulta'];

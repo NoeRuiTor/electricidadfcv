@@ -2,6 +2,7 @@
 session_start();
 include_once("../config/funciones.php");
 include("../plantillas/cabecera.php");
+
 if(isset($_REQUEST['contrasena'])){
     $pwd = $_REQUEST['contrasena'];
 }
@@ -16,7 +17,6 @@ if(isset($_REQUEST['contrasena'])){
             </h3>
             <p class="success__box-content">Hemos recibido su solicitud, puede acceder a su zona de cliente en <span>Acceso usuarios</span>
              con su email y la contraseña <?php echo $pwd; ?> y cambiarla por seguridad.</p>
-           
         </div>
 </section>
 <div id="volver" class="col-12-12 col-12-12-sm">

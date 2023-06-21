@@ -7,7 +7,7 @@
         </h3>
     </div>
     <div class="presupuesto__modifica-form  col-12-12 col-12-12-sm">
-       <form  action="../controllers/presupuesto_Controller.php" method="post" enctype="multipart/form-data">
+       <form  action="presupuesto_Controller.php" method="post" enctype="multipart/form-data">
          
             <div class="presupuesto__modifica-input">
                 <div>

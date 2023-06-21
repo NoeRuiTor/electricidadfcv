@@ -52,8 +52,7 @@ include("../plantillas/cabecera.php");
                 Ofrecemos servicios personalizados para emprender proyectos, ampliaciones o modificaciones, así como realizar
                  un eficaz mantenimiento de tus instalaciones eléctricas. Realizamos proyectos para instalaciones eléctricas tanto
                   en locales como en viviendas: Cambios de tensiones, Boletines eléctricos, Tramitamos gestiones en Industria e 
-                  Iberdrola, Certificados de instalación (boletines).
-              </p>
+                  Iberdrola, Certificados de instalación (boletines).</p>
               <a href="presupuestos.php" class="feature__text-btn btn btn--presupuesto">Pida su presupuesto</a>  
 
           </div>
@@ -106,8 +105,7 @@ include("../plantillas/cabecera.php");
                 por ello, que para eso, hay que saber elegir una buena opción, generalmente la opción que consuma 
                 poco y que dure mucho. Las luces tipo led cumplen a la perfeccion estos dos requisitos, ya que la 
                 duración es aproximadamente unas 30 mil horas y el gasto de toda su vida útil no suele llegar a superar
-                 los 16 euros.
-               </p>
+                 los 16 euros.</p>
               <a href="presupuestos.php" class="feature__text-btn btn btn--presupuesto">Pida su presupuesto</a>  
 
           </div>

@@ -130,6 +130,7 @@ function obtenerPresupuestosOrdenadosCliente($orderBy, $orderDirection,$idUser) 
 
 }
 
+
 function buscarPresupuestosCliente($nombreCliente, $tipoTrabajo,  $fechaEmisionIni, $fechaEmisionFin, $estado, $idUser) {
     require("../config/conectar_db.php");
     $con = conectar_db($bd);

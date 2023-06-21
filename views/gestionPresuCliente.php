@@ -7,8 +7,8 @@
     </div>
 
     <div class="presupuesto__modifica-form  col-12-12 col-12-12-sm">
-       <form  action="../controllers/presupuesto_Controller.php" method="post" enctype="multipart/form-data">
-            <div class="presupuesto__modifica-input">
+       <form  action="presupuesto_Controller.php" method="post" enctype="multipart/form-data">
+           <div class="presupuesto__modifica-input">
                 <div>
                     <input type="hidden" name="id" value="<?php echo $presupuesto['id'];?>">
                     <label for="id presupuesto">Id Presupuesto</label>
