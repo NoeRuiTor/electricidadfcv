@@ -339,6 +339,7 @@ body {
   width: 45%;
 }
 .presupuesto__formulario #descripcion {
+  padding: 1rem;
   width: 100%;
   border: none;
   color: #323535;

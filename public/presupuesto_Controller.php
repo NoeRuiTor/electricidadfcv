@@ -23,10 +23,10 @@ if(isset($_POST['enviar'])){
       if(!empty($_FILES['adjunto']['name']) && $_FILES['adjunto']['size']>0){
         $documento = $_FILES['adjunto']['name'];
         enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion,$documento);
-		enviarCorreoUsuarioRegistrado($nombre, $email, $pwd);
+		    enviarCorreoUsuarioRegistrado($nombre, $email, $pwd);
       }else{
         enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion);
-		enviarCorreoUsuarioRegistrado($nombre, $email, $pwd);
+		    enviarCorreoUsuarioRegistrado($nombre, $email, $pwd);
       }
     }
       
