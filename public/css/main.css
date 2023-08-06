@@ -334,6 +334,7 @@ body {
   height: 2.5rem;
   border: none;
   color: #323535;
+  padding-left: 1rem;
 }
 .presupuesto__formulario-input .ciudad {
   width: 45%;

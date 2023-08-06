@@ -141,12 +141,11 @@
                                 <p>Como trabajamos</p>
                                 <span></span>
                     </h2>
-                    <p class="info__trabajo-main col-12-12 col-12-12-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Vivamus justo dolor, luctus et ipsum sit amet, convallis tristique dolor. Curabitur id finibus turpis. 
-                        Morbi faucibus mattis nibh a mattis. Morbi lacus purus, blandit ac justo nec, finibus faucibus felis. 
-                        In vel est faucibus, consequat justo vitae, mattis elit. Quisque viverra est pretium arcu finibus, 
-                        et rutrum ligula viverra. Nulla ultrices fermentum urna. Mauris vehicula sem eu est finibus maximus. 
-                        Sed ut egestas orci, in dapibus urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="info__trabajo-main col-12-12 col-12-12-sm"><strong><em>Nos gusta diferenciarnos de los demás precisamente, 
+                        porque cuesta muy poco hacer las cosas bien.</em></strong><br><br>
+                    Realizamos cualquier tipo de instalación para tu vivienda o negocio. Trabajos profesionales a precios muy competitivos.
+                    Disponemos de gran experiencia avalada por las opiniones de nuestros clientes. Desarrollamos desde el inicio los proyectos
+                    de instalación eléctrica coordinado con otros profesionales o con los propios clientes.</p>
    
                 </div>
 
