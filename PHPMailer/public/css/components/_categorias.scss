@@ -1,0 +1,33 @@
+//MENU CATEGORIAS FOTOS DE LOS TRABAJOS
+
+.categorias{   
+
+    #category-list{
+        display: flex;
+        justify-content: center;
+        align-items: center;        
+
+        li{
+            list-style: none;
+            margin: 1rem;
+        
+             a{
+                text-decoration: none;                
+                font-size: $s-size;
+                color: $colorBlanco;
+                background-color: $color3;
+                padding: 1rem;
+                @include mobile(1024px){
+                    font-size: $xs-size;
+                }             
+    
+                &:hover{
+                    text-decoration: none;
+                    background-color: $color2;
+                }
+             }
+
+        }
+    }
+
+}

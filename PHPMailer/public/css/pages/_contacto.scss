@@ -1,0 +1,39 @@
+
+
+.contactar{
+    padding: 5rem 0;
+    width: 95%;
+    
+
+    &__mapa{   
+    padding-left: 5rem;
+       height: 100%;
+       .mapa{
+        width: 100%;
+        height: 100%;
+       }
+    }
+    &__form{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       @include centra-items;
+       
+
+       &-heading{
+        align-self: flex-end;
+        display: block;        
+        @include heading_linea($color1);  
+        @include mobile  {
+            align-self:center;            
+            margin-top: 2rem;
+          }    
+
+       }
+    #color{
+      color:$color1;
+      border-bottom: none;
+    }
+    
+ }
+}

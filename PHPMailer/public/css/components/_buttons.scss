@@ -1,0 +1,56 @@
+//BOTONES
+
+.btn--login{
+    @include button;   
+    background-color: $color1;   
+   &:hover{
+    @include button-animation;    
+   } 
+}  
+
+.btn--enviar{  
+    @include button($color2,$color2 );              
+    background-color: transparent;  
+    &:hover{
+        @include button-animation;       
+    
+       }    
+}
+
+.btn--presupuesto{
+    @include button($color4,$color5);              
+    background-color: $color4;  
+    &:hover{
+        @include button-animation;       
+    
+       }    
+}
+
+.btn--contactar{
+    @include button($color2,$color2);              
+    background-color: $color5;
+   
+    &:hover{
+        @include button-animation;       
+    
+       }    
+}
+
+#search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0 0 0.2rem;
+}
+
+#search-button i {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+  
+
+

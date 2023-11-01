@@ -1,0 +1,23 @@
+//BANNER AVISO COOKIES
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $color5;
+    padding: 1rem;
+    text-align: center;
+  
+  
+    p {
+        margin: 0;
+        font-family:$fuente1;
+        font-size: $xs-size;
+    }
+  
+    a {
+    color: $color4;
+    text-decoration: none;
+  }
+} 

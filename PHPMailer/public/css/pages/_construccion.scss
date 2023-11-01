@@ -1,0 +1,16 @@
+.construccion{
+    width: 100%;
+    max-width: 100%;
+    background-color: $colorBlanco;
+    &__img{
+        width: 50%;
+        height: 58vh;
+        @include centra-items;
+        padding: 5rem;
+        
+        img{
+            align-self: center;
+            width: 80%;
+        }
+    }
+}

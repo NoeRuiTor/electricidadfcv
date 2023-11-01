@@ -1,0 +1,56 @@
+//ABSTRACT:
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/funtions";
+
+
+//BASE:
+@import "base/typography";
+@import "base/base";
+@import "base/animations";
+
+//COMPONENTS:
+@import "components/buttons";
+@import "components/banner-head";
+@import "components/fixed-icons";
+@import "components/contact-box";
+@import "components/heading";
+@import "components/redes_sociales";
+@import "components/form-presupuesto";
+@import "components/carrousel";
+@import "components/slider-reseñas";
+@import "components/cookies";
+@import "components/feature";
+@import "components/form-contactar";
+@import "components/admin-nav";
+@import "components/form-login";
+@import "components/categorias";
+@import "components/card-foto";
+@import "components/paginacion";
+@import "components/post";
+@import "components/post_list";
+@import "components/mensajes";
+@import "components/alertInfo";
+@import "components/admin-nav-users";
+@import "components/tabla-listados";
+@import "components/formEdit";
+
+
+//LAYOUT:
+@import "layout/grid";
+@import "layout/nav";
+@import "layout/header";
+@import "layout/info-contacto";
+@import "layout/footer";
+
+
+//PAGES:
+@import "pages/home";
+@import "pages/servicios";
+@import "pages/presupuesto";
+@import "pages/contacto";
+@import "pages/blog";
+@import "pages/login";
+@import "pages/trabajos";
+@import "pages/success";
+@import "pages/dashboard";

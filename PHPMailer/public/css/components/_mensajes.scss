@@ -1,0 +1,13 @@
+//MENSAJES DE ERRORES O DE INFORMACIÓN
+
+#errores, #mensaje{
+    width: 100%;    
+    color:$color4;
+    font-weight: 800;
+    text-align: center;
+    font-size: $m-size;
+    font-style: italic;
+    padding: 1.5rem; 
+    margin-bottom: 1.5rem;
+   
+}

@@ -1,0 +1,31 @@
+.blog{
+    font-size: $xs-size;
+    background-color: $colorBlanco;
+    margin: 2rem;
+    align-content: space-around;
+    &__posts{
+        padding:2rem;
+        width: 100%;
+    }
+    &__aside{
+        padding: 2rem;
+
+        &-etiquetas{
+            .etiquetas-heading{
+                font-size: $m-size;
+                @include heading_linea($color2);
+                padding: 1rem;
+                color:$color2;
+            }
+            
+            a{
+                text-decoration: none;            
+                font-style: italic;
+                color: $colorNegro;
+            }
+            .etiquetas-etiqueta{
+                padding: 0.8rem;
+            }
+        }
+    }
+}

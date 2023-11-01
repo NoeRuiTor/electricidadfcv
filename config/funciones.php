@@ -2,7 +2,7 @@
 //VARIABLES
   
   $email = 'info@electricidadfcv.com';
-  $movil = '666194313';
+  $movil = '+34666194313';
   $direccion = "Electricidad FCV, Carrer Senieta de l'Auelet, 53, 03420 Castalla, Alicante";
   
 

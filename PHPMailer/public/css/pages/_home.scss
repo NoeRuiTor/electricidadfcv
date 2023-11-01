@@ -1,0 +1,210 @@
+.contenedor {
+    
+    max-width: 100%;
+    width: 100%;
+    margin-top: 1.5rem; 
+    background-color: $colorBlanco;
+
+    .banner1{
+        @include  banner(
+            $height:55rem,
+            $bgBM:saturation);           
+        background-image: $banner1Foto;        
+        background-position: center center;
+            
+
+        @include mobile(1200px){
+          align-content: end ;
+          height: calc(80rem/2);
+        }
+        
+        
+        
+        &__text-background{                               
+        
+            background-color: $gradienteNegro;
+           
+            @include mobile(1200px){
+                align-self: end  ;
+                justify-self: center;
+                width: 100%;
+             }      
+            
+        }
+        &__text{    
+                                
+            display: flex;
+            flex-direction: column;
+            height:  80%;
+            justify-content:center;
+            padding: 2rem;                     
+                
+
+            .heading-primary{ 
+                color:$colorBlanco;                                 
+                line-height: 5rem;
+                
+                &--color{
+                    color:$color1;
+                }
+                
+            }
+                       
+        }
+ 
+    }
+
+    .inicio{
+        text-align: left;
+        padding: 5rem;
+        &__text{
+            font-size: $s-size;
+           
+
+            .heading-secondary{                
+                color: $colorNegro;
+                @include mobile(1200px){
+                    font-size: 3rem;
+                }
+                @include mobile(1000px){
+                    font-size: 2.5rem;
+                }
+                &--color{
+                    color: $color1;
+                }
+            }
+            .heading-main{
+                padding: 2rem;                
+                line-height: 3rem;
+                
+                a{
+                    color:$colorNegro;
+                   
+                }
+            }
+
+            @include mobile{
+                text-align: left;
+                padding: 2rem;
+                margin-right: 5rem;                
+             }  
+            
+        }
+        &__contacto{
+            @include centra-items;
+           .contacto{
+            margin-bottom: 2rem;
+           }
+
+           @include mobile{
+            display: none;
+         }  
+           
+        }
+    }
+
+    .servicios{
+        justify-self: end;
+        padding: 5rem;
+        background-color: $color5;   
+        margin-top: 2rem;  
+
+        &__text{
+            color: $color2;
+           
+            .heading-secondary{               
+                @include heading_linea($color2);
+            }
+            .heading-main{           
+                font-size: $s-size;
+                padding: 2rem;
+            }
+        }
+        
+    }
+
+    .info{  
+        @include  banner(           
+            $bgBM:saturation);           
+        background-image: $banner2Foto;        
+        background-position: center center;  
+        color:$color5; 
+          
+        &__background{
+            background-color: $gradienteNegro1;
+         .info__trabajo{  
+            color: $color5;
+            &-heading{
+                padding: 5rem;                
+                @include heading_linea($color5);                
+            }
+            &-main{
+                font-size: $s-size;
+                width: 80%;
+                text-align: justify;
+                margin-left: 8rem;
+                margin-bottom: 5rem;
+                line-height: 3rem;
+               
+            } 
+        
+                  
+        }
+    }
+        .info__reseñas{
+            background-color: $color3;
+            color: $color2;
+            .reseñas__text{
+                .heading-secondary{
+                padding: 5rem;            
+                @include heading_linea($color2);
+
+                    @include mobile{                    
+                        flex-direction: column;
+                            span{
+                                margin-left: 38%;
+                            }
+                    
+                    }
+                }
+            }
+
+            .reseñas__slider{
+                padding-left: 20%;
+            }
+       
+        
+    }
+
+        .info__extra{
+            padding: 5rem 0;
+            
+            &-slogan{
+                @include centra-items;
+                text-align: center;
+                width: 60%;
+                .content{
+                    padding: 2rem;
+                }
+                .heading{
+                    color: $color4;
+                    font-family: $fuente2;
+                }
+            }
+
+            &-asocia{
+                @include centra-items;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                .imagen{
+                    width: 50%;
+                    padding: 1rem;
+                }
+            }
+    }
+
+  }
+
+}    

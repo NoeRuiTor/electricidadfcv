@@ -1,0 +1,121 @@
+//TABLA LISTADO PRESUPUESTOS
+
+    .tablaListados {
+        
+        margin-bottom: 5rem;
+       
+       
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: auto;
+       
+    
+
+        td {
+        border: 0.1 solid $color2;
+        padding: 0.8rem;
+        text-align: center;
+        
+    }
+
+     .tabla-fila:nth-child(even) {
+        background-color: $colorBlanco;
+    }
+    .tabla-fila{   
+        
+        .nombre-cli{
+            color:$color4;
+        }
+       .td-contact{
+         color:$color2
+       }
+      
+      
+    }
+
+     .tabla-head {
+        font-weight: bold;
+        border-bottom: 0.2rem solid $color2;
+        td{
+            font-size: $s-size;
+            i{
+                color:$colorNegro;
+            }
+            @include mobile{
+                font-size: $xs-size;
+                
+            }       
+            
+        }
+        
+    }
+    .icono-descarga {
+        display: inline-block;             
+       
+                
+    }
+    .fa-eye-slash, .fa-eye{
+        cursor: pointer;
+        font-size: $s-size;
+        @include mobile{
+            font-size: 2rem;
+        }
+      }
+    
+    .estado{
+        p{
+            margin: 0.2rem;
+            padding: 0.5rem 0;
+            border-radius: 1rem;
+        }
+    }
+    
+    .estado-pendiente {
+        p{
+            background-color: $color4;
+            color: $colorBlanco;
+        }
+    }
+
+    .estado-aprobado {
+        p{
+            background-color: green;
+            color: $colorBlanco;
+        }
+    }
+
+    .estado-rechazado {
+        p{
+            background-color: red;
+            color: $colorBlanco;
+        }
+    }
+    .estado-solicitado {
+        p{
+            background-color: $color1;
+            color: $colorNegro;          
+        }
+    }
+
+    .estado-activo {
+        p{
+            background-color: green;
+            color: $colorBlanco;
+        }
+    }
+
+    .estado-inactivo {
+        p{
+            background-color: red;
+            color: $colorBlanco;
+        }
+    }
+    #edit{
+        width: 2rem;
+        
+    }
+   
+    }
+}

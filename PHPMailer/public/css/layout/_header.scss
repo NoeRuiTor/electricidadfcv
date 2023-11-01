@@ -1,0 +1,77 @@
+.header{
+    max-width: 100%;
+    width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0; /* Posicionamos la cabecera pegada arriba */
+	position: fixed; /* Hacemos que la cabecera tenga una posició*/
+    z-index: 1;
+    box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);   
+    height: 15rem;
+    justify-content: space-around;
+    align-items: start;  
+    background-color: $colorBlanco;
+    
+   
+    &__logo{
+    
+    @include centra-items; 
+    @include caja-logo; 
+
+        .logo{
+            @include logo;
+            @include mobile{
+                width: 10rem;
+                height: 10rem;
+            }
+        }
+    }
+  
+    .menu-icon{
+        display: none;
+        @include mobile{
+            display: flex;
+	        justify-content:flex-end;
+	        align-items: center;
+            font-size: 2.4rem;
+            cursor: pointer;
+        }
+    }
+    .menu-login{
+        display: none;
+        @include mobile{
+            display: flex;
+	        justify-content:flex-end;
+	        align-items: center;
+            font-size: 2.4rem;
+            cursor: pointer;
+            a{
+                color: $colorNegro;
+            }
+        }
+    }
+    
+    &__nav{   
+     
+      align-self: center;      
+          
+        
+     }
+    
+    
+ 
+    &__btn{
+       
+     @include centra-items;
+    
+     @include mobile{       
+      
+       display: none;
+    }
+    @include mobile(1024px){       
+       font-size: $xs-size;
+        
+     }
+
+    }
+   
+}  

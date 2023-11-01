@@ -1,0 +1,69 @@
+// POST BLOG
+.post{
+    background-color: $colorBlanco;  
+    width: 90%;
+    height: 50rem;
+    padding: 2rem 5rem;
+    box-shadow: 0.3em 0.3em 1em 0.5em rgba(0,0,0,0.3); 
+    margin-top: 2rem; 
+    line-height: 2rem;
+    
+    div{
+        max-width: 90%;
+        max-height: 90%;
+    }
+    &-img{
+        padding: 1rem;
+        width: 60%;
+        height: 60%;        
+    }
+    &-detalles{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        &--color{
+            color:$color4;
+        }
+        &--estilo{
+            font-style: italic;
+        }
+    }
+    &-heading{
+        font-size: $s-size;
+    }
+    &-resumen{
+        padding: 1rem;
+        text-align: left;
+        a{
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $color4;
+        }
+    }
+}
+.post--detalle{   
+    height: 100%; 
+ 
+    
+    .post-contenido{
+        line-height: 2.5rem;
+        text-align: justify;
+        padding:3rem 0;
+        max-height: 90%;
+    
+   }  
+    
+}
+
+
+#volver{
+    width: 80%;
+    margin:3rem;
+    text-align: right;
+    a{
+    text-decoration: none;
+    font-size: $s-size;
+    color: $color4;         
+    }
+}

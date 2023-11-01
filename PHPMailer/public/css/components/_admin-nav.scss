@@ -1,0 +1,15 @@
+//BANNER DE ADMINISTRACIÓN INTRANET 
+
+.admin__nav{
+    @include banner-intranet;
+
+    &-heading{
+        @include centra-items;
+       
+        h2{
+            text-transform: none;
+            
+        }
+    }
+}
+
