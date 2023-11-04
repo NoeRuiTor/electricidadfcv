@@ -7,7 +7,7 @@ function procesarFormContacto(){
 	
     
 
-        $to ='info@electricidadfcv.com'; // Dirección de correo electrónico a la que se enviará el mensaje
+        $to ='fundeanuconstantin@gmail.com'; // Dirección de correo electrónico a la que se enviará el mensaje
         $subject = 'Contacto desde la web'; // Asunto del correo electrónico
     
         // Construir el cuerpo del mensaje

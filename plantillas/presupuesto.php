@@ -52,7 +52,7 @@
                  <textarea id="descripcion" name="descripcion" cols="40" rows="10" placeholder="Descripción del trabajo"></textarea>
            </div>
            <div class="presupuesto__formulario-input">
-                <input id="file" type="file" id="file" accept=".jpg, .jpeg, .png, .gif .pdf" name="adjunto">
+                <input id="file" type="file" accept=".jpg, .jpeg, .png, .gif .pdf" name="adjunto">
            </div>
            <div class="presupuesto__formulario-privacidad">
                 <input type="checkbox" name="privacidad" id="ppriva" value="privacidad"> He leído y acepto la <a href="#">POLÍTICA DE PRIVACIDAD</a>

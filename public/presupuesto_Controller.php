@@ -7,28 +7,12 @@ if(isset($_POST['enviar'])){
   $telefono = $_POST['telefono'];
   $ciudad = $_POST['ciudad'];
   $cpostal =  $_POST['cpostal'];
-  $tipoTrabajo = $_POST['trabajo'];
-  
-  if(isset($_POST['descripción'])){
-    $descripcion = $_POST['descripción'];
-  }
+  $tipoTrabajo = $_POST['trabajo']; 
   $fechaActual = date('Y-m-d');
   $pwd = generar_contrasena(6);
 
     procesaFormulario($nombre,$email,$telefono,$ciudad,$cpostal,$tipoTrabajo,$fechaActual,$pwd);
     
-   // Si se procesa el formulario correctamente, enviar email también email con los datos
-    
-    if(procesaFormulario($nombre,$email,$telefono,$ciudad,$cpostal,$tipoTrabajo,$fechaActual,$pwd)){
-      if(!empty($_FILES['adjunto']['name']) && $_FILES['adjunto']['size']>0){
-        $documento = $_FILES['adjunto']['name'];
-        enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion,$documento);
-		enviarCorreoUsuarioRegistrado($nombre, $email, $pwd);
-      }else{
-        enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion);
-		enviarCorreoUsuarioRegistrado($nombre, $email, $pwd);
-      }
-    }
       
 }
 
@@ -65,6 +49,18 @@ function generar_contrasena($longitud) {
 
 function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoTrabajo, $fechaActual, $pwd) {
   if (validarDatos($nombre, $email, $telefono, $ciudad, $cpostal, $tipoTrabajo) == true) {
+	  if(isset($_POST['descripcion'])){
+    	$descripcion = $_POST['descripcion'];
+  	  } 
+     if(!empty($_FILES['adjunto']) && $_FILES['adjunto']['size']>0){
+      $documento = $_FILES['adjunto']['tmp_name'];
+       enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion,$documento);
+	   
+      }else{
+        enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion);
+		    
+     }
+    
     require("../config/conectar_db.php");
     $conn = conectar_db($bd);
     
@@ -99,7 +95,7 @@ function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoT
      //SI EL USUARIO NO EXISTE EN LA BASE DE DATOS
         
     }else{
-          
+           enviarCorreoUsuarioRegistrado($nombre, $email, $pwd);
           // Iniciar una transacción
           $conn->beginTransaction();
 
@@ -173,7 +169,7 @@ function validarDatos($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo){
 }
 
 function enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo, $descripcion, $documento) {
-    $to = 'info@electricidadfcv.com'; // Dirección de correo electrónico a la que se enviará el mensaje
+    $to = 'fundeanuconstantin@gmail.com'; // Dirección de correo electrónico a la que se enviará el mensaje
     $subject = 'Nueva solicitud de presupuesto'; // Asunto del correo electrónico
     $boundary = md5(time()); // Generar un valor único para el límite del mensaje
 
@@ -218,7 +214,7 @@ function enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $
 
 function enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion){
 
-    $to = 'info@electricidadfcv.com'; // Dirección de correo electrónico a la que se enviará el mensaje
+    $to = 'fundeanuconstantin@gmail.com'; // Dirección de correo electrónico a la que se enviará el mensaje
     $subject = 'Nueva solicitud de presupuesto'; // Asunto del correo electrónico
 
     // Construir el cuerpo del mensaje
@@ -243,7 +239,7 @@ function enviarCorreo($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabaj
 
 function enviarCorreoUsuarioRegistrado($nombre, $email, $pwd) {
     $to = $email; // Dirección de correo electrónico del usuario registrado
-    $subject = 'Registro exitoso'; // Asunto del correo electrónico
+    $subject = 'Su registro se ha realizado correctamente'; // Asunto del correo electrónico
 
     // Construir el cuerpo del mensaje
     $message = "Hola " . $nombre . ",\r\n\r\n";
@@ -251,6 +247,7 @@ function enviarCorreoUsuarioRegistrado($nombre, $email, $pwd) {
     $message .= "Tus datos de acceso son:\r\n";
     $message .= "Usuario: " . $email . "\r\n";
     $message .= "Contraseña: " . $pwd. "\r\n\r\n";
+	$message .= "Recuerde por su seguridad, cambiar la contraseña.\r\n\r\n";
     $message .= "Gracias por confiar en nosotros. ¡Bienvenido!\r\n";
 
     // Encabezados adicionales para el correo electrónico
