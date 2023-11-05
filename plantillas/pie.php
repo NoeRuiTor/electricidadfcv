@@ -44,7 +44,7 @@
                  <ul class="footer-list">
                      <li><a href="#">Aviso Legal</a></li>
                      <li><a href="#">Pólitica de Cookies</a></li>
-                     <li><a href="#">Pólitica de privacidad</a></li>
+                     <li><a href="politicaPrivacidad.php">Pólitica de privacidad</a></li>
                  </ul>
             </div>
 
