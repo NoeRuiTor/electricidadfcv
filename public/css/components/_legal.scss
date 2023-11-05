@@ -1,0 +1,23 @@
+.legal{
+    background-color: $colorBlanco;  
+    width: 100%;
+    height: auto;    
+    font-family:$fuente2;
+    line-height: 3rem;
+    padding: 3rem; 
+    justify-content: space-around;
+    font-size: $xs-size;
+    box-shadow: 0.3em 0.3em 1em 0.5em rgba(0,0,0,0.3); 
+    margin-top: 2rem; 
+    
+    
+    div{
+        max-width: 90%;
+        max-height: 90%;
+    }
+    &-heading{
+        font-size: $xs-size;
+        padding: 1rem 0;        
+        color:$colorNegro;
+    }
+}

@@ -334,11 +334,13 @@ body {
   height: 2.5rem;
   border: none;
   color: #323535;
+  padding-left: 1rem;
 }
 .presupuesto__formulario-input .ciudad {
   width: 45%;
 }
 .presupuesto__formulario #descripcion {
+  padding: 1rem;
   width: 100%;
   border: none;
   color: #323535;
@@ -1046,6 +1048,28 @@ body {
 }
 .formEdit .presupuesto__modifica-form .condiciones {
   font-style: italic;
+}
+
+.legal {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: auto;
+  font-family: "Poppins", sans-serif;
+  line-height: 3rem;
+  padding: 3rem;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  box-shadow: 0.3em 0.3em 1em 0.5em rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+}
+.legal div {
+  max-width: 90%;
+  max-height: 90%;
+}
+.legal-heading {
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  color: #000000;
 }
 
 .contenedor {
