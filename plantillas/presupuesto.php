@@ -15,7 +15,7 @@
       <form class="presupuesto__formulario col-12-12 col-12-12-sm" action="presupuesto_Controller.php" method="post" enctype="multipart/form-data" onsubmit="return enviaForm()">
            <!-- Campo honeypot oculto -->
           <div style="display:none;">
-            <label for="pais">Teléfono:</label>
+            <label for="pais">País:</label>
             <input type="text" name="pais" id="pais">
           </div>           
            <div class="presupuesto__formulario-input">
