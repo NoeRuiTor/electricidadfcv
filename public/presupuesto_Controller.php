@@ -10,8 +10,9 @@ if(isset($_POST['enviar'])){
   $tipoTrabajo = $_POST['trabajo']; 
   $fechaActual = date('Y-m-d');
   $pwd = generar_contrasena(6);
+  $pais = $_POST['pais'];
 
-    procesaFormulario($nombre,$email,$telefono,$ciudad,$cpostal,$tipoTrabajo,$fechaActual,$pwd);
+    procesaFormulario($nombre,$email,$telefono,$ciudad,$cpostal,$tipoTrabajo,$fechaActual,$pwd,$pais);
     
       
 }
@@ -47,7 +48,7 @@ function generar_contrasena($longitud) {
     return $contrasena;
 }
 
-function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoTrabajo, $fechaActual, $pwd) {
+function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoTrabajo, $fechaActual, $pwd, $pais) {
   if (validarDatos($nombre, $email, $telefono, $ciudad, $cpostal, $tipoTrabajo) == true) {
 	  if(isset($_POST['descripcion'])){
     	$descripcion = $_POST['descripcion'];
@@ -155,7 +156,7 @@ function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoT
 }
 
 
-function validarDatos($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo){
+function validarDatos($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo,$pais){
   
     if (!isset($nombre) || empty($nombre)){
         return false;
@@ -171,6 +172,9 @@ function validarDatos($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo){
     }
     if (!isset($telefono) || empty($telefono)){
         return false;
+    }
+    if (isset($pais) || !empty($pais)){
+       return false;
     }
    
     if ($tipoTrabajo !== "instalacion electrica nueva" && $tipoTrabajo !== "reforma instalacion" && $tipoTrabajo !== "iluminacion led"
