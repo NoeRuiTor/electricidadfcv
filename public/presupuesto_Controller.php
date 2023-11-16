@@ -53,7 +53,19 @@ function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoT
     	$descripcion = $_POST['descripcion'];
   	  } 
      if(!empty($_FILES['adjunto']) && $_FILES['adjunto']['size']>0){
-      $documento = $_FILES['adjunto']['tmp_name'];
+      // Ruta donde se guardarán temporalmente los archivos cargados
+          $rutaTemporal = $_FILES['adjunto']['tmp_name'];
+    
+    // Nombre del archivo original
+          $nombreArchivo = $_FILES['adjunto']['name'];
+    
+    // Directorio donde se guardarán los archivos adjuntos
+          $directorioDestino = "adjuntos/";
+    
+    // Mueve el archivo temporal al directorio de destino
+          $documento = $directorioDestino . $nombreArchivo;
+          move_uploaded_file($rutaTemporal, $documento);
+
        enviarCorreoConAdjunto($nombre, $email, $ciudad, $cpostal, $telefono, $tipoTrabajo,$descripcion,$documento);
 	   
       }else{
