@@ -49,7 +49,7 @@ function generar_contrasena($longitud) {
 }
 
 function procesaFormulario($nombre, $email, $telefono, $ciudad, $cpostal, $tipoTrabajo, $fechaActual, $pwd, $pais) {
-  if (validarDatos($nombre, $email, $telefono, $ciudad, $cpostal, $tipoTrabajo) == true) {
+  if (validarDatos($nombre, $email, $telefono, $ciudad, $cpostal, $tipoTrabajo, $pais) == true) {
 	  if(isset($_POST['descripcion'])){
     	$descripcion = $_POST['descripcion'];
   	  } 
@@ -173,7 +173,7 @@ function validarDatos($nombre, $email,$ciudad,$cpostal,$telefono,$tipoTrabajo,$p
     if (!isset($telefono) || empty($telefono)){
         return false;
     }
-    if (isset($pais) || !empty($pais)){
+    if (!empty($pais)){
        return false;
     }
    
