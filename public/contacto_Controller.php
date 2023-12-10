@@ -4,8 +4,7 @@ function procesarFormContacto(){
     $telefono = filter_var($_POST['telefono'], FILTER_SANITIZE_NUMBER_INT);
     $email = filter_var ($_POST['email'],FILTER_SANITIZE_EMAIL);
     $consulta = $_POST['consulta'];
-	
-    
+	    
 
         $to ='fundeanuconstantin@gmail.com'; // Dirección de correo electrónico a la que se enviará el mensaje
         $subject = 'Contacto desde la web'; // Asunto del correo electrónico

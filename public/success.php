@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$titulo_pagina = "Datos recibidos";
+  $titulo_pagina = "Datos recibidos";
   $description = "Electricista en Castalla y toda la provincia de Alicante, instalaciones eléctricas, 
   energias renovables, reformas de instalaciones, memoria técnica de diseño, presupuestos en general, tienda de iluminación led";
   $keywords = "electricidad, electricista, iluminación, energías renovables, reformas electricas, Castalla";

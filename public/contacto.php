@@ -62,6 +62,11 @@ include("../plantillas/cabecera.php");
                         <div class="form-input">
                                 <input type="text" name="nombre" id="nom" autocapitalize="word" placeholder="nombre" autocomplete="off">
                         </div>
+                         <!-- Campo honeypot oculto -->
+                        <div style="display:none;">
+                            <label for="pais">País:</label>
+                            <input type="text" name="pais" id="pais">
+                        </div> 
                         <div class="form-input">
                                 <input type="email" name="email" id="emeal" placeholder="email" autocomplete="off">
                         </div>
