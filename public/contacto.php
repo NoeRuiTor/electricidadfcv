@@ -77,7 +77,7 @@ include("../plantillas/cabecera.php");
                             <textarea id="consulta" name="consulta" cols="40" rows="10"placeholder="Consulta..."></textarea>
                         </div>
                         <div class="form-privacidad">
-                        <input type="checkbox" name="privacidad"  value="privacidad" id="ppriva"> He leído y acepto la <a href="#">POLÍTICA DE PRIVACIDAD</a>
+                        <input type="checkbox" name="privacidad"  value="privacidad" id="ppriva"> He leído y acepto la <a href="politicaPrivacidad.php">POLÍTICA DE PRIVACIDAD</a>
                         </div>
                         <?php if (isset($_REQUEST['error'])) : ?>
                         <div id="errores">
