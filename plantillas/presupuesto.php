@@ -60,7 +60,7 @@
                 <input id="file" type="file" accept=".jpg, .jpeg, .png, .gif .pdf" name="adjunto">
            </div>
            <div class="presupuesto__formulario-privacidad">
-                <input type="checkbox" name="privacidad" id="ppriva" value="privacidad"> He leído y acepto la <a href="../public/politicaPrivacidad.php">POLÍTICA DE PRIVACIDAD</a>
+                <input type="checkbox" name="privacidad" id="ppriva" value="privacidad"> He leído y acepto la <a href="politicaPrivacidad.php">POLÍTICA DE PRIVACIDAD</a>
            </div>
 
            <div id="errores"></div>
