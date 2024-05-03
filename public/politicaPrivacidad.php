@@ -26,6 +26,7 @@ include("../plantillas/cabecera.php");
                 <p class="bodytext">Le informamos que los datos de carácter personal que pudieran proporcionarse, a través de este sitio web, así como los que pudiera facilitar en el futuro en el marco de su relación jurídica con esta entidad, serán incorporados a nuestra base de datos.</p>
                 <p class="bodytext">&nbsp;</p>
                 <p class="bodytext">Se informa sobre los siguientes extremos relativos a la protección de datos:</p>
+                <p class="bodytext">&nbsp;</p>
                 <ol class="bodytext">
 
                     <li class="bodytext">
@@ -70,6 +71,7 @@ include("../plantillas/cabecera.php");
                     </li>
 
                 </ol>
+                <p class="bodytext">&nbsp;</p>
             </div>
         </div>
 

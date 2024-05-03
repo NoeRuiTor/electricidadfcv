@@ -28,12 +28,10 @@ function login(){
              );
         $stmt = $con->prepare($query);
         $stmt->execute($params);
-        $result = $stmt->rowCount();
-        $hash = password_hash($pwd, PASSWORD_DEFAULT);
-        if ($result > 0 && password_verify($pwd, $hash)) {
-            $user = $stmt->fetch();
+        $user = $stmt->fetch();  
+		$hash = $user['psw'];
+        if ($user && password_verify($pwd, $hash)) {            
             $rol = $user['rol'];
-
 
             // Inicio de sesión exitoso, establecer el tipo de usuario en la sesión
             $_SESSION['rol'] = $rol;
@@ -74,18 +72,17 @@ function cambiaPassword(){
     $con = conectar_db($bd);
     
         $email=$_REQUEST['email'];
-        $pwd=$_REQUEST['old-password'];
+        $pwd=$_REQUEST['old-password'];	    
         $newPwd=$_REQUEST['new-password'];
-        $query = "SELECT * FROM usuario WHERE email = :email AND psw = :psw";
+        $query = "SELECT * FROM usuario WHERE email = :email";
         $params = array(
-            ':email' => $email,
-            ':psw' => $pwd
-        );
+            ':email' => $email
+             );
         $stmt = $con->prepare($query);
         $stmt->execute($params);
-        $result = $stmt->rowCount();
-        $hash = password_hash($pwd, PASSWORD_DEFAULT);
-        if ($result > 0 && password_verify($pwd, $hash)) {
+        $user = $stmt->fetch();  
+		$hash = $user['psw'];
+        if ($user && password_verify($pwd, $hash)) {  
             $pwdHash=password_hash($newPwd, PASSWORD_DEFAULT);
             
             $sentencia = $con->prepare ("UPDATE usuario SET psw = :psw WHERE email = :email ;");

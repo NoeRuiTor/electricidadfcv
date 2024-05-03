@@ -42,8 +42,8 @@
                     <span></span>
                 </h4>           
                  <ul class="footer-list">
-                     <li><a href="#">Aviso Legal</a></li>
-                     <li><a href="#">Pólitica de Cookies</a></li>
+                     <li><a href="avisoLegal.php">Aviso Legal</a></li>
+                     <li><a href="politicaCookies.php">Pólitica de Cookies</a></li>
                      <li><a href="politicaPrivacidad.php">Pólitica de privacidad</a></li>
                  </ul>
             </div>
