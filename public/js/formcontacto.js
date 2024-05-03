@@ -15,7 +15,7 @@ function validaDatosContacto(){
     let tel = document.getElementById("tel").value;
     let nom = document.getElementById("nom").value;
     let checkbox = document.getElementById("ppriva");
-    let pais = document.getElementById("pais");
+   
     
     if(nom ==="") {
       showCustomAlert("Debes completar el campo nombre");
@@ -38,12 +38,6 @@ function validaDatosContacto(){
       return false;
      }
 
-
-    if (pais !== ""){
-      showCustomAlert("Error. Robot detectado");
-      return false;
-    }
-    
 
     if (!checkbox.checked) {
         // El checkbox no está marcado
